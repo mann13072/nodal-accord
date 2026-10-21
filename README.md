@@ -71,6 +71,9 @@ repository) and expected next to this folder. Point `NODAL_DATA_ROOT` at any gen
 - `docs/architecture/decisions.md` — ADRs and **every deviation from the blueprint** (SQLite instead of PostgreSQL, no
   RLS, no Docker/Azure, no AI agent, demo identities instead of OIDC, Mode A economics only).
 
+## License
+Apache License 2.0 — see `LICENSE`. Third-party dependencies keep their own licenses (MIT, BSD or Apache-2.0).
+
 ## What is not claimed
 Not integrated with SupplyOn or any ERP; no vendor schema is used; not production-ready; time-limited runs are labelled
 `FEASIBLE_WITH_GAP`, never optimal; benchmark numbers are from one laptop and one synthetic workload; shortage exposure is

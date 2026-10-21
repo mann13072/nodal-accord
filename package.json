@@ -2,6 +2,7 @@
   "name": "nodal-accord",
   "private": true,
   "version": "0.1.0",
+  "license": "Apache-2.0",
   "description": "Root dev orchestration: API + optimization worker + web workbench",
   "scripts": {
     "dev": "node scripts/kill-ports.mjs 8000 5173 && concurrently -k -n api,worker,web -c blue,magenta,green \"node scripts/run-py.mjs api\" \"node scripts/run-py.mjs worker\" \"npm --prefix apps/web run dev\"",
