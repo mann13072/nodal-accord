@@ -12,7 +12,8 @@ const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      {/* The workbench lives under /app; the site root serves the static landing page (index.html). */}
+      <BrowserRouter basename="/app">
         <App />
       </BrowserRouter>
     </QueryClientProvider>

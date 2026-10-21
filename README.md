@@ -4,7 +4,7 @@ A working, API-first prototype of the blueprint in `../Nodal_Accord_Engineering_
 exception, compare constrained mitigation plans (Pyomo + HiGHS MILP), turn a validated plan into a structured offer, let
 the supplier accept or counteroffer, re-simulate, route human approvals, and export an immutable agreement record.
 
-**Live demo:** https://nodal-accord.vercel.app (frontend on Vercel) · API: https://nodal-accord-api.onrender.com/docs
+**Website:** https://nodal-accord.vercel.app · **Live demo:** https://nodal-accord.vercel.app/app (frontend on Vercel) · API: https://nodal-accord-api.onrender.com/docs
 (backend on Render's free plan with the synthetic 500-supplier dataset; it sleeps after 15 minutes idle, so the first
 request can take about a minute. Pick a demo identity in the top bar.)
 

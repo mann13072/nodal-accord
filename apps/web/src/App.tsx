@@ -16,7 +16,7 @@ export default function App() {
     // Full reload: no cached data from the previous identity may survive the switch.
     setPrincipalId(id);
     qc.clear();
-    window.location.assign("/");
+    window.location.assign("/app/");
   };
 
   return (
