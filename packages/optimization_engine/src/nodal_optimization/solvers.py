@@ -25,12 +25,14 @@ class SolveOutcome:
         return abs(self.primal - self.bound) / max(abs(self.primal), 1e-9)
 
 
-def solve_highs(model: pyo.ConcreteModel, *, time_limit: float, mip_gap: float) -> SolveOutcome:
+def solve_highs(model: pyo.ConcreteModel, *, time_limit: float, mip_gap: float, warmstart: bool = False) -> SolveOutcome:
+    """warmstart=True passes the variables' current values to HiGHS as a starting MIP solution."""
     opt = Highs()
     if not opt.available():
         return SolveOutcome("error", False, None, None, 0.0, "HiGHS solver is not available in this environment")
     opt.config.time_limit = max(float(time_limit), 0.0)
     opt.config.mip_gap = float(mip_gap)
+    opt.config.warmstart = warmstart
     opt.config.load_solution = False
     opt.config.stream_solver = False
     started = time.perf_counter()

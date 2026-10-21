@@ -15,12 +15,24 @@ def test_current_sources_are_all_lanes_with_committed_capacity(store):
 def test_snapshot_scope_validates_and_mitigation_never_worsens_service(store):
     opts = SolverOptions(time_limit_seconds=30, max_relative_gap=0.0)
     base = solve_scenario(snapshot_scenario(store, "DISR-000001", "baseline", solver=opts)[0])
-    hyb = solve_scenario(snapshot_scenario(store, "DISR-000001", "hybrid", solver=opts)[0])
+    hyb = solve_scenario(snapshot_scenario(store, "DISR-000001", "hybrid", solver=opts)[0], seed=base)
     for r in (base, hyb):
         assert r.status in (SolveStatus.OPTIMAL, SolveStatus.FEASIBLE_WITH_GAP)
         assert r.validation_errors == []
-    if base.status == hyb.status == SolveStatus.OPTIMAL:
-        assert hyb.late_unit_weeks <= base.late_unit_weeks
+    # Seeded with the baseline plan, a mitigation run can never report worse service than baseline.
+    weighted = lambda r: sum(next(i.criticality_weight for i in snapshot_scenario(store, "DISR-000001", "baseline")[0].items
+                                  if (i.part_id, i.plant_id) == (iw.part_id, iw.plant_id)) * iw.backlog for iw in r.item_weeks)
+    assert weighted(hyb) <= weighted(base)
+
+
+def test_unimproved_seed_is_flagged_not_presented_as_a_recommendation(store):
+    from nodal_optimization.model_inputs import SolverOptions as SO
+
+    inp = snapshot_scenario(store, "DISR-000001", "hybrid", solver=SO(time_limit_seconds=0.0))[0]
+    r = solve_scenario(inp)
+    assert r.status in (SolveStatus.FEASIBLE_WITH_GAP, SolveStatus.TIME_LIMIT)
+    if r.status == SolveStatus.FEASIBLE_WITH_GAP and r.relative_gap not in (None, 0.0):
+        assert any("did not improve" in w or "not proven" in w for w in r.warnings)
 
 
 def test_other_tenant_economics_are_withheld_from_the_objective(store):

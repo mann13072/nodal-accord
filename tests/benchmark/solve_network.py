@@ -121,13 +121,21 @@ def main() -> None:
         return report
 
     for ev in sample:
+        baseline_result = None
         for mode in args.modes:
             b = time.perf_counter()
             inp, econ, scope = snapshot_scenario(store, ev, mode, max_items=args.max_items,
                                                  solver=SolverOptions(time_limit_seconds=args.time_limit, max_relative_gap=args.gap))
             scope_s = time.perf_counter() - b
-            res = solve_scenario(inp, exposure_proxy_per_unit=econ.exposure_proxy_per_unit)
-            runs.append({"disruption_id": ev, "mode": mode, "status": res.status.value, "items": scope["items"], "lanes": scope["lanes"],
+            res = solve_scenario(inp, exposure_proxy_per_unit=econ.exposure_proxy_per_unit,
+                                 seed=baseline_result if mode != "baseline" else None)
+            if mode == "baseline":
+                baseline_result = res
+            runs.append({"warm_start": "baseline plan" if mode != "baseline" and baseline_result is not None else "no-release plan",
+                         "stage1_termination": res.stage1.termination if res.stage1 else None,
+                         "stage1_gap": res.stage1.relative_gap if res.stage1 else None,
+                         "stage2_gap": res.stage2.relative_gap if res.stage2 else None,
+                         "not_improved_over_seed": any("did not improve" in w for w in res.warnings),"disruption_id": ev, "mode": mode, "status": res.status.value, "items": scope["items"], "lanes": scope["lanes"],
                          "resources": scope["resources"], "truncated": scope["truncated"], "weeks": len(inp.weeks),
                          "out_of_scope_reserved_hours": scope.get("out_of_scope_reserved_hours"),
                          "variables": res.model_size.get("variables"), "integer_variables": res.model_size.get("integer_variables"),

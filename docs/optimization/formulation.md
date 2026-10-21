@@ -41,6 +41,17 @@ never an input, so it cannot leak into buyer results.
 - `INFEASIBLE` with diagnostics from relaxing zero-shortage/budget, locked releases and lead times.
 - `ERROR` when the independent validator finds any violation; the plan cannot become an offer.
 
+## Warm starts
+Stage 1 is seeded so a time-limited run always has an incumbent:
+- baseline: the "release nothing" plan (stock and receipts only, remainder backlogged) — always feasible unless there
+  are locked releases or a mandatory zero-shortage constraint, in which case no seed is used;
+- every other mode: the solved baseline plan. Each mode only adds options to baseline, so that plan is feasible and a
+  mitigation result can never report worse service than baseline.
+
+If the solver does not improve on its seed within the time limit, the result carries the warning "did not improve on
+the seeded … plan … not a recommendation" and its gap. `relative_gap` in results is the cost-stage gap; a
+`FEASIBLE_WITH_GAP` run with gap 0.0 means the *shortage* stage was not proven (see `stage1_gap` in benchmarks).
+
 ## HYBRID definition
 HYBRID = overtime + alternate source (blueprint case category 8; matches the generator's oracle). Prebuild is a
 separate option. An earlier version folded prebuild into HYBRID; the oracle cross-check caught it (3/180 mismatches).

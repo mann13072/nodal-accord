@@ -218,9 +218,13 @@ def execute_run(session_factory, store, run_id: str, worker_id: str) -> bool:
         try:
             results: dict[str, Any] = {}
             hashes = []
+            baseline_result = None  # every other mode is a superset of baseline, so its plan is a valid warm start
             for mode in [m for m in MODE_ORDER if m in request.get("modes", MODE_ORDER)]:
                 inp, econ, meta = build_inputs(store, case, request, mode)
-                res = solve_scenario(inp, exposure_proxy_per_unit=econ.exposure_proxy_per_unit)
+                res = solve_scenario(inp, exposure_proxy_per_unit=econ.exposure_proxy_per_unit,
+                                     seed=baseline_result if mode != "baseline" else None)
+                if mode == "baseline":
+                    baseline_result = res
                 results[mode] = serialize(res, inp, econ) | {"scope": meta}
                 hashes.append(results[mode]["input_hash"])
             run.state = RunState.VALIDATING.value

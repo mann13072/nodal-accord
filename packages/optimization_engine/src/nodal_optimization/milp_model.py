@@ -302,7 +302,8 @@ def _count(m: pyo.ConcreteModel) -> dict[str, int]:
 
 
 # ------------------------------------------------------------------------------------------------
-def solve_scenario(inp: ScenarioInput, *, exposure_proxy_per_unit: Decimal = Decimal("0")) -> ScenarioResult:
+def solve_scenario(inp: ScenarioInput, *, exposure_proxy_per_unit: Decimal = Decimal("0"),
+                   seed: "ScenarioResult | None" = None) -> ScenarioResult:
     import time
 
     t0 = time.perf_counter()
@@ -315,9 +316,12 @@ def solve_scenario(inp: ScenarioInput, *, exposure_proxy_per_unit: Decimal = Dec
     budget = inp.solver.time_limit_seconds
     gap = inp.solver.max_relative_gap
 
-    # Stage 1: physical service.
+    # Stage 1: physical service. Seed HiGHS with the trivially feasible "release nothing" plan when it is valid,
+    # so a time-limited run always has an incumbent and an honest gap instead of no answer.
+    seed_kind = "earlier plan" if _seed_from_result(m, inp, seed) else ("no-release plan" if _seed_no_release_plan(m, inp) else None)
+    seed_shortage = pyo.value(m.shortage, exception=False) if seed_kind else None
     m.obj1 = pyo.Objective(expr=m.shortage, sense=pyo.minimize)
-    s1 = solve_highs(m, time_limit=budget * 0.5, mip_gap=gap)
+    s1 = solve_highs(m, time_limit=budget * 0.5, mip_gap=gap, warmstart=seed_kind is not None)
     result.stage1 = s1
     if s1.termination == "infeasible":
         result.status = SolveStatus.INFEASIBLE
@@ -334,6 +338,9 @@ def solve_scenario(inp: ScenarioInput, *, exposure_proxy_per_unit: Decimal = Dec
         return result
     stage1_value = float(s1.primal)
     stage1_proven = s1.termination == "optimal" and (s1.relative_gap or 0.0) <= 1e-9
+    if seed_kind and seed_shortage is not None and not stage1_proven and stage1_value >= seed_shortage - EPS:
+        result.warnings.append(f"Solver did not improve on the seeded {seed_kind} within the time limit; "
+                               "this is a starting point, not a recommendation.")
     snapshot1 = _snapshot_values(m)
 
     # Stage 2: cost, holding stage-1 service fixed (within tolerance).
@@ -341,7 +348,7 @@ def solve_scenario(inp: ScenarioInput, *, exposure_proxy_per_unit: Decimal = Dec
     m.service_lock = pyo.Constraint(expr=m.shortage <= stage1_value + inp.solver.shortage_tolerance_units + EPS)
     m.obj2 = pyo.Objective(expr=m.spend, sense=pyo.minimize)
     remaining = max(budget - s1.wall_seconds, budget * 0.25)
-    s2 = solve_highs(m, time_limit=remaining, mip_gap=gap)
+    s2 = solve_highs(m, time_limit=remaining, mip_gap=gap, warmstart=True)  # stage-1 plan satisfies the service lock
     result.stage2 = s2
     if not s2.has_solution:
         # Stage-1 incumbent is still a valid physical plan; report it without cost optimality.
@@ -367,6 +374,79 @@ def solve_scenario(inp: ScenarioInput, *, exposure_proxy_per_unit: Decimal = Dec
     if status == SolveStatus.FEASIBLE_WITH_GAP and s1.termination == "time_limit":
         result.message = "Time limit reached; best feasible plan returned with its gap. Not proven optimal."
     return result
+
+
+def _seed_from_result(m: pyo.ConcreteModel, inp: ScenarioInput, seed: "ScenarioResult") -> bool:
+    """Warm-start from an earlier plan (e.g. the baseline) that is feasible in this model.
+
+    Baseline only uses capabilities every other mode also has, so its plan is a valid starting point; the
+    independent validator still checks whatever HiGHS finally returns."""
+    if not seed or not seed.has_plan or inp.require_zero_shortage or any(ln.locked_releases for ln in inp.lanes):
+        return False
+    meta = m._meta
+    widx = {w: t for t, w in enumerate(meta["weeks"])}
+    lanes = meta["lanes"]
+    plan: dict[tuple[str, int], tuple[int, int]] = {}
+    for rl in seed.releases:
+        if rl.lane_id not in lanes or rl.release_week not in widx:
+            return False
+        if rl.overtime_units and not inp.allow_overtime:
+            return False
+        plan[(rl.lane_id, widx[rl.release_week])] = (rl.regular_units, rl.overtime_units)
+    rows = {(iw.part_id, iw.plant_id, iw.week_start): iw for iw in seed.item_weeks}
+    for comp in (m.r, m.o, m.k, m.z, m.y, m.sn, m.In, m.so, m.Io, m.B):
+        for v in comp.values():
+            if not v.fixed:
+                v.set_value(0, skip_validation=True)
+    for (a, t), (reg, ot) in plan.items():
+        m.r[a, t].set_value(reg, skip_validation=True)
+        m.o[a, t].set_value(ot, skip_validation=True)
+        ln = lanes[a]
+        if ln.lot_multiple > 1:
+            m.k[a, t].set_value((reg + ot) // ln.lot_multiple, skip_validation=True)
+        if (a, t) in m.z and reg + ot > 0:
+            m.z[a, t].set_value(1, skip_validation=True)
+        if a in m.y and reg + ot > 0:
+            m.y[a].set_value(1, skip_validation=True)
+    for n, key in enumerate(meta["item_keys"]):
+        for t, w in enumerate(meta["weeks"]):
+            iw = rows.get((key[0], key[1], w))
+            if iw is None:
+                return False
+            m.so[n, t].set_value(iw.served_from_stock, skip_validation=True)
+            m.sn[n, t].set_value(iw.served_from_new, skip_validation=True)
+            m.Io[n, t].set_value(iw.old_inventory, skip_validation=True)
+            if not m.In[n, t].fixed:
+                m.In[n, t].set_value(iw.new_inventory, skip_validation=True)
+            if not m.B[n, t].fixed:
+                m.B[n, t].set_value(iw.backlog, skip_validation=True)
+    return True
+
+
+def _seed_no_release_plan(m: pyo.ConcreteModel, inp: ScenarioInput) -> bool:
+    """Set variable values to the plan with zero new releases (stock and receipts only, rest backlogged).
+
+    Only used when that plan is feasible: no locked releases and no mandatory zero shortage."""
+    if inp.require_zero_shortage or any(ln.locked_releases for ln in inp.lanes):
+        return False
+    meta = m._meta
+    for comp in (m.r, m.o, m.k, m.z, m.y, m.sn, m.In):
+        for v in comp.values():
+            if not v.fixed:
+                v.set_value(0, skip_validation=True)
+    for n, key in enumerate(meta["item_keys"]):
+        it = meta["items"][key]
+        stock, backlog = it.opening_usable, 0
+        for t, w in enumerate(meta["weeks"]):
+            available = stock + int(it.receipts.get(w, 0))
+            need = int(it.demand.get(w, 0)) + backlog
+            served = min(available, need)
+            stock, backlog = available - served, need - served
+            m.so[n, t].set_value(served, skip_validation=True)
+            m.Io[n, t].set_value(stock, skip_validation=True)
+            if not m.B[n, t].fixed:
+                m.B[n, t].set_value(backlog, skip_validation=True)
+    return True
 
 
 def _snapshot_values(m: pyo.ConcreteModel) -> dict:
