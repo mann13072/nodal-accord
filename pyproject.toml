@@ -1,0 +1,54 @@
+[project]
+name = "nodal-accord"
+version = "0.1.0"
+description = "Collaborative supply resolution engine (synthetic-data prototype)"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.7",
+  "sqlalchemy>=2.0",
+  "pyarrow>=16",
+  "pandas>=2.2",
+  "pyomo>=6.8",
+  "highspy>=1.7",
+  "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "hypothesis>=6"]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-dir]
+nodal_domain = "packages/domain/src/nodal_domain"
+nodal_planning = "packages/planning_engine/src/nodal_planning"
+nodal_optimization = "packages/optimization_engine/src/nodal_optimization"
+nodal_finance = "packages/finance_engine/src/nodal_finance"
+nodal_integrations = "packages/integrations/src/nodal_integrations"
+nodal_api = "apps/api/src/nodal_api"
+"nodal_api.routers" = "apps/api/src/nodal_api/routers"
+"nodal_api.services" = "apps/api/src/nodal_api/services"
+nodal_worker = "apps/worker/src/nodal_worker"
+
+[tool.setuptools]
+packages = ["nodal_domain", "nodal_planning", "nodal_optimization", "nodal_finance", "nodal_integrations",
+            "nodal_api", "nodal_api.routers", "nodal_api.services", "nodal_worker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [
+  "packages/domain/src",
+  "packages/planning_engine/src",
+  "packages/optimization_engine/src",
+  "packages/finance_engine/src",
+  "packages/integrations/src",
+  "apps/api/src",
+  "apps/worker/src",
+]
+markers = [
+  "dataset: needs the generated synthetic dataset (skipped when NODAL_DATA_ROOT is missing)",
+  "slow: long-running benchmark-style test",
+]

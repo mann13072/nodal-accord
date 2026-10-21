@@ -1,0 +1,18 @@
+{
+  "name": "nodal-accord",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Root dev orchestration: API + optimization worker + web workbench",
+  "scripts": {
+    "dev": "node scripts/kill-ports.mjs 8000 5173 && concurrently -k -n api,worker,web -c blue,magenta,green \"node scripts/run-py.mjs api\" \"node scripts/run-py.mjs worker\" \"npm --prefix apps/web run dev\"",
+    "dev:api": "node scripts/run-py.mjs api",
+    "dev:worker": "node scripts/run-py.mjs worker",
+    "dev:web": "npm --prefix apps/web run dev",
+    "test": "node scripts/run-py.mjs pytest",
+    "build:web": "npm --prefix apps/web run build",
+    "postinstall": "npm --prefix apps/web install"
+  },
+  "devDependencies": {
+    "concurrently": "9.0.1"
+  }
+}
