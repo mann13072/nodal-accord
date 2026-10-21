@@ -4,7 +4,7 @@
   --text: #1c232b; --text-2: #4b5560; --text-3: #6f7882; --accent: #326b8c; --accent-weak: #e3edf3;
   --red: #b42318; --red-bg: #fde8e6; --amber: #9a5b00; --amber-bg: #fdf1dc; --green: #1f7a3f; --green-bg: #e3f4e8;
   --gray-bg: #eceeed; --focus: #1b5fd1;
-  --row: 34px; --rail: 52px; --queue: 272px; --context: 360px;
+  --row: 34px; --rail: 64px; --queue: 272px; --context: 360px;
   --mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
   font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 14px; color: var(--text);
   color-scheme: light;
@@ -46,12 +46,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 @media (max-width: 900px) { .topbar .tablet-up { display: none; } .topbar { gap: 8px; } .topbar select { max-width: 46vw; } }
 .body { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); min-height: 0; }
 .rail { background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding-top: 6px; }
-.rail a { display: grid; place-items: center; height: 44px; color: var(--text-3); text-decoration: none; font-size: 11px; font-weight: 600; border-left: 3px solid transparent; }
+.rail a { display: grid; place-items: center; align-content: center; gap: 3px; height: 52px; color: var(--text-3); text-decoration: none; font-size: 11px; font-weight: 600; border-left: 3px solid transparent; }
+.rail a:hover { color: var(--text-2); }
 .rail a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-weak); }
 .rail a span { font-size: 10px; font-weight: 500; }
 .main { min-width: 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
 
-.workspace { display: grid; grid-template-columns: var(--queue) minmax(560px, 1fr) var(--context); height: 100%; min-height: 0; }
+.workspace { display: grid; grid-template-columns: var(--queue) minmax(440px, 1fr) var(--context); height: 100%; min-height: 0; }
 /* minmax(0, …) lets the case column shrink to the screen; wide tables then scroll inside their section instead of stretching the page (and the charts). */
 @media (max-width: 1200px) { .workspace { grid-template-columns: var(--queue) minmax(0, 1fr); } .context { display: none; } }
 @media (max-width: 900px) { .workspace { grid-template-columns: minmax(0, 1fr); } .queue { max-height: 40vh; } }
@@ -96,11 +97,19 @@ details.ctx-block[open] > summary { margin-bottom: 8px; }
 .pane-head h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin: 0; color: var(--text-2); }
 
 .queue-list { list-style: none; margin: 0; padding: 0; overflow: auto; flex: 1; }
-.queue-item { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 7px 10px; border-bottom: 1px solid var(--border); cursor: pointer; }
+.queue-filters { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; }
+.queue-filters select { max-width: 120px; }
+/* Two lines per case: problem + (status, or the case id while the case is still new), then part · shortage. */
+.queue-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3px 8px; padding: 8px 10px; border-bottom: 1px solid var(--border); cursor: pointer; }
 .queue-item:hover { background: var(--surface-2); }
 .queue-item[aria-selected="true"] { background: var(--accent-weak); box-shadow: inset 3px 0 0 var(--accent); }
-.queue-item .id { font-family: var(--mono); font-size: 12px; font-weight: 600; }
-.queue-item .title { grid-column: 1 / -1; font-size: 13px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.queue-item { align-items: start; }
+.queue-item .title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; overflow: hidden;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }  /* wrap long problems, never cut them mid-word */
+.queue-item .title + .id, .queue-item .title + .tag { margin-top: 1px; }
+.queue-item .sub { grid-column: 1 / -1; font-size: 12px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.queue-item .sub .mono { font-size: 11px; }
+.queue-item .id { font-family: var(--mono); font-size: 11px; color: var(--text-3); justify-self: end; }
 
 .case-area { display: flex; flex-direction: column; min-height: 0; min-width: 0; background: var(--bg); }
 .case-head { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 14px 0; }

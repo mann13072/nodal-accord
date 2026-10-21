@@ -12,6 +12,12 @@ const VIEWS: [string, string][] = [["All", ""], ["Detected", "DETECTED"], ["Inve
   ["Scenarios ready", "SCENARIOS_READY"], ["Awaiting supplier", "SENT"], ["Countered", "COUNTERED"],
   ["Needs approval", "BUYER_APPROVAL_PENDING"], ["Export ready", "EXPORT_READY"]];
 
+/** impact_score is the baseline shortage: units unmet if nothing is done (it is also the queue's sort key). */
+function shortageLabel(units: number | undefined): string {
+  if (units === undefined || units === null) return "shortage unknown";
+  return units > 0 ? `${units.toLocaleString("en-GB")} units short` : "no shortage";
+}
+
 export function CasesPage({ me }: { me: Me }) {
   const { caseId, mode = "investigate" } = useParams();
   const nav = useNavigate();
@@ -43,29 +49,37 @@ export function CasesPage({ me }: { me: Me }) {
     <div className="workspace">
       <aside className="pane queue" aria-label="Exception queue">
         <div className="pane-head" style={{ flexDirection: "column", alignItems: "stretch" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }} title="Use ↑/↓ or j/k to move between cases">
             <h2>Exception queue</h2><div style={{ flex: 1 }} />
-            <span className="small muted">{counts.open} open · {counts.pending} pending</span>
+            <span className="small muted">{counts.open} open{counts.pending > 0 && <> · {counts.pending} waiting</>}</span>
           </div>
-          <input className="field" placeholder="Search case or part" aria-label="Search cases" value={q} onChange={(e) => setQ(e.target.value)} />
-          <select className="field" aria-label="Saved view" value={state} onChange={(e) => setState(e.target.value)}>
-            {VIEWS.map(([label, v]) => <option key={label} value={v}>{label}</option>)}
-          </select>
+          <div className="queue-filters">
+            <input className="field" placeholder="Search…" title="Search by case ID, part or problem" aria-label="Search cases" value={q} onChange={(e) => setQ(e.target.value)} />
+            <select className="field" aria-label="Saved view" value={state} onChange={(e) => setState(e.target.value)}>
+              {VIEWS.map(([label, v]) => <option key={label} value={v}>{label}</option>)}
+            </select>
+          </div>
         </div>
         <ul className="queue-list" role="listbox" aria-label="Cases">
-          {items.map((c) => (
-            <li key={c.case_id} role="option" aria-selected={c.case_id === caseId} className="queue-item"
-                onClick={() => nav(`/cases/${c.case_id}/${mode}`)}>
-              <span className="id">{c.case_id}</span>
-              <StatusTag value={c.state} />
-              <span className="title" title={c.title}>{c.title}</span>
-              <span className="small muted">impact {c.impact_score ?? "—"} · v{c.input_version}</span>
-            </li>
-          ))}
+          {items.map((c) => {
+            // Titles are "<problem> - <part>"; show the problem as the headline and the part underneath.
+            const [problem, part] = c.title.includes(" - ") ? [c.title.slice(0, c.title.lastIndexOf(" - ")), c.title.slice(c.title.lastIndexOf(" - ") + 3)] : [c.title, ""];
+            return (
+              <li key={c.case_id} role="option" aria-selected={c.case_id === caseId} className="queue-item"
+                  onClick={() => nav(`/cases/${c.case_id}/${mode}`)} title={`${c.case_id} · ${c.title}`}>
+                <span className="title">{problem}</span>
+                {c.state !== "DETECTED" ? <StatusTag value={c.state} /> : <span className="id">{c.case_id}</span>}
+                <span className="sub">
+                  {part && <span className="mono">{part}</span>}
+                  {part && " · "}{shortageLabel(c.impact_score)}
+                  {(c.input_version ?? 1) > 1 && <> <span className="tag amber" title="Inputs changed since the case opened (e.g. after a counteroffer)">inputs v{c.input_version}</span></>}
+                </span>
+              </li>
+            );
+          })}
           {cases.isLoading && <li className="empty">Loading…</li>}
           {!cases.isLoading && items.length === 0 && <li className="empty">No cases in this view.</li>}
         </ul>
-        <div className="small muted" style={{ padding: 8, borderTop: "1px solid var(--border)" }}>↑/↓ or j/k to move · {me.tenant_scopes.join(", ")}</div>
       </aside>
       {caseId ? <CaseWorkspace caseId={caseId} mode={mode} me={me} /> : <div className="case-area"><div className="empty">Select a case from the queue.</div></div>}
     </div>

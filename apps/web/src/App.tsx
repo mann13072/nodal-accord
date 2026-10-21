@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { NavLink, Navigate, Route, Routes } from "react-router-dom";
+import { NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { api, getPrincipalId, isBuyer, isSupplier, Me, Principal, setPrincipalId } from "./api";
 import { AgreementsPage, AuditPage, ImportsPage, NetworkPage } from "./pages/Pages";
 import { CasesPage } from "./pages/CasesPage";
@@ -10,6 +10,7 @@ export default function App() {
   const me = useQuery({ queryKey: ["me", getPrincipalId()], queryFn: () => api<Me>("/session/me") });
   const principals = useQuery({ queryKey: ["principals"], queryFn: () => api<{ items: Principal[] }>("/session/principals") });
   const role = me.data?.role;
+  const inCase = useLocation().pathname.startsWith("/cases/");
 
   const switchPrincipal = (id: string) => {
     // Full reload: no cached data from the previous identity may survive the switch.
@@ -44,12 +45,12 @@ export default function App() {
       </header>
       <div className="body">
         <nav className="rail" aria-label="Primary">
-          {isBuyer(role) && <NavLink to="/queue">Q<span>Queue</span></NavLink>}
-          {isBuyer(role) && <NavLink to="/network">N<span>Network</span></NavLink>}
-          {isSupplier(role) && <NavLink to="/supplier">O<span>Offers</span></NavLink>}
-          {(isBuyer(role) || isSupplier(role)) && <NavLink to="/agreements">A<span>Agreem.</span></NavLink>}
-          {isBuyer(role) && <NavLink to="/audit">L<span>Audit</span></NavLink>}
-          {(role === "INTEGRATION_SERVICE" || role === "BUYER_PLANNER") && <NavLink to="/admin/integrations">I<span>Imports</span></NavLink>}
+          {isBuyer(role) && <NavLink to="/queue" className={({ isActive }) => (isActive || inCase ? "active" : "")}><RailIcon name="queue" /><span>Queue</span></NavLink>}
+          {isBuyer(role) && <NavLink to="/network"><RailIcon name="network" /><span>Network</span></NavLink>}
+          {isSupplier(role) && <NavLink to="/supplier"><RailIcon name="offers" /><span>Offers</span></NavLink>}
+          {(isBuyer(role) || isSupplier(role)) && <NavLink to="/agreements"><RailIcon name="agreements" /><span>Agreements</span></NavLink>}
+          {isBuyer(role) && <NavLink to="/audit"><RailIcon name="audit" /><span>Audit</span></NavLink>}
+          {(role === "INTEGRATION_SERVICE" || role === "BUYER_PLANNER") && <NavLink to="/admin/integrations"><RailIcon name="imports" /><span>Imports</span></NavLink>}
         </nav>
         <main className="main">
           {me.isError && <div className="notice err" style={{ margin: 12 }}>Cannot reach the API: {(me.error as Error).message}. Start it with <span className="mono">npm run dev</span>.</div>}
@@ -71,6 +72,22 @@ export default function App() {
         </main>
       </div>
     </div>
+  );
+}
+
+const RAIL_ICONS: Record<string, string> = {
+  queue: "M4 5h12M4 10h12M4 15h8",
+  network: "M5 10a2 2 0 1 0 0 .01M15 5a2 2 0 1 0 0 .01M15 15a2 2 0 1 0 0 .01M7 9l6-3M7 11l6 3",
+  offers: "M3 5h14v10H3zM3 5l7 6 7-6",
+  agreements: "M5 3h7l3 3v11H5zM8 11l2 2 4-4",
+  audit: "M10 4a6 6 0 1 0 0 12a6 6 0 1 0 0-12M10 7v3l2 2",
+  imports: "M10 3v9M6 8l4 4 4-4M4 14v3h12v-3",
+};
+
+function RailIcon({ name }: { name: string }) {
+  return (
+    <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6"
+         strokeLinecap="round" strokeLinejoin="round"><path d={RAIL_ICONS[name]} /></svg>
   );
 }
 
