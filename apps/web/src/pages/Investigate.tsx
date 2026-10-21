@@ -81,9 +81,9 @@ export function Investigate({ detail }: { detail: CaseDetail }) {
 
       <Section title="Affected network" actions={graph.data && <span className="small muted">{graph.data.nodes.length} nodes shown · {graph.data.hidden_nodes} hidden · limit {graph.data.max_nodes}</span>}>
         {graph.data && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 240px", gap: 12 }}>
+          <div className="graph-host"><div className="graph-layout">
             <ImpactGraph graph={graph.data} onSelect={setNode} />
-            <div className="small">
+            <div className="small graph-side">
               {sel ? (
                 <div className="stack">
                   <div><b className="mono">{sel.id}</b> <span className="muted">{sel.kind.toLowerCase()}</span></div>
@@ -98,7 +98,7 @@ export function Investigate({ detail }: { detail: CaseDetail }) {
               {graph.data.other_relationships_sharing_resource > 0 && <p className="notice">{graph.data.other_relationships_sharing_resource} lane(s) of other buyers share this resource; they are not shown.</p>}
               <p className="muted">{graph.data.completeness_note}</p>
             </div>
-          </div>
+          </div></div>
         )}
       </Section>
     </div>
