@@ -1,0 +1,46 @@
+[
+  {
+    "question": "Why is this case short, and which resource is the bottleneck?",
+    "case_id": "CASE-000004",
+    "state": "COMPLETED",
+    "tools": [
+      "get_case_evidence"
+    ],
+    "expected_tools_used": true,
+    "unverified_numbers": [],
+    "leaks": [],
+    "seconds": 4.5,
+    "usage": {
+      "prompt_tokens": 3075,
+      "completion_tokens": 499,
+      "total_tokens": 3574,
+      "prompt_cache_hit_tokens": 1024,
+      "prompt_cache_miss_tokens": 2051
+    },
+    "answer": "**Why it's short (CASE-000004, RUN-1688E1B44C11)**\n\n- **Cause:** a resource-competition / shared-machine conflict on supplier SUP-000295, lane LANE-000082, for PART-000030. The disruption runs 2026-11-23 to 2026-11-30 (2 weeks) with a 20% capacity loss and a 14-day lead-time extension. It's confirmed, with 0.95 event confidence.\n- **Scope:** two lines are in scope. PART-000030 (LANE-000082) has 600 units of demand and 0 usable stock. PART-000054 (LANE-000136) has 400 units of demand and 0 usable stock, with 200 units offered on its alternate lane.\n- **Shortage picture:** PART-000030 already goes short in week 2026-11-02 in both the baseline and disrupted views, with peak backlog 911 baseline vs 922 disrupted. PART-000054 goes short from 2026-11-09 in both, with peak backlog 237 in each.\n\n**Bottleneck**\n\nThe tool results don't name a single bottleneck resource. What they do show is that the binding constraint is the shared machine behind LANE-000082 / PART-000030: it's the only line with a capacity loss (20%) and a lead-time extension, and it has no usable stock and no alternate units offered. PART-000054's shortage is essentially unchanged by the disruption (237 vs 237), so it isn't what the disruption is driving.\n\nOne caveat: the shortage on PART-000030 starts in 2026-11-02, which is before the disruption window opens on 2026-11-23, and the baseline already shows a 911 peak backlog. So part of the shortfall is pre-existing, not caused by this event.\n\nThe existing run RUN-1688E1B44C11 is OPTIMAL and not stale. I can pull its per-mode results or compare modes if you want to see which mitigation covers the gap.",
+    "source": "live deployment (Render, dataset medium_500, commit aaa9e1d), not run_eval.py",
+    "agent_run_id": "AIR-C3EA778C4D1B",
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "asked_at_utc": "2026-10-21T13:49:05.943554",
+    "principal": "demo.buyer001.planner",
+    "preceding_scenario_run": "RUN-1688E1B44C11 (baseline, overtime, alternate, prebuild, hybrid; OPTIMAL)",
+    "checks": {
+      "numbers_match_case_data": true,
+      "numbers_checked": [
+        "SUP-000295",
+        "LANE-000082",
+        "capacity loss 20%",
+        "lead-time extension 14 days",
+        "event confidence 0.95",
+        "window 2026-11-23..2026-11-30",
+        "demand 600 / 400",
+        "alternate offered 200",
+        "first shortage 2026-11-02 / 2026-11-09",
+        "peak backlog 911 -> 922 and 237 -> 237"
+      ],
+      "leak_check": "nodal_domain.permissions.find_forbidden on the full run output: none"
+    },
+    "note": "Only question 1 of run_eval.py has been run live so far; the other five are not yet evaluated."
+  }
+]
