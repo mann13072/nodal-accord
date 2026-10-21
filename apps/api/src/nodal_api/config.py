@@ -12,7 +12,7 @@ class ConfigError(RuntimeError):
     pass
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, repr=False)
 class Settings:
     env: str
     demo_mode: bool
@@ -22,6 +22,8 @@ class Settings:
     max_graph_nodes: int = 100
     cors_origins: tuple[str, ...] = ("http://localhost:5173", "http://127.0.0.1:5173")
     max_solver_seconds: float = 600.0  # hard cap on any requested solver time limit
+    ai_access_code: str = ""  # when set, the AI assistant requires this code (protects the owner's API balance)
+    ai_hourly_limit: int = 30  # AI questions per hour per process
 
     @property
     def environment_label(self) -> str:
@@ -47,4 +49,6 @@ def load_settings() -> Settings:
     extra_origins = tuple(o.strip() for o in os.environ.get("NODAL_CORS_ORIGINS", "").split(",") if o.strip())
     return Settings(env, demo, data_root, db_url, _flag("NODAL_INLINE_WORKER", "false"),
                     cors_origins=Settings.cors_origins + extra_origins,
-                    max_solver_seconds=float(os.environ.get("NODAL_MAX_SOLVER_SECONDS", "600")))
+                    max_solver_seconds=float(os.environ.get("NODAL_MAX_SOLVER_SECONDS", "600")),
+                    ai_access_code=os.environ.get("NODAL_AI_ACCESS_CODE", "").strip(),
+                    ai_hourly_limit=int(os.environ.get("NODAL_AI_HOURLY_LIMIT", "30")))

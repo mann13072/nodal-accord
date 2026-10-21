@@ -13,6 +13,8 @@ import uuid
 
 from nodal_api.config import load_settings
 from nodal_api.db import make_engine, make_session_factory
+from nodal_agent_tools.providers import provider_from_env
+from nodal_api.services.agent import execute_agent_run, pending_agent_ids
 from nodal_api.services.scenario_exec import execute_run, pending_run_ids
 from nodal_integrations.snapshot import get_store
 
@@ -35,12 +37,20 @@ def main() -> None:
     signal.signal(signal.SIGTERM, _stop)
     log.info("worker %s started; dataset=%s db=%s", worker_id, store.dataset_label, settings.db_url)
     last_beat = 0.0
+    provider = provider_from_env()
+    log.info("AI assistant %s", f"enabled ({provider.name}, {provider.model})" if provider else "disabled (no API key)")
     while not stop:
         ids = pending_run_ids(sessions)
         for run_id in ids:
             t0 = time.perf_counter()
             if execute_run(sessions, store, run_id, worker_id):
                 log.info("run %s finished in %.2fs", run_id, time.perf_counter() - t0)
+        agent_ids = pending_agent_ids(sessions)
+        for agent_id in agent_ids:
+            t0 = time.perf_counter()
+            if execute_agent_run(sessions, store, settings, provider, agent_id, worker_id, lambda: None):
+                log.info("agent run %s finished in %.2fs", agent_id, time.perf_counter() - t0)
+        ids = ids + agent_ids
         if time.time() - last_beat > 30:
             log.info("heartbeat %s", worker_id)
             last_beat = time.time()

@@ -1,4 +1,5 @@
 import { CaseDetail, eur, Run } from "../api";
+import { AgentPanel } from "../components/AgentPanel";
 import { StatusTag } from "../components/ui";
 
 export function ContextPanel({ detail, run, mode }: { detail?: CaseDetail; run?: Run; mode: string }) {
@@ -6,6 +7,7 @@ export function ContextPanel({ detail, run, mode }: { detail?: CaseDetail; run?:
   const r = run?.results?.[mode];
   return (
     <aside className="pane context stack" aria-label="Context">
+      <AgentPanel caseId={detail.case.case_id} />
       <div>
         <h3 className="small muted" style={{ textTransform: "uppercase", letterSpacing: ".06em", margin: "0 0 6px" }}>Case facts</h3>
         <dl className="kv">

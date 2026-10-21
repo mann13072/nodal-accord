@@ -17,7 +17,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 for sub in ("packages/domain/src", "packages/planning_engine/src", "packages/optimization_engine/src", "packages/finance_engine/src",
-            "packages/integrations/src", "apps/api/src"):
+            "packages/integrations/src", "packages/agent_tools/src", "apps/api/src"):
     sys.path.insert(0, str(REPO / sub))
 
 from fastapi.testclient import TestClient  # noqa: E402

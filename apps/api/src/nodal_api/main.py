@@ -14,11 +14,13 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from nodal_agent_tools.providers import provider_from_env
 from nodal_integrations.snapshot import get_store
 
 from .config import Settings, load_settings
 from .db import make_engine, make_session_factory
-from .routers import cases, offers, system
+from .routers import agent, cases, offers, system
+from .services.agent import execute_agent_run, pending_agent_ids
 from .services.cases import seed_cases
 from .services.scenario_exec import execute_run, pending_run_ids
 
@@ -26,8 +28,8 @@ log = logging.getLogger("nodal_api")
 
 
 class InlineWorker:
-    def __init__(self, sessions, store):
-        self.sessions, self.store = sessions, store
+    def __init__(self, sessions, store, settings, provider_factory):
+        self.sessions, self.store, self.settings, self.provider_factory = sessions, store, settings, provider_factory
         self.wake = threading.Event()
         self.stop = threading.Event()
         self.thread = threading.Thread(target=self._loop, name="nodal-inline-worker", daemon=True)
@@ -37,6 +39,9 @@ class InlineWorker:
         while not self.stop.is_set():
             for run_id in pending_run_ids(self.sessions):
                 execute_run(self.sessions, self.store, run_id, self.worker_id)
+            for agent_id in pending_agent_ids(self.sessions):
+                execute_agent_run(self.sessions, self.store, self.settings, self.provider_factory(), agent_id,
+                                  self.worker_id, self.wake.set)
             self.wake.wait(1.0)
             self.wake.clear()
 
@@ -54,9 +59,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             seeded = seed_cases(s, app.state.store)
         if seeded:
             log.info("seeded %s cases from %s", seeded, app.state.store.dataset_label)
+        if not hasattr(app.state, "agent_provider_factory"):
+            app.state.agent_provider_factory = provider_from_env  # None => AI disabled; tests may override
         worker = None
         if settings.inline_worker:
-            worker = InlineWorker(app.state.sessions, app.state.store)
+            worker = InlineWorker(app.state.sessions, app.state.store, settings, lambda: app.state.agent_provider_factory())
             worker.thread.start()
             app.state.wake_worker = worker.wake.set
         else:
@@ -85,6 +92,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(system.router)
     app.include_router(cases.router)
     app.include_router(offers.router)
+    app.include_router(agent.router)
     return app
 
 

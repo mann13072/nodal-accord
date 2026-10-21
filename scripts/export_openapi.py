@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 for sub in ("packages/domain/src", "packages/planning_engine/src", "packages/optimization_engine/src", "packages/finance_engine/src",
-            "packages/integrations/src", "apps/api/src"):
+            "packages/integrations/src", "packages/agent_tools/src", "apps/api/src"):
     sys.path.insert(0, str(ROOT / sub))
 
 from nodal_api.config import Settings  # noqa: E402

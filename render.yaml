@@ -10,3 +10,10 @@ services:
     envVars:
       - key: NODAL_CORS_ORIGINS
         value: https://nodal-accord.vercel.app
+      # Optional AI assistant. Values are entered in the Render dashboard only (sync: false), never in this file.
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: NODAL_AI_ACCESS_CODE
+        sync: false
+      - key: NODAL_AI_HOURLY_LIMIT
+        value: "20"

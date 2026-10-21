@@ -46,7 +46,25 @@ bumps `input_version`, making every earlier run and offer stale (`409 STALE_SCEN
 Finance approval is required above the tenant's approval threshold or when payment days change. No ERP write-back;
 `/agreements/{id}/export` is a preview. Acceptance is workflow acceptance, not a legal signature.
 
+## ADR-8 Optional AI assistant (Phase G) — explain, never decide
+`packages/agent_tools` (provider interface, bounded loop, number checks) + `apps/api/.../services/agent.py` (tools).
+- Off unless `DEEPSEEK_API_KEY` is set; the product is fully functional without it (`/agent/status` → `enabled: false`).
+- Provider: DeepSeek's OpenAI-compatible API, model from `NODAL_AI_MODEL` (default `deepseek-flash`), thinking mode off,
+  low temperature. Swappable behind `AgentProvider`.
+- Tools call the same principal-scoped views as the HTTP API (`services/views.py`), so the model sees only what the
+  asking user may see; a second field-level redaction runs before any tool output reaches the provider.
+- Tools: `list_cases`, `get_case_evidence`, `get_scenario_results`, `compare_scenarios`, `request_scenario` (queues a
+  solver job, at most once per question), `draft_offer_text` (returns shareable terms; creates nothing). No tool sends,
+  accepts, approves or edits. Every tool call is audited.
+- Asynchronous like scenarios (`202` + poll); at most 4 model rounds (the last offers no tools), 900 output tokens,
+  6,000 characters per tool result.
+- Numbers in answers that do not appear in any tool result are flagged as unverified (IDs and dates are ignored).
+- Public-demo protection: `NODAL_AI_ACCESS_CODE` gate and a per-process hourly cap (`NODAL_AI_HOURLY_LIMIT`).
+- Data disclosure: questions and the user's visible (synthetic) case data are sent to the provider; stated in the UI.
+- Buyer roles only in v1. Tests use a scripted provider (no real calls); `tests/agent_eval/run_eval.py` is a live
+  evaluation the owner can run at their own cost. No live-evaluation results are claimed until it has been run.
+
 ## Not built (blueprint items deliberately left out)
-Optional AI agent and tool gateway (Phase G), Azure/Bicep, Docker images, OIDC provider (demo identities only, fail-closed
+Azure/Bicep, Docker images, OIDC provider (demo identities only, fail-closed
 otherwise), SSE progress (polling only), EDI parser, outbound webhooks (outbox records events with delivery disabled),
 generated TypeScript client (hand-written typed client against the committed OpenAPI file), Playwright tests.

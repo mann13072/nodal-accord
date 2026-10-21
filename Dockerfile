@@ -12,14 +12,14 @@ WORKDIR /app
 
 COPY pyproject.toml ./
 RUN pip install "fastapi>=0.115" "uvicorn[standard]>=0.30" "pydantic>=2.7" "sqlalchemy>=2.0" "pyarrow>=16" \
-                "pandas>=2.2" "pyomo>=6.8" "highspy>=1.7" "pyyaml>=6"
+                "pandas>=2.2" "pyomo>=6.8" "highspy>=1.7" "pyyaml>=6" "httpx>=0.27"
 
 COPY --chown=app:app packages ./packages
 COPY --chown=app:app apps/api ./apps/api
 COPY --chown=app:app apps/worker ./apps/worker
 COPY --chown=app:app deploy/data ./data
 
-ENV PYTHONPATH=/app/packages/domain/src:/app/packages/planning_engine/src:/app/packages/optimization_engine/src:/app/packages/finance_engine/src:/app/packages/integrations/src:/app/apps/api/src:/app/apps/worker/src \
+ENV PYTHONPATH=/app/packages/domain/src:/app/packages/planning_engine/src:/app/packages/optimization_engine/src:/app/packages/finance_engine/src:/app/packages/integrations/src:/app/packages/agent_tools/src:/app/apps/api/src:/app/apps/worker/src \
     NODAL_ENV=demo \
     DEMO_MODE=true \
     NODAL_DATA_ROOT=/app/data/medium_500 \

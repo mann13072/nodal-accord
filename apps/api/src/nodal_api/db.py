@@ -184,6 +184,26 @@ class ImportRun(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
 
+class AgentRun(Base):
+    """One question to the optional AI assistant, executed asynchronously like a scenario run."""
+    __tablename__ = "agent_runs"
+    agent_run_id: Mapped[str] = mapped_column(String, primary_key=True)
+    principal_id: Mapped[str] = mapped_column(String, index=True)
+    tenant_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    case_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    question: Mapped[str] = mapped_column(Text)
+    state: Mapped[str] = mapped_column(String, index=True)  # QUEUED | RUNNING | COMPLETED | STOPPED | FAILED
+    answer: Mapped[str | None] = mapped_column(Text, nullable=True)
+    trace: Mapped[list] = mapped_column(JSON, default=list)
+    unverified_numbers: Mapped[list] = mapped_column(JSON, default=list)
+    provider: Mapped[str | None] = mapped_column(String, nullable=True)
+    model: Mapped[str | None] = mapped_column(String, nullable=True)
+    usage: Mapped[dict] = mapped_column(JSON, default=dict)
+    error: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
 class IdempotencyRecord(Base):
     __tablename__ = "idempotency_keys"
     key: Mapped[str] = mapped_column(String, primary_key=True)  # principal|route|Idempotency-Key

@@ -44,13 +44,31 @@ switch to `demo.supplier0013.planner` → Accept → back to procurement → App
 Counteroffer path: CASE-000011 (tenant 2) — supplier moves the delivery week → inputs v2, earlier runs stale → re-run →
 the alternate no longer arrives in time (200 units unmet, matching the generator's oracle) → no offer can be drafted.
 
+## Optional AI assistant
+
+An "Ask AI" panel in each case explains shortages, compares scenario runs, can queue a new solver run and drafts
+supplier message text. It never computes numbers itself, never sees data the user can't see, and cannot send,
+accept or approve anything; numbers not found in its tool results are flagged as unverified. It is **off** unless
+an API key is configured — the rest of the product does not depend on it. Details: ADR-8 in
+`docs/architecture/decisions.md`.
+
+To enable it locally (PowerShell, current terminal only; paste your own key):
+
+```powershell
+$env:DEEPSEEK_API_KEY = "<your key>"; npm run dev
+```
+
+On Render, add `DEEPSEEK_API_KEY` (and an `NODAL_AI_ACCESS_CODE` you share only with demo viewers) under the
+service's **Environment** settings. Questions and the visible synthetic case data are sent to DeepSeek.
+
 ## Tests
 
 ```powershell
 npm test                                            # or: .\.venv\Scripts\python -m pytest
 ```
 
-43 tests: ledger properties (Hypothesis), finance goldens (payment terms EUR 394.52, consolidated 0.00), golden solver
+57 tests: AI assistant gating, scoping, redaction, bounded loop and number checks (scripted provider, no real
+calls); ledger properties (Hypothesis), finance goldens (payment terms EUR 394.52, consolidated 0.00), golden solver
 fixtures (hand optimum, lead time, shared machine, unqualified lane, locked release, infeasible zero-shortage, prebuild,
 overtime, time limit never labelled optimal), **oracle cross-check: all 36 curated cases × 5 modes agree with the
 generator's independent solver on unmet units (180/180 on tiny, medium_500 and enterprise_5000)**, 12-week scope tests,
@@ -102,7 +120,7 @@ repository) and expected next to this folder. Point `NODAL_DATA_ROOT` at any gen
 
 - `docs/optimization/formulation.md` — the MILP as implemented, status labels, HYBRID definition.
 - `docs/architecture/decisions.md` — ADRs and **every deviation from the blueprint** (SQLite instead of PostgreSQL, no
-  RLS, no Docker/Azure, no AI agent, demo identities instead of OIDC, Mode A economics only).
+  RLS, no Azure, demo identities instead of OIDC, Mode A economics only).
 
 ## License
 Apache License 2.0 — see `LICENSE`. Third-party dependencies keep their own licenses (MIT, BSD or Apache-2.0).

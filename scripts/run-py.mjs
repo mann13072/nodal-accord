@@ -10,7 +10,7 @@ const venvPy = path.join(root, ".venv", win ? "Scripts/python.exe" : "bin/python
 const python = existsSync(venvPy) ? venvPy : win ? "python" : "python3";
 const srcs = [
   "packages/domain/src", "packages/planning_engine/src", "packages/optimization_engine/src",
-  "packages/finance_engine/src", "packages/integrations/src", "apps/api/src", "apps/worker/src",
+  "packages/finance_engine/src", "packages/integrations/src", "packages/agent_tools/src", "apps/api/src", "apps/worker/src",
 ].map((p) => path.join(root, p));
 
 const env = { ...process.env, PYTHONPATH: [...srcs, process.env.PYTHONPATH || ""].join(path.delimiter) };

@@ -14,6 +14,7 @@ dependencies = [
   "pyomo>=6.8",
   "highspy>=1.7",
   "pyyaml>=6",
+  "httpx>=0.27",
 ]
 
 [project.optional-dependencies]
@@ -29,13 +30,14 @@ nodal_planning = "packages/planning_engine/src/nodal_planning"
 nodal_optimization = "packages/optimization_engine/src/nodal_optimization"
 nodal_finance = "packages/finance_engine/src/nodal_finance"
 nodal_integrations = "packages/integrations/src/nodal_integrations"
+nodal_agent_tools = "packages/agent_tools/src/nodal_agent_tools"
 nodal_api = "apps/api/src/nodal_api"
 "nodal_api.routers" = "apps/api/src/nodal_api/routers"
 "nodal_api.services" = "apps/api/src/nodal_api/services"
 nodal_worker = "apps/worker/src/nodal_worker"
 
 [tool.setuptools]
-packages = ["nodal_domain", "nodal_planning", "nodal_optimization", "nodal_finance", "nodal_integrations",
+packages = ["nodal_domain", "nodal_planning", "nodal_optimization", "nodal_finance", "nodal_integrations", "nodal_agent_tools",
             "nodal_api", "nodal_api.routers", "nodal_api.services", "nodal_worker"]
 
 [tool.pytest.ini_options]
@@ -46,6 +48,7 @@ pythonpath = [
   "packages/optimization_engine/src",
   "packages/finance_engine/src",
   "packages/integrations/src",
+  "packages/agent_tools/src",
   "apps/api/src",
   "apps/worker/src",
 ]
