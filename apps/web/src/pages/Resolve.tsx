@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Agreement, api, CaseDetail, Counter, eur, Me, num, Offer, OfferLine, Run } from "../api";
-import { Digest, ErrorNote, Section, StatusTag } from "../components/ui";
+import { Digest, ErrorNote, Section, StatusTag, TableScroll } from "../components/ui";
 
 type OffersResp = { items: Offer[]; counteroffers: Counter[]; agreements: Agreement[] };
 
@@ -104,7 +104,7 @@ function OfferGroup({ versions, me, caseId, counters, agreements, onChange }: { 
               <span>inputs v{o.input_version}</span><span>expires {new Date(o.expires_at).toLocaleString()}</span>
               <span>premium total <b className="num">{eur(o.premium_total_eur)}</b></span><Digest value={o.terms_digest} />
             </div>
-            <table className="data">
+            <TableScroll><table className="data">
               <thead><tr><th>Line</th><th>Action</th><th>Lane</th><th>Part</th><th>Delivery week</th><th className="n">Qty</th><th className="n">Premium / unit</th><th className="n">Payment days</th></tr></thead>
               <tbody>{lines.map((l, i) => (
                 <tr key={l.line_id}><td>{l.line_id}</td><td>{l.kind.replace(/_/g, " ").toLowerCase()}</td><td className="mono">{l.lane_id}</td><td className="mono">{l.part_id}</td><td>{l.delivery_week}</td>
@@ -118,7 +118,7 @@ function OfferGroup({ versions, me, caseId, counters, agreements, onChange }: { 
                     <td className="n">{num(l.additional_qty)}</td><td className="n">{eur(l.unit_premium_eur)}</td><td className="n">{l.payment_days}</td></>)}
                 </tr>))}
               </tbody>
-            </table>
+            </table></TableScroll>
             {o === latest && o.status === "DRAFT" && (
               <div className="form-row">
                 {!edit && <button className="btn sm" onClick={() => setEdit(o.lines.map((l) => ({ ...l })))}>Edit terms (new version)</button>}

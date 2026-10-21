@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { api, AuditItem, CaseSummary, eur, Me, num, Offer, SupplierCaseDetail } from "../api";
-import { Digest, ErrorNote, Section, StatusTag } from "../components/ui";
+import { Digest, ErrorNote, Section, StatusTag, TableScroll } from "../components/ui";
 
 export function SupplierPortal({ me }: { me: Me }) {
   const { caseId } = useParams();
@@ -65,7 +65,7 @@ function SupplierOffer({ offer, onChange }: { offer: Offer; onChange: () => void
   return (
     <Section title={`Offer v${offer.offer_version}`} actions={<><StatusTag value={offer.status} /><Digest value={offer.terms_digest} /></>}>
       <div className="small" style={{ marginBottom: 6 }}>Valid until {new Date(offer.expires_at).toLocaleString()} · premium total {eur(offer.premium_total_eur)}</div>
-      <table className="data">
+      <TableScroll><table className="data">
         <thead><tr><th>Line</th><th>Requested action</th><th>Lane</th><th>Part</th><th>Delivery week</th><th className="n">Qty</th><th className="n">Premium / unit</th><th className="n">Payment days</th><th className="n">Your contribution*</th></tr></thead>
         <tbody>{offer.lines.map((l) => {
           const c = counter?.[l.line_id];
@@ -80,12 +80,12 @@ function SupplierOffer({ offer, onChange }: { offer: Offer; onChange: () => void
               <td className="n">{evalById[l.line_id]?.your_contribution_on_premium_eur != null ? eur(String(evalById[l.line_id].your_contribution_on_premium_eur)) : "—"}</td>
             </tr>);
         })}</tbody>
-      </table>
+      </table></TableScroll>
       <p className="small muted">* {offer.your_private_evaluation?.note}</p>
       {offer.your_lane_capacity && offer.your_lane_capacity.length > 0 && (
         <details><summary>Your confirmed lane capacity for the requested weeks</summary>
-          <table className="data"><thead><tr><th>Lane</th><th>Week</th><th className="n">Committed</th><th className="n">Offered flex</th></tr></thead>
-            <tbody>{offer.your_lane_capacity.map((c, i) => <tr key={i}><td className="mono">{String(c.lane_id)}</td><td>{String(c.week)}</td><td className="n">{String(c.committed_units)}</td><td className="n">{String(c.supplier_offered_flex_units)}</td></tr>)}</tbody></table>
+          <TableScroll><table className="data"><thead><tr><th>Lane</th><th>Week</th><th className="n">Committed</th><th className="n">Offered flex</th></tr></thead>
+            <tbody>{offer.your_lane_capacity.map((c, i) => <tr key={i}><td className="mono">{String(c.lane_id)}</td><td>{String(c.week)}</td><td className="n">{String(c.committed_units)}</td><td className="n">{String(c.supplier_offered_flex_units)}</td></tr>)}</tbody></table></TableScroll>
         </details>)}
       {live && !counter && (
         <div className="form-row" style={{ marginTop: 8 }}>

@@ -23,6 +23,11 @@ export function Section({ title, actions, children, id }: { title: string; actio
   );
 }
 
+/** Wide tables scroll sideways on their own instead of pushing the surrounding text off-screen. */
+export function TableScroll({ children }: { children: ReactNode }) {
+  return <div className="table-scroll">{children}</div>;
+}
+
 export function ErrorNote({ error }: { error: unknown }) {
   if (!error) return null;
   return <div className="notice err" role="alert">{error instanceof Error ? error.message : String(error)}</div>;

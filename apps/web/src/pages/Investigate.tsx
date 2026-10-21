@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { api, CaseDetail, Graph, num } from "../api";
 import { ImpactGraph, LedgerChart } from "../components/charts";
-import { Section } from "../components/ui";
+import { Section, TableScroll } from "../components/ui";
 
 export function Investigate({ detail }: { detail: CaseDetail }) {
   const items = detail.snapshot_horizon.items;
@@ -35,14 +35,14 @@ export function Investigate({ detail }: { detail: CaseDetail }) {
         <Section title="Case scope (curated fixture)">
           {detail.fixture ? (
             <>
-              <table className="data">
+              <TableScroll><table className="data">
                 <thead><tr><th>Lane</th><th>Part</th><th className="n">Demand</th><th className="n">Usable</th><th className="n">Lane ceiling</th><th>Alternate</th><th className="n">Alt. units</th></tr></thead>
                 <tbody>{detail.fixture.lines.map((l) => (
                   <tr key={l.lane_id}><td className="mono">{l.lane_id}</td><td className="mono">{l.part_id}</td><td className="n">{num(l.demand_units)}</td>
                     <td className="n">{num(l.usable_stock)}</td><td className="n">{num(l.lane_ceiling_units)}</td>
                     <td className="mono">{l.alternate_lane_id ?? "—"}</td><td className="n">{num(l.alternate_offered_units)}</td></tr>))}
                 </tbody>
-              </table>
+              </table></TableScroll>
               <p className="small muted">
                 Disrupted week {detail.fixture.week_start}; alternate {detail.fixture.alternate_qualified ? "qualified" : "NOT qualified"},{" "}
                 {detail.fixture.alternate_arrives_in_time ? "arrives in time" : "arrives too late"}; overtime {detail.fixture.overtime_available ? "offered" : "not offered"}.
@@ -69,9 +69,9 @@ export function Investigate({ detail }: { detail: CaseDetail }) {
             </div>
             {item.affected_receipts.length > 0 && (
               <details style={{ marginTop: 8 }}><summary>{item.affected_receipts.length} confirmed receipt(s) affected — source rows</summary>
-                <table className="data"><thead><tr><th>Receipt</th><th>Lane</th><th>Arrival</th><th className="n">Planned</th><th className="n">After disruption</th></tr></thead>
+                <TableScroll><table className="data"><thead><tr><th>Receipt</th><th>Lane</th><th>Arrival</th><th className="n">Planned</th><th className="n">After disruption</th></tr></thead>
                   <tbody>{item.affected_receipts.map((r) => <tr key={r.receipt_id}><td className="mono">{r.receipt_id}</td><td className="mono">{r.lane_id}</td><td>{r.arrival_week}</td><td className="n">{num(r.planned_units)}</td><td className="n">{num(r.disrupted_units)}</td></tr>)}</tbody>
-                </table>
+                </table></TableScroll>
               </details>
             )}
             <p className="small muted">{detail.snapshot_horizon.note} Solver-free; the optimizer runs in Simulate.</p>
@@ -89,10 +89,10 @@ export function Investigate({ detail }: { detail: CaseDetail }) {
                   <div><b className="mono">{sel.id}</b> <span className="muted">{sel.kind.toLowerCase()}</span></div>
                   {sel.label !== sel.id && <div>{sel.label}</div>}
                   {sel.note && <div className="muted">{sel.note}</div>}
-                  <table className="data"><tbody>{selEdges.map((e, i) => (
+                  <TableScroll><table className="data"><tbody>{selEdges.map((e, i) => (
                     <tr key={i}><td>{e.kind.toLowerCase()}</td><td className="mono">{e.source === node ? e.target : e.source}</td>
                       <td>{e.lane_id ? <span className="mono">{e.lane_id}</span> : null}{e.role === "ALTERNATE" ? " alt" : ""}{e.lead_time_days ? ` · ${e.lead_time_days} d` : ""}</td></tr>))}
-                  </tbody></table>
+                  </tbody></table></TableScroll>
                 </div>
               ) : <div className="muted">Select a node to inspect its relationships. Dashed edges are alternate lanes; red edges are shared-resource constraints.</div>}
               {graph.data.other_relationships_sharing_resource > 0 && <p className="notice">{graph.data.other_relationships_sharing_resource} lane(s) of other buyers share this resource; they are not shown.</p>}

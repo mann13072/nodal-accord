@@ -25,9 +25,9 @@ export default function App() {
           <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><circle cx="4" cy="8" r="2.5" fill="var(--accent)" /><circle cx="12" cy="4" r="2.5" fill="var(--accent)" /><circle cx="12" cy="12" r="2.5" fill="var(--accent)" /><path d="M4 8L12 4M4 8l8 4" stroke="var(--accent)" strokeWidth="1.2" /></svg>
           NODAL ACCORD
         </div>
-        {me.data && <span className="chip" title="Organization">{me.data.org_name}</span>}
+        {me.data && <span className="chip tablet-up" title="Organization">{me.data.org_name}</span>}
         <label className="chip" title="Demo identity (server resolves role and tenant scope)">
-          <span className="muted">Acting as</span>
+          <span className="muted tablet-up">Acting as</span>
           <select aria-label="Demo identity" value={getPrincipalId()} onChange={(e) => switchPrincipal(e.target.value)}
                   style={{ border: "none", background: "transparent", fontWeight: 600 }}>
             {principals.data?.items.map((p) => (
@@ -36,9 +36,11 @@ export default function App() {
           </select>
         </label>
         <div className="spacer" />
-        {me.data && <span className="chip mono" title="Canonical snapshot">{me.data.snapshot_id}</span>}
-        {me.data && <span className="chip" title="Dataset">dataset: {me.data.dataset}</span>}
-        <span className="chip demo" title="Synthetic data only; not a production environment">ENVIRONMENT: {me.data?.environment ?? "…"} · SYNTHETIC DATA</span>
+        {me.data && <span className="chip mono wide-only" title="Canonical snapshot">{me.data.snapshot_id}</span>}
+        {me.data && <span className="chip wide-only" title="Dataset">dataset: {me.data.dataset}</span>}
+        <span className="chip demo" title="Synthetic data only; not a production environment">
+          <span className="tablet-up">ENVIRONMENT: </span>{me.data?.environment ?? "…"}<span className="tablet-up"> · SYNTHETIC DATA</span>
+        </span>
       </header>
       <div className="body">
         <nav className="rail" aria-label="Primary">

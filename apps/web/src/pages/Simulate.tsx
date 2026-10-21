@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, CaseDetail, eur, Me, ModeResult, num, Run } from "../api";
-import { ErrorNote, Section, StatusTag } from "../components/ui";
+import { ErrorNote, Section, StatusTag, TableScroll } from "../components/ui";
 
 const MODES = ["baseline", "overtime", "alternate", "prebuild", "hybrid"] as const;
 const MODE_LABEL: Record<string, string> = { baseline: "Baseline", overtime: "Overtime", alternate: "Alternate source", prebuild: "Prebuild", hybrid: "Hybrid (OT + alt.)" };
@@ -69,7 +69,7 @@ export function Simulate({ detail, me, runs, run, runId, setRunId, selectedMode,
 
       <Section title="Runs" actions={pending && <span className="small"><StatusTag value={active!.state} /> solving in worker…</span>}>
         {runs.length === 0 ? <div className="muted">No scenario runs yet.</div> : (
-          <table className="data">
+          <TableScroll><table className="data">
             <thead><tr><th>Run</th><th>State</th><th>Status</th><th>Scope</th><th>Inputs</th><th className="n">Wall s</th><th>Requested</th></tr></thead>
             <tbody>{runs.slice(0, 8).map((r) => (
               <tr key={r.run_id} className={`clickable ${r.run_id === runId ? "sel" : ""}`} onClick={() => setRunId(r.run_id)}>
@@ -78,12 +78,12 @@ export function Simulate({ detail, me, runs, run, runId, setRunId, selectedMode,
                 <td>v{r.input_version} {r.stale && <span className="tag amber" title="Inputs changed since this run">STALE</span>}</td>
                 <td className="n">{r.wall_seconds ?? "—"}</td><td className="small muted">{r.requested_by}</td></tr>))}
             </tbody>
-          </table>)}
+          </table></TableScroll>)}
       </Section>
 
       {results && (
         <Section title={`Comparison — ${runId}`} actions={active?.stale && <span className="tag amber">STALE: inputs changed, re-run before offering</span>}>
-          <div style={{ overflowX: "auto" }}>
+          <TableScroll>
             <table className="data matrix">
               <thead><tr><th>KPI</th>{shown.map((m) => (
                 <th key={m} className="n mode" style={{ cursor: "pointer", color: m === selectedMode ? "var(--accent)" : undefined }}
@@ -106,7 +106,7 @@ export function Simulate({ detail, me, runs, run, runId, setRunId, selectedMode,
                 <Row label="Binding constraints" modes={shown} r={results} f={(x) => (x.binding_constraints.length ? x.binding_constraints.length : "—")} />
               </tbody>
             </table>
-          </div>
+          </TableScroll>
           <p className="small muted">★ = fewest unmet units, then lowest incremental buyer cost, among validated plans. Selection is a suggestion; humans decide.</p>
         </Section>
       )}
@@ -120,21 +120,22 @@ export function Simulate({ detail, me, runs, run, runId, setRunId, selectedMode,
           {sel.validation_errors.length > 0 && <div className="notice err"><b>Validation failed — offers suppressed</b><ul>{sel.validation_errors.map((d, i) => <li key={i}>{d}</li>)}</ul></div>}
           {sel.warnings.map((w, i) => <div key={i} className="notice warn">{w}</div>)}
           {sel.releases.length > 0 && (
-            <table className="data" style={{ marginTop: 8 }}>
+            <TableScroll><table className="data" style={{ marginTop: 8 }}>
               <thead><tr><th>Lane</th><th>Supplier</th><th>Role</th><th>Part</th><th>Release</th><th>Arrival</th><th className="n">Regular</th><th className="n">Overtime</th><th className="n">Unit price</th><th className="n">Disclosed premium</th></tr></thead>
               <tbody>{sel.releases.map((r, i) => (
                 <tr key={i}><td className="mono">{r.lane_id}</td><td className="mono">{r.supplier_org_id}</td><td>{r.role.toLowerCase()}</td><td className="mono">{r.part_id}</td>
                   <td>{r.release_week}</td><td>{r.arrival_week}</td><td className="n">{num(r.regular_units)}</td><td className="n">{num(r.overtime_units)}</td>
                   <td className="n">{eur(r.unit_price_eur)}</td><td className="n">{eur(r.disclosed_premium_eur)}</td></tr>))}
               </tbody>
-            </table>)}
+            </table></TableScroll>)}
           {sel.hidden_other_relationship_lines > 0 && <p className="small muted">{sel.hidden_other_relationship_lines} allocation line(s) belonging to other buyers on the shared resource are hidden.</p>}
           <details style={{ marginTop: 8 }}><summary>Assumptions, provenance and model size</summary>
             <ul className="small">{sel.assumptions.map((a, i) => <li key={i}>{a}</li>)}</ul>
-            <table className="data"><thead><tr><th>Lane</th><th>Role</th><th>Qualified</th><th className="n">Lead wk</th><th>Source of price/premium</th></tr></thead>
+            <TableScroll><table className="data"><thead><tr><th>Lane</th><th>Role</th><th>Qualified</th><th className="n">Lead time (wk)</th><th>Where the price and premium come from</th></tr></thead>
               <tbody>{Object.entries(sel.lane_provenance).map(([k, v]) => (
-                <tr key={k}><td className="mono">{k}</td><td>{v.role.toLowerCase()}</td><td>{v.qualified ? "yes" : "no"}</td><td className="n">{v.lead_weeks}</td><td className="small">{v.provenance}</td></tr>))}</tbody></table>
-            <p className="small mono">model {JSON.stringify(sel.solver.model_size)} · stage1 {sel.solver.stage1_termination} · stage2 {sel.solver.stage2_termination} · input {sel.input_hash.slice(0, 20)}…</p>
+                <tr key={k}><td className="mono">{k}</td><td>{v.role.toLowerCase()}</td><td>{v.qualified ? "yes" : "no"}</td><td className="n">{v.lead_weeks}</td>
+                  <td><SourceLines provenance={v.provenance} /></td></tr>))}</tbody></table></TableScroll>
+            <ModelFacts size={sel.solver.model_size} stage1={sel.solver.stage1_termination} stage2={sel.solver.stage2_termination} inputHash={sel.input_hash} />
             {sel.financials && <ul className="small muted">{sel.financials.basis.map((b, i) => <li key={i}>{b}</li>)}</ul>}
           </details>
         </Section>
@@ -146,6 +147,53 @@ export function Simulate({ detail, me, runs, run, runId, setRunId, selectedMode,
 function Row({ label, modes, r, f, title }: { label: string; modes: readonly string[]; r: Record<string, ModeResult>; f: (x: ModeResult) => React.ReactNode; title?: string }) {
   return <tr><th scope="row" title={title} style={{ fontWeight: 500, textTransform: "none", fontSize: 13, color: "var(--text)" }}>{label}</th>
     {modes.map((m) => <td key={m} className="n">{f(r[m])}</td>)}</tr>;
+}
+
+/**
+ * The solver records where each lane's price and premium came from as internal labels
+ * (see lane_price / disclosed_premium in nodal_optimization/case_inputs.py). Show them in plain words, one per line;
+ * anything unrecognised is shown as written.
+ */
+function sourceParts(provenance: string): { label?: string; text: string; assumed?: boolean }[] {
+  return provenance.split("; ").filter(Boolean).map((p) => {
+    let m: RegExpMatchArray | null;
+    if (p === "buyer_commercial_terms (price + transport)") return { label: "Price", text: "contract price + transport" };
+    if (p === "sourcing_lanes.standard_landed_unit_price_eur") return { label: "Price", text: "standard landed price of this lane" };
+    if ((m = p.match(/^overtime premium: supplier_shareable_offers (\S+)$/))) return { label: "Overtime premium", text: `disclosed by the supplier (${m[1]})` };
+    if (p.startsWith("overtime premium: ASSUMED")) return { label: "Overtime premium", text: "your maximum approved premium (the supplier disclosed none)", assumed: true };
+    if ((m = p.match(/^lead time (\d+) d(?: \((.+)\))?$/))) return { label: "Lead time", text: `${m[1]} days${m[2] ? `, ${m[2]}` : ""}` };
+    if (p === "case fixture override") return { text: "set by the case test scenario" };
+    if (p.startsWith("other relationship")) return { text: "another buyer's lane: prices withheld, only its machine time counts" };
+    return { text: p };
+  });
+}
+
+function SourceLines({ provenance }: { provenance: string }) {
+  return (
+    <div className="src-lines" title={provenance}>
+      {sourceParts(provenance).map((s, i) => (
+        <span key={i}>{s.label && <b>{s.label}:</b>}{s.text}{s.assumed && <> <span className="tag amber">Assumed</span></>}</span>))}
+    </div>
+  );
+}
+
+const TERMINATION: Record<string, string> = { optimal: "optimal", maxTimeLimit: "stopped at the time limit", infeasible: "infeasible",
+  maxIterations: "stopped at the iteration limit", unbounded: "unbounded" };
+const SIZE_LABELS: [string, string][] = [["weeks", "week"], ["items", "item"], ["lanes", "lane"], ["resources", "resource"], ["requirements", "requirement"]];
+const plural = (n: number, word: string) => `${n.toLocaleString("en-GB")} ${word}${n === 1 ? "" : "s"}`;
+
+/** Model size and solver outcome as a readable sentence instead of raw JSON. */
+function ModelFacts({ size, stage1, stage2, inputHash }: { size: Record<string, number>; stage1: string | null; stage2: string | null; inputHash: string }) {
+  const term = (t: string | null) => (t ? TERMINATION[t] ?? t : "not run");
+  const scope = SIZE_LABELS.filter(([k]) => typeof size[k] === "number").map(([k, w]) => plural(size[k], w)).join(", ");
+  return (
+    <p className="model-facts">
+      <b>Model:</b> {plural(size.variables ?? 0, "variable")} ({(size.integer_variables ?? 0).toLocaleString("en-GB")} whole-number),{" "}
+      {plural(size.constraints ?? 0, "constraint")}{scope && <> · covers {scope}</>}.<br />
+      <b>Solver:</b> step 1 (least lateness) {term(stage1)} · step 2 (lowest cost) {term(stage2)}.<br />
+      <b>Input fingerprint:</b> <span className="mono" title={inputHash}>{inputHash.replace(/^sha256:/, "").slice(0, 12)}…</span>
+    </p>
+  );
 }
 
 function bestMode(results?: Record<string, ModeResult>): string | null {

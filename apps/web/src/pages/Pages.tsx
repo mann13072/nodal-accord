@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Agreement, api, AuditItem, CaseSummary, isBuyer, Me, num } from "../api";
-import { ErrorNote, Section, StatusTag } from "../components/ui";
+import { ErrorNote, Section, StatusTag, TableScroll } from "../components/ui";
 import { AgreementCard } from "./Resolve";
 
 export function NetworkPage() {
@@ -56,9 +56,9 @@ function CaseAudit({ c }: { c: CaseSummary }) {
   const e = useQuery({ queryKey: ["events", c.case_id], queryFn: () => api<{ items: AuditItem[] }>(`/cases/${c.case_id}/events`) });
   return (
     <Section title={`${c.case_id} · ${c.title}`} actions={<StatusTag value={c.state} />}>
-      <table className="data"><thead><tr><th>Time</th><th>Actor</th><th>Action</th><th>Resource</th><th>Decision</th><th>Summary</th></tr></thead>
+      <TableScroll><table className="data"><thead><tr><th>Time</th><th>Actor</th><th>Action</th><th>Resource</th><th>Decision</th><th>Summary</th></tr></thead>
         <tbody>{e.data?.items.map((x) => <tr key={x.event_id}><td className="small">{new Date(x.at).toLocaleString()}</td><td className="small mono">{x.actor_id}</td>
-          <td>{x.action}</td><td className="mono small">{x.resource_id}</td><td><StatusTag value={x.decision} /></td><td className="small">{x.summary}</td></tr>)}</tbody></table>
+          <td>{x.action}</td><td className="mono small">{x.resource_id}</td><td><StatusTag value={x.decision} /></td><td className="small">{x.summary}</td></tr>)}</tbody></table></TableScroll>
     </Section>
   );
 }
@@ -83,13 +83,13 @@ export function ImportsPage() {
       {r && (
         <Section title={`Import ${r.import_id} · ${r.connector}`} actions={<><StatusTag value={r.status === "COMMITTED_DRY_RUN" ? "COMPLETED" : r.status} />{r.idempotent_replay && <span className="tag gray">IDEMPOTENT REPLAY</span>}</>}>
           <div className="small mono">{r.payload_checksum}</div>
-          <table className="data" style={{ marginTop: 8 }}><thead><tr><th>Entity</th><th className="n">Accepted</th><th className="n">Quarantined</th><th>Reason codes</th><th className="n">Matched canonical</th><th className="n">Differences</th></tr></thead>
+          <TableScroll><table className="data" style={{ marginTop: 8 }}><thead><tr><th>Entity</th><th className="n">Accepted</th><th className="n">Quarantined</th><th>Reason codes</th><th className="n">Matched canonical</th><th className="n">Differences</th></tr></thead>
             <tbody>{r.report.entities.map((e) => {
               const rc = r.report.reconciliation.find((x) => x.entity === e.entity);
               return <tr key={e.entity}><td>{e.entity}</td><td className="n">{num(e.accepted)}</td><td className="n">{num(e.quarantined)}</td>
                 <td className="small">{Object.entries(e.reasons).map(([k, v]) => `${k}: ${v}`).join(", ") || "—"}</td>
                 <td className="n">{num(rc?.matched)}</td><td className="n">{num(rc?.differences)}</td></tr>;
-            })}</tbody></table>
+            })}</tbody></table></TableScroll>
           <p className="small muted">{r.report.note}</p>
         </Section>)}
     </div>
