@@ -46,7 +46,7 @@ the alternate no longer arrives in time (200 units unmet, matching the generator
 npm test                                            # or: .\.venv\Scripts\python -m pytest
 ```
 
-42 tests: ledger properties (Hypothesis), finance goldens (payment terms EUR 394.52, consolidated 0.00), golden solver
+43 tests: ledger properties (Hypothesis), finance goldens (payment terms EUR 394.52, consolidated 0.00), golden solver
 fixtures (hand optimum, lead time, shared machine, unqualified lane, locked release, infeasible zero-shortage, prebuild,
 overtime, time limit never labelled optimal), **oracle cross-check: all 36 curated cases × 5 modes agree with the
 generator's independent solver on unmet units (180/180 on tiny, medium_500 and enterprise_5000)**, 12-week scope tests,
@@ -56,9 +56,38 @@ Run the cross-check on a bigger dataset with `NODAL_DATA_ROOT=<dir> pytest tests
 
 ## Measured performance
 
-See `docs/evaluation/` (JSON written by `tests/benchmark/solve_network.py` and `tests/benchmark/load_api.py`).
-Benchmark runs for the 500- and 5,000-supplier datasets are in progress; results will be committed here when measured.
-No performance figure is claimed until then.
+Measured on one developer laptop (Windows 11, 12 logical CPUs, Python 3.13, HiGHS via Pyomo), dev servers stopped.
+Raw per-run data: `docs/evaluation/*.json`. Reproduce with `tests/benchmark/solve_network.py` and `load_api.py`.
+These are measurements of this synthetic workload, not a production SLA.
+
+**Scenario solves** — 10 sampled disruptions × {baseline, hybrid} per dataset, 12-week `SNAPSHOT_HORIZON` scope
+(≤ 60 items per scope), 30 s time limit per mode, 1 % MIP gap target:
+
+| Dataset | Suppliers / lanes | Status (20 solves) | Solver p50 / p95 / max | Hit time limit | Stage-1 gap > 50 % | Validation failures | Load + index | Peak RSS |
+|---|---|---|---|---|---|---|---|---|
+| tiny | 20 / 37 | 6 OPTIMAL, 14 FEASIBLE_WITH_GAP | 0.24 / 4.2 / 5.2 s | 0 | 0 | 0 | 0.05 + 0.02 s | 150 MB |
+| medium_500 | 500 / 3,000 | 2 OPTIMAL, 18 FEASIBLE_WITH_GAP | 16.5 / 30.7 / 31.2 s | 6 | 6 | 0 | 0.07 + 0.38 s | 391 MB |
+| enterprise_5000 | 5,000 / 30,000 | 5 OPTIMAL, 15 FEASIBLE_WITH_GAP | 16.3 / 30.5 / 30.5 s | 3 | 8 | 0 | 0.26 + 3.9 s | 1,210 MB |
+
+How to read this honestly:
+- Every solve returned a validated plan, but most large scopes (≈ 6,000–8,600 integer variables) are **not proven
+  optimal**: on 8 of 20 enterprise solves the shortage stage stopped with a bound gap above 50 %, so those numbers are
+  incumbents, not optima. Small scopes and the curated case fixtures solve to optimality in well under a second.
+- Mode results are warm-started (baseline from the no-release plan, others from baseline), so mitigation never reports
+  worse service than baseline; one run per large dataset did not improve on its seed and is flagged as such.
+- A solve covers one disruption's scoped component, not the whole network. Decomposition / rolling horizon for larger
+  connected scopes is not implemented.
+
+**API latency** — 5,000-supplier dataset, in-process client, 20 sequential requests (`api-latency-enterprise_5000.json`):
+
+| Endpoint | Cold (first request) | Warm p50 / p95 | Blueprint target |
+|---|---|---|---|
+| `GET /cases` | 0.04 s | 4 / 5 ms | p95 < 2 s |
+| `GET /cases/{id}` | 1.43 s (lazy index build) | 4 / 5 ms | p95 < 3 s |
+| `GET /network/impact` | 0.19 s | 7 / 8 ms | — |
+
+The case index holds the 36 curated cases (33 visible to buyer 1), not one case per supplier, so it is not evidence of
+filtering thousands of cases.
 
 ## Getting the data
 The synthetic dataset is produced by the companion generator (`Nodal_Accord_5000_Supplier_Data/`, not part of this

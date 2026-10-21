@@ -1,0 +1,26 @@
+{
+  "dataset": "enterprise_5000",
+  "startup_s": 0.815,
+  "principal": "demo.buyer001.planner",
+  "repeats": 20,
+  "endpoints": {
+    "GET /cases": {
+      "cold_s": 0.0395,
+      "warm_p50_s": 0.0042,
+      "warm_p95_s": 0.0047,
+      "cases_visible": 33
+    },
+    "GET /cases/{id}": {
+      "cold_s": 1.4342,
+      "warm_p50_s": 0.0039,
+      "warm_p95_s": 0.0047
+    },
+    "GET /network/impact": {
+      "cold_s": 0.193,
+      "warm_p50_s": 0.0066,
+      "warm_p95_s": 0.0078
+    }
+  },
+  "impact_nodes_example": 6,
+  "method": "In-process TestClient, single client, sequential requests; cold = first request after startup."
+}
