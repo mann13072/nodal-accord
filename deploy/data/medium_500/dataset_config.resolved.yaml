@@ -1,0 +1,37 @@
+schema_version: '1.0'
+seed: 20261021
+scenario_label: industrial-network-demo
+planning:
+  weeks: 12
+  start_monday: '2026-10-26'
+  base_currency: EUR
+  allowed_base_units:
+  - EA
+scale:
+  buyer_tenants: 4
+  suppliers: 500
+  buyer_plants: 12
+  buyer_parts: 1200
+  sourcing_lanes: 3000
+  resource_count_target: 400
+  relationship_count_target: 750
+  curated_cases_minimum: 36
+  curated_offer_chains_minimum: 12
+population:
+  percent_multibuyer_suppliers_target: 35
+  percent_single_source_parts_target: 18
+  percent_qualified_alt_for_critical_parts_minimum: 65
+  percent_lanes_using_shared_resource_target: 40
+  percent_healthy_supplier_weeks_target: 90
+output:
+  format: parquet
+  partition_by:
+  - tenant_id
+  csv_small_fixture: true
+  parquet_compression: zstd
+validation:
+  strict: true
+  fail_on_orphans: true
+  fail_on_negative_quantities: true
+  fail_on_cross_tenant_leakage: true
+profile: medium

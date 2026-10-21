@@ -1,0 +1,12 @@
+{
+  "gap": null,
+  "incumbent": null,
+  "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+  "modeled_constraints": 150,
+  "modeled_variables": 600,
+  "optimality_claimed": false,
+  "purpose": "EXPLICIT_ZERO_BUDGET_TIMEOUT_CONTRACT_TEST",
+  "solver_status_code": 1,
+  "status": "TIME_LIMIT",
+  "time_limit_seconds": 0.0
+}

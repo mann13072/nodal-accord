@@ -1,0 +1,43 @@
+{
+  "mismatched_rows": 0,
+  "scope": "Exported projections reconcile every row; source schemas carry different canonical subsets, not interchangeable full datasets.",
+  "sources": [
+    {
+      "canonical_projection_hash": "4e2554afcaff4f13e6942d8ac9acb30683c407dc833badeafc5cb8d9203088c2",
+      "canonical_table": "demand_forecast",
+      "mapped_projection_hash": "4e2554afcaff4f13e6942d8ac9acb30683c407dc833badeafc5cb8d9203088c2",
+      "mismatched_rows": 0,
+      "passed": true,
+      "row_count": 14400,
+      "source": "mock_erp/demand.csv"
+    },
+    {
+      "canonical_projection_hash": "f7af4e0de48d8c155ef6430df8284476df471e099d40f8e1c5eacb899f17abd5",
+      "canonical_table": "inventory_positions",
+      "mapped_projection_hash": "f7af4e0de48d8c155ef6430df8284476df471e099d40f8e1c5eacb899f17abd5",
+      "mismatched_rows": 0,
+      "passed": true,
+      "row_count": 1200,
+      "source": "mock_erp/stock_positions.csv"
+    },
+    {
+      "canonical_projection_hash": "29e513693428cb4db94bd42bfa3e45998de0c651a77327eab6b67d2d1e326a3f",
+      "canonical_table": "purchase_order_lines",
+      "mapped_projection_hash": "29e513693428cb4db94bd42bfa3e45998de0c651a77327eab6b67d2d1e326a3f",
+      "mismatched_rows": 0,
+      "passed": true,
+      "row_count": 6000,
+      "source": "mock_erp/purchase_orders.csv"
+    },
+    {
+      "canonical_projection_hash": "780a9246f5e8f9362034fadaedc6ae33f6e6fc118b95aedce44026a425119e65",
+      "canonical_table": "lane_capacity",
+      "mapped_projection_hash": "780a9246f5e8f9362034fadaedc6ae33f6e6fc118b95aedce44026a425119e65",
+      "mismatched_rows": 0,
+      "passed": true,
+      "row_count": 36000,
+      "source": "mock_collaboration/supplier_capacity.jsonl"
+    }
+  ],
+  "status": "PASS"
+}

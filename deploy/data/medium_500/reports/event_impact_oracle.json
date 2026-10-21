@@ -1,0 +1,1502 @@
+[
+  {
+    "disruption_id": "DISR-000001",
+    "lane_ids": [
+      "LANE-000001",
+      "LANE-000361"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000001",
+      "PART-000139"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000004"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000002",
+    "lane_ids": [
+      "LANE-000019",
+      "LANE-000392"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000007",
+      "PART-000151"
+    ],
+    "plant_ids": [
+      "PLANT-000002"
+    ],
+    "supplier_ids": [
+      "SUP-000045"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000003",
+    "lane_ids": [
+      "LANE-000038",
+      "LANE-000812"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000013",
+      "PART-000014",
+      "PART-000313",
+      "PART-000314"
+    ],
+    "plant_ids": [
+      "PLANT-000003",
+      "PLANT-000005"
+    ],
+    "supplier_ids": [
+      "SUP-000097"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000004",
+    "lane_ids": [
+      "LANE-000082",
+      "LANE-000136",
+      "LANE-000198",
+      "LANE-000214",
+      "LANE-000230",
+      "LANE-000422",
+      "LANE-000562",
+      "LANE-000709",
+      "LANE-000854",
+      "LANE-000918",
+      "LANE-000976",
+      "LANE-001008",
+      "LANE-001147",
+      "LANE-001226",
+      "LANE-001256",
+      "LANE-001287",
+      "LANE-001627",
+      "LANE-001692",
+      "LANE-001781",
+      "LANE-001830",
+      "LANE-001888",
+      "LANE-001906",
+      "LANE-001970",
+      "LANE-002055",
+      "LANE-002072",
+      "LANE-002105",
+      "LANE-002168"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000030",
+      "PART-000054",
+      "PART-000078",
+      "PART-000084",
+      "PART-000090",
+      "PART-000162",
+      "PART-000216",
+      "PART-000276",
+      "PART-000330",
+      "PART-000354",
+      "PART-000378",
+      "PART-000390",
+      "PART-000444",
+      "PART-000474",
+      "PART-000486",
+      "PART-000498",
+      "PART-000624",
+      "PART-000648",
+      "PART-000684",
+      "PART-000702",
+      "PART-000726",
+      "PART-000732",
+      "PART-000756",
+      "PART-000786",
+      "PART-000792",
+      "PART-000804",
+      "PART-000828"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000007",
+      "PLANT-000008",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000295"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000005",
+    "lane_ids": [
+      "LANE-000076",
+      "LANE-000417"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000028",
+      "PART-000160"
+    ],
+    "plant_ids": [
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000229"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000006",
+    "lane_ids": [
+      "LANE-000097",
+      "LANE-002453"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000037",
+      "PART-000937"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000010"
+    ],
+    "supplier_ids": [
+      "SUP-000183"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000007",
+    "lane_ids": [
+      "LANE-000124",
+      "LANE-000374"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000049",
+      "PART-000145"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000248"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000008",
+    "lane_ids": [
+      "LANE-000147",
+      "LANE-000287"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000057",
+      "PART-000109",
+      "PART-000111"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000463"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000009",
+    "lane_ids": [
+      "LANE-000800",
+      "LANE-001252"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000310",
+      "PART-000484"
+    ],
+    "plant_ids": [
+      "PLANT-000004",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000098"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000010",
+    "lane_ids": [
+      "LANE-000108",
+      "LANE-000165",
+      "LANE-000278",
+      "LANE-000341",
+      "LANE-000634",
+      "LANE-000681",
+      "LANE-000769",
+      "LANE-000895",
+      "LANE-001037",
+      "LANE-001222",
+      "LANE-001303",
+      "LANE-001318",
+      "LANE-001382",
+      "LANE-001525",
+      "LANE-001688",
+      "LANE-001905",
+      "LANE-001951",
+      "LANE-002053",
+      "LANE-002089",
+      "LANE-002101",
+      "LANE-002229",
+      "LANE-002304"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000041",
+      "PART-000065",
+      "PART-000107",
+      "PART-000131",
+      "PART-000245",
+      "PART-000263",
+      "PART-000299",
+      "PART-000347",
+      "PART-000401",
+      "PART-000473",
+      "PART-000503",
+      "PART-000509",
+      "PART-000533",
+      "PART-000587",
+      "PART-000647",
+      "PART-000731",
+      "PART-000749",
+      "PART-000785",
+      "PART-000797",
+      "PART-000803",
+      "PART-000851",
+      "PART-000881"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000007",
+      "PLANT-000008",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000398"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000011",
+    "lane_ids": [
+      "LANE-000220",
+      "LANE-000303"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000085",
+      "PART-000086",
+      "PART-000115",
+      "PART-000116"
+    ],
+    "plant_ids": [
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000361"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000012",
+    "lane_ids": [
+      "LANE-000249",
+      "LANE-000514"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000097",
+      "PART-000199"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002"
+    ],
+    "supplier_ids": [
+      "SUP-000440"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000013",
+    "lane_ids": [
+      "LANE-000027",
+      "LANE-000274"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000010",
+      "PART-000106"
+    ],
+    "plant_ids": [
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000081"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000014",
+    "lane_ids": [
+      "LANE-000083",
+      "LANE-000301"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000031",
+      "PART-000115"
+    ],
+    "plant_ids": [
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000129"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000015",
+    "lane_ids": [
+      "LANE-000023",
+      "LANE-000336"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000007",
+      "PART-000009",
+      "PART-000129"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002"
+    ],
+    "supplier_ids": [
+      "SUP-000022"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000016",
+    "lane_ids": [
+      "LANE-000111",
+      "LANE-000184",
+      "LANE-000246",
+      "LANE-000312",
+      "LANE-000667",
+      "LANE-000900",
+      "LANE-000990",
+      "LANE-001056",
+      "LANE-001074",
+      "LANE-001367",
+      "LANE-001384",
+      "LANE-001416",
+      "LANE-001448",
+      "LANE-001514",
+      "LANE-001526",
+      "LANE-002462",
+      "LANE-002669",
+      "LANE-002956",
+      "LANE-002978"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000042",
+      "PART-000072",
+      "PART-000096",
+      "PART-000120",
+      "PART-000258",
+      "PART-000348",
+      "PART-000384",
+      "PART-000408",
+      "PART-000414",
+      "PART-000528",
+      "PART-000534",
+      "PART-000546",
+      "PART-000558",
+      "PART-000582",
+      "PART-000588",
+      "PART-000942",
+      "PART-001020",
+      "PART-001176",
+      "PART-001188"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000010",
+      "PLANT-000011",
+      "PLANT-000012"
+    ],
+    "supplier_ids": [
+      "SUP-000411"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000017",
+    "lane_ids": [
+      "LANE-000203",
+      "LANE-000407"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000079",
+      "PART-000157"
+    ],
+    "plant_ids": [
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000357"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000018",
+    "lane_ids": [
+      "LANE-000008",
+      "LANE-000192",
+      "LANE-000324",
+      "LANE-000340",
+      "LANE-000448",
+      "LANE-000476",
+      "LANE-000602",
+      "LANE-000632",
+      "LANE-000735",
+      "LANE-000780",
+      "LANE-001050",
+      "LANE-001111",
+      "LANE-001126",
+      "LANE-001219",
+      "LANE-001345",
+      "LANE-001363",
+      "LANE-001552",
+      "LANE-001568",
+      "LANE-001946",
+      "LANE-002015",
+      "LANE-002208",
+      "LANE-002257",
+      "LANE-002272"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000004",
+      "PART-000076",
+      "PART-000124",
+      "PART-000130",
+      "PART-000172",
+      "PART-000184",
+      "PART-000232",
+      "PART-000244",
+      "PART-000286",
+      "PART-000304",
+      "PART-000406",
+      "PART-000430",
+      "PART-000436",
+      "PART-000472",
+      "PART-000520",
+      "PART-000526",
+      "PART-000598",
+      "PART-000604",
+      "PART-000748",
+      "PART-000772",
+      "PART-000844",
+      "PART-000862",
+      "PART-000868"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000007",
+      "PLANT-000008",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000002"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000019",
+    "lane_ids": [
+      "LANE-000095",
+      "LANE-000297",
+      "LANE-000452",
+      "LANE-000481",
+      "LANE-000511",
+      "LANE-000590",
+      "LANE-000606",
+      "LANE-000668",
+      "LANE-000724",
+      "LANE-000870",
+      "LANE-001007",
+      "LANE-001322",
+      "LANE-001336",
+      "LANE-001560",
+      "LANE-001644",
+      "LANE-001796",
+      "LANE-001811",
+      "LANE-001890",
+      "LANE-002118",
+      "LANE-002320"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000036",
+      "PART-000114",
+      "PART-000174",
+      "PART-000186",
+      "PART-000198",
+      "PART-000228",
+      "PART-000234",
+      "PART-000258",
+      "PART-000282",
+      "PART-000336",
+      "PART-000390",
+      "PART-000510",
+      "PART-000516",
+      "PART-000600",
+      "PART-000630",
+      "PART-000690",
+      "PART-000696",
+      "PART-000726",
+      "PART-000810",
+      "PART-000888"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000007",
+      "PLANT-000008",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000337"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000020",
+    "lane_ids": [
+      "LANE-000029",
+      "LANE-000167",
+      "LANE-000196",
+      "LANE-000229",
+      "LANE-000263",
+      "LANE-000277",
+      "LANE-000387",
+      "LANE-000435",
+      "LANE-000524",
+      "LANE-000541",
+      "LANE-000575",
+      "LANE-000664",
+      "LANE-000801",
+      "LANE-000960",
+      "LANE-000987",
+      "LANE-001071",
+      "LANE-001085",
+      "LANE-001097",
+      "LANE-001381",
+      "LANE-001495",
+      "LANE-001511",
+      "LANE-001542",
+      "LANE-001590",
+      "LANE-001779",
+      "LANE-001827",
+      "LANE-001875",
+      "LANE-002019",
+      "LANE-002227",
+      "LANE-002305",
+      "LANE-002317"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000011",
+      "PART-000065",
+      "PART-000077",
+      "PART-000089",
+      "PART-000101",
+      "PART-000107",
+      "PART-000149",
+      "PART-000167",
+      "PART-000203",
+      "PART-000209",
+      "PART-000221",
+      "PART-000257",
+      "PART-000311",
+      "PART-000371",
+      "PART-000383",
+      "PART-000413",
+      "PART-000419",
+      "PART-000425",
+      "PART-000533",
+      "PART-000575",
+      "PART-000581",
+      "PART-000593",
+      "PART-000611",
+      "PART-000683",
+      "PART-000701",
+      "PART-000719",
+      "PART-000773",
+      "PART-000851",
+      "PART-000881",
+      "PART-000887"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000007",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000114"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000021",
+    "lane_ids": [
+      "LANE-002477",
+      "LANE-002547"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000947",
+      "PART-000971"
+    ],
+    "plant_ids": [
+      "PLANT-000011",
+      "PLANT-000012"
+    ],
+    "supplier_ids": [
+      "SUP-000395"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000022",
+    "lane_ids": [
+      "LANE-000235",
+      "LANE-000968"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000092",
+      "PART-000373",
+      "PART-000374"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000441"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000023",
+    "lane_ids": [
+      "LANE-000777",
+      "LANE-001311"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000301",
+      "PART-000303",
+      "PART-000507"
+    ],
+    "plant_ids": [
+      "PLANT-000004",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000006"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000024",
+    "lane_ids": [
+      "LANE-000797",
+      "LANE-001155"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000307",
+      "PART-000309",
+      "PART-000445",
+      "PART-000447"
+    ],
+    "plant_ids": [
+      "PLANT-000004",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000093"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000025",
+    "lane_ids": [
+      "LANE-000819",
+      "LANE-001004"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000317",
+      "PART-000389"
+    ],
+    "plant_ids": [
+      "PLANT-000005"
+    ],
+    "supplier_ids": [
+      "SUP-000166"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000026",
+    "lane_ids": [
+      "LANE-000843",
+      "LANE-000985"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000327",
+      "PART-000379",
+      "PART-000381"
+    ],
+    "plant_ids": [
+      "PLANT-000004"
+    ],
+    "supplier_ids": [
+      "SUP-000209"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000027",
+    "lane_ids": [
+      "LANE-000107",
+      "LANE-000166",
+      "LANE-000651",
+      "LANE-000721",
+      "LANE-000867",
+      "LANE-000974",
+      "LANE-001129",
+      "LANE-001160",
+      "LANE-001223",
+      "LANE-001285",
+      "LANE-001411",
+      "LANE-001670",
+      "LANE-001825",
+      "LANE-001921",
+      "LANE-001949",
+      "LANE-001966",
+      "LANE-002133",
+      "LANE-002197",
+      "LANE-002337"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000041",
+      "PART-000065",
+      "PART-000251",
+      "PART-000281",
+      "PART-000335",
+      "PART-000377",
+      "PART-000437",
+      "PART-000449",
+      "PART-000473",
+      "PART-000497",
+      "PART-000545",
+      "PART-000641",
+      "PART-000701",
+      "PART-000737",
+      "PART-000749",
+      "PART-000755",
+      "PART-000815",
+      "PART-000839",
+      "PART-000893"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000007",
+      "PLANT-000008",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000373"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000028",
+    "lane_ids": [
+      "LANE-000147",
+      "LANE-000287"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000057",
+      "PART-000109",
+      "PART-000111"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000463"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000029",
+    "lane_ids": [
+      "LANE-000923",
+      "LANE-001014"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000356",
+      "PART-000392"
+    ],
+    "plant_ids": [
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000290"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000030",
+    "lane_ids": [
+      "LANE-000831",
+      "LANE-000955"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000321",
+      "PART-000369"
+    ],
+    "plant_ids": [
+      "PLANT-000005",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000188"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000031",
+    "lane_ids": [
+      "LANE-000890",
+      "LANE-000984"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000343",
+      "PART-000345",
+      "PART-000379",
+      "PART-000381"
+    ],
+    "plant_ids": [
+      "PLANT-000004"
+    ],
+    "supplier_ids": [
+      "SUP-000389"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000032",
+    "lane_ids": [
+      "LANE-000806",
+      "LANE-001021"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000312",
+      "PART-000396"
+    ],
+    "plant_ids": [
+      "PLANT-000004",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000075"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000033",
+    "lane_ids": [
+      "LANE-000148",
+      "LANE-000226"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000058",
+      "PART-000088"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000475"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000034",
+    "lane_ids": [
+      "LANE-000084",
+      "LANE-000839"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000031",
+      "PART-000325"
+    ],
+    "plant_ids": [
+      "PLANT-000003",
+      "PLANT-000004"
+    ],
+    "supplier_ids": [
+      "SUP-000142"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000035",
+    "lane_ids": [
+      "LANE-000794",
+      "LANE-001105"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000307",
+      "PART-000308",
+      "PART-000428"
+    ],
+    "plant_ids": [
+      "PLANT-000004",
+      "PLANT-000006"
+    ],
+    "supplier_ids": [
+      "SUP-000053"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000036",
+    "lane_ids": [
+      "LANE-000177",
+      "LANE-000351",
+      "LANE-000379",
+      "LANE-000647",
+      "LANE-000673",
+      "LANE-000731",
+      "LANE-000953",
+      "LANE-001157",
+      "LANE-001506",
+      "LANE-001521",
+      "LANE-001719",
+      "LANE-001761",
+      "LANE-001821",
+      "LANE-001930",
+      "LANE-001993",
+      "LANE-002045",
+      "LANE-002065",
+      "LANE-002099",
+      "LANE-002161",
+      "LANE-002255",
+      "LANE-002285"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000069",
+      "PART-000135",
+      "PART-000145",
+      "PART-000147",
+      "PART-000249",
+      "PART-000259",
+      "PART-000261",
+      "PART-000285",
+      "PART-000369",
+      "PART-000445",
+      "PART-000447",
+      "PART-000579",
+      "PART-000585",
+      "PART-000657",
+      "PART-000673",
+      "PART-000675",
+      "PART-000699",
+      "PART-000741",
+      "PART-000765",
+      "PART-000781",
+      "PART-000783",
+      "PART-000787",
+      "PART-000789",
+      "PART-000801",
+      "PART-000823",
+      "PART-000825",
+      "PART-000859",
+      "PART-000861",
+      "PART-000873"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003",
+      "PLANT-000004",
+      "PLANT-000005",
+      "PLANT-000006",
+      "PLANT-000007",
+      "PLANT-000008",
+      "PLANT-000009"
+    ],
+    "supplier_ids": [
+      "SUP-000487"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000037",
+    "lane_ids": [
+      "LANE-000037",
+      "LANE-000318"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000013",
+      "PART-000014",
+      "PART-000121",
+      "PART-000122"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000088"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000038",
+    "lane_ids": [
+      "LANE-000038"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000013",
+      "PART-000014"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000097"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000039",
+    "lane_ids": [
+      "LANE-000039"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000013",
+      "PART-000015"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000060"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000040",
+    "lane_ids": [
+      "LANE-000040"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000013",
+      "PART-000015"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000071"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000041",
+    "lane_ids": [
+      "LANE-000041"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000013",
+      "PART-000015"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000082"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000042",
+    "lane_ids": [
+      "LANE-000042"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000016"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000108"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000043",
+    "lane_ids": [
+      "LANE-000043",
+      "LANE-000150"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000016",
+      "PART-000058"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000140"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000044",
+    "lane_ids": [
+      "LANE-000044"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000016"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000157"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000045",
+    "lane_ids": [
+      "LANE-000045",
+      "LANE-000353"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000017",
+      "PART-000137"
+    ],
+    "plant_ids": [
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000204"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000046",
+    "lane_ids": [
+      "LANE-000046",
+      "LANE-000436",
+      "LANE-000545",
+      "LANE-000621",
+      "LANE-000638"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000018",
+      "PART-000168",
+      "PART-000210",
+      "PART-000240",
+      "PART-000246"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002",
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000070"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000047",
+    "lane_ids": [
+      "LANE-000047"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000018"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000073"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000048",
+    "lane_ids": [
+      "LANE-000048"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000018"
+    ],
+    "plant_ids": [
+      "PLANT-000003"
+    ],
+    "supplier_ids": [
+      "SUP-000107"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000049",
+    "lane_ids": [
+      "LANE-000049"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000019"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000064"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000050",
+    "lane_ids": [
+      "LANE-000050"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000020"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000119"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000051",
+    "lane_ids": [
+      "LANE-000051"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000020"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000138"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000052",
+    "lane_ids": [
+      "LANE-000052"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000020"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000151"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000053",
+    "lane_ids": [
+      "LANE-000053"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000021"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000104"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000054",
+    "lane_ids": [
+      "LANE-000054",
+      "LANE-000207"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000021",
+      "PART-000079",
+      "PART-000081"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002"
+    ],
+    "supplier_ids": [
+      "SUP-000131"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000055",
+    "lane_ids": [
+      "LANE-000055",
+      "LANE-000305"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000021",
+      "PART-000115",
+      "PART-000117"
+    ],
+    "plant_ids": [
+      "PLANT-000001",
+      "PLANT-000002"
+    ],
+    "supplier_ids": [
+      "SUP-000139"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000056",
+    "lane_ids": [
+      "LANE-000056"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000022"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000172"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000057",
+    "lane_ids": [
+      "LANE-000057"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000022"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000181"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000058",
+    "lane_ids": [
+      "LANE-000058"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000022"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000207"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000059",
+    "lane_ids": [
+      "LANE-000059"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000023"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000251"
+    ]
+  },
+  {
+    "disruption_id": "DISR-000060",
+    "lane_ids": [
+      "LANE-000060"
+    ],
+    "method": "RESOURCE_OR_LANE_THEN_REVERSE_BOM_REACHABILITY",
+    "part_ids": [
+      "PART-000023"
+    ],
+    "plant_ids": [
+      "PLANT-000001"
+    ],
+    "supplier_ids": [
+      "SUP-000266"
+    ]
+  }
+]

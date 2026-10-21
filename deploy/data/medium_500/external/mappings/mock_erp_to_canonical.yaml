@@ -1,0 +1,272 @@
+schema_version: '1.0'
+illustrative_only: true
+mappings:
+  demand:
+    canonical_table: demand_forecast
+    fields:
+    - external_column: client
+      canonical_column: tenant_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: site_code
+      canonical_column: plant_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: material_code
+      canonical_column: part_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: week_required
+      canonical_column: week_start
+      type_conversion: ISO8601
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_requested
+      canonical_column: required_units
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: record_revision
+      canonical_column: revision
+      type_conversion: int64
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+  stock_positions:
+    canonical_table: inventory_positions
+    fields:
+    - external_column: client
+      canonical_column: tenant_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: site_code
+      canonical_column: plant_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: material_code
+      canonical_column: part_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: stock_asof
+      canonical_column: snapshot_at
+      type_conversion: ISO8601
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_onhand
+      canonical_column: on_hand_units
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_reserved
+      canonical_column: reserved_units
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_blocked
+      canonical_column: quality_hold_units
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_usable
+      canonical_column: usable_units
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+  purchase_orders:
+    canonical_table: purchase_order_lines
+    fields:
+    - external_column: order_line_key
+      canonical_column: po_line_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: order_key
+      canonical_column: po_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: client
+      canonical_column: tenant_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: route_key
+      canonical_column: lane_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: material_code
+      canonical_column: part_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: site_code
+      canonical_column: destination_plant_id
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_ordered
+      canonical_column: ordered_qty
+      type_conversion: int64
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: qty_confirmed
+      canonical_column: confirmed_qty
+      type_conversion: int64
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: price_eur
+      canonical_column: unit_purchase_price
+      type_conversion: decimal(20,2)
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: transaction_currency
+      canonical_column: currency
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: promised_date
+      canonical_column: due_date
+      type_conversion: ISO8601
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON
+    - external_column: confirmation_state
+      canonical_column: line_status
+      type_conversion: string
+      unit_conversion: EA identity; reject unsupported units
+      null_policy: REJECT
+      relationship_lookup: route_key -> sourcing_lanes; client/site/material must
+        match
+      version: '1.0'
+      timezone_conversion: date buckets remain Monday; instants normalized UTC
+      rejected_data_behavior: QUARANTINE_WITH_REASON

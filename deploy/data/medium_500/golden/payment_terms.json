@@ -1,0 +1,10 @@
+{
+  "annual_rate": ".08",
+  "buyer_incremental_financing_cost_eur": "394.52",
+  "consolidated_net_financing_eur": "0.00",
+  "from_payment_days": 60,
+  "lot_price_eur": "40000.00",
+  "physical_production_cost_delta_eur": "0.00",
+  "supplier_financing_benefit_eur": "394.52",
+  "to_payment_days": 15
+}

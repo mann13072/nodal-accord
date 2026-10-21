@@ -1,0 +1,35 @@
+{
+  "negotiation_outcome_counts": {
+    "ACCEPTED": 8,
+    "EXPIRED": 1,
+    "REJECTED": 2,
+    "STALE": 1
+  },
+  "payment_terms_example": {
+    "annual_rate": ".08",
+    "buyer_incremental_financing_cost_eur": "394.52",
+    "consolidated_net_financing_eur": "0.00",
+    "from_payment_days": 60,
+    "lot_price_eur": "40000.00",
+    "physical_production_cost_delta_eur": "0.00",
+    "supplier_financing_benefit_eur": "394.52",
+    "to_payment_days": 15
+  },
+  "premium_transfer_example": {
+    "buyer_incremental_spend_eur": "200.00",
+    "consolidated_transfer_cost_eur": "0.00",
+    "supplier_incremental_revenue_eur": "200.00",
+    "unit_premium_eur": "2.00",
+    "units": 100
+  },
+  "purchase_price_minus_private_cost_eur": {
+    "count": 3000,
+    "max": 135.14999999999998,
+    "mean": 19.312453333333334,
+    "median": 10.565000000000001,
+    "min": 0.05999999999999983,
+    "p10": 0.6099999999999999,
+    "p90": 51.428
+  },
+  "weak_margin_lanes": 45
+}

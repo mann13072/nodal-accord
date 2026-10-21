@@ -69,7 +69,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     app = FastAPI(title="Nodal Accord API", version="1.0.0", lifespan=lifespan,
                   description="Collaborative supply resolution engine. Synthetic-data prototype; no real ERP or vendor integration.")
-    app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_methods=["*"],
+    app.add_middleware(CORSMiddleware, allow_origins=list(settings.cors_origins), allow_methods=["*"],
                        allow_headers=["*"], expose_headers=["X-Correlation-ID"])
 
     @app.middleware("http")

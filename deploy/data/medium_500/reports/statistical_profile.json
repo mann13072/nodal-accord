@@ -1,0 +1,469 @@
+{
+  "cases_partial_only": 10,
+  "cases_with_zero_shortage_mitigation": 26,
+  "confirmed_receipts_only_baseline": {
+    "assumption": "Lost-sales weekly deficit; no backlog carry. Confirmed future receipts only; unallocated offered capacity is not incoming stock. This is not an optimized service level.",
+    "by_tenant_week": [
+      {
+        "ending_usable_units": 99754,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 12891,
+        "week_start": "2026-10-26"
+      },
+      {
+        "ending_usable_units": 44001,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 54754,
+        "week_start": "2026-11-02"
+      },
+      {
+        "ending_usable_units": 22126,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 78501,
+        "week_start": "2026-11-09"
+      },
+      {
+        "ending_usable_units": 7223,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 93674,
+        "week_start": "2026-11-16"
+      },
+      {
+        "ending_usable_units": 8823,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 109603,
+        "week_start": "2026-11-23"
+      },
+      {
+        "ending_usable_units": 8321,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 106040,
+        "week_start": "2026-11-30"
+      },
+      {
+        "ending_usable_units": 9913,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 104451,
+        "week_start": "2026-12-07"
+      },
+      {
+        "ending_usable_units": 3837,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 99103,
+        "week_start": "2026-12-14"
+      },
+      {
+        "ending_usable_units": 4713,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 94896,
+        "week_start": "2026-12-21"
+      },
+      {
+        "ending_usable_units": 3527,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 94771,
+        "week_start": "2026-12-28"
+      },
+      {
+        "ending_usable_units": 6835,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 98320,
+        "week_start": "2027-01-04"
+      },
+      {
+        "ending_usable_units": 5970,
+        "tenant_id": "TEN-000001",
+        "unmet_units": 90311,
+        "week_start": "2027-01-11"
+      },
+      {
+        "ending_usable_units": 90629,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 9260,
+        "week_start": "2026-10-26"
+      },
+      {
+        "ending_usable_units": 41205,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 47816,
+        "week_start": "2026-11-02"
+      },
+      {
+        "ending_usable_units": 17817,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 80940,
+        "week_start": "2026-11-09"
+      },
+      {
+        "ending_usable_units": 9124,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 80343,
+        "week_start": "2026-11-16"
+      },
+      {
+        "ending_usable_units": 3698,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 96387,
+        "week_start": "2026-11-23"
+      },
+      {
+        "ending_usable_units": 5922,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 100933,
+        "week_start": "2026-11-30"
+      },
+      {
+        "ending_usable_units": 3450,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 98771,
+        "week_start": "2026-12-07"
+      },
+      {
+        "ending_usable_units": 2252,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 88731,
+        "week_start": "2026-12-14"
+      },
+      {
+        "ending_usable_units": 1180,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 93561,
+        "week_start": "2026-12-21"
+      },
+      {
+        "ending_usable_units": 5382,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 81808,
+        "week_start": "2026-12-28"
+      },
+      {
+        "ending_usable_units": 3562,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 89059,
+        "week_start": "2027-01-04"
+      },
+      {
+        "ending_usable_units": 12041,
+        "tenant_id": "TEN-000002",
+        "unmet_units": 90727,
+        "week_start": "2027-01-11"
+      },
+      {
+        "ending_usable_units": 94559,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 9242,
+        "week_start": "2026-10-26"
+      },
+      {
+        "ending_usable_units": 38940,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 53095,
+        "week_start": "2026-11-02"
+      },
+      {
+        "ending_usable_units": 19117,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 77118,
+        "week_start": "2026-11-09"
+      },
+      {
+        "ending_usable_units": 7929,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 88943,
+        "week_start": "2026-11-16"
+      },
+      {
+        "ending_usable_units": 6673,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 95462,
+        "week_start": "2026-11-23"
+      },
+      {
+        "ending_usable_units": 2821,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 98213,
+        "week_start": "2026-11-30"
+      },
+      {
+        "ending_usable_units": 4420,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 93585,
+        "week_start": "2026-12-07"
+      },
+      {
+        "ending_usable_units": 2192,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 98609,
+        "week_start": "2026-12-14"
+      },
+      {
+        "ending_usable_units": 5719,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 89284,
+        "week_start": "2026-12-21"
+      },
+      {
+        "ending_usable_units": 4363,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 86231,
+        "week_start": "2026-12-28"
+      },
+      {
+        "ending_usable_units": 10670,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 82088,
+        "week_start": "2027-01-04"
+      },
+      {
+        "ending_usable_units": 4751,
+        "tenant_id": "TEN-000003",
+        "unmet_units": 83956,
+        "week_start": "2027-01-11"
+      },
+      {
+        "ending_usable_units": 90513,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 7462,
+        "week_start": "2026-10-26"
+      },
+      {
+        "ending_usable_units": 37188,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 47140,
+        "week_start": "2026-11-02"
+      },
+      {
+        "ending_usable_units": 18561,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 86109,
+        "week_start": "2026-11-09"
+      },
+      {
+        "ending_usable_units": 8217,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 90103,
+        "week_start": "2026-11-16"
+      },
+      {
+        "ending_usable_units": 6638,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 91807,
+        "week_start": "2026-11-23"
+      },
+      {
+        "ending_usable_units": 6541,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 98218,
+        "week_start": "2026-11-30"
+      },
+      {
+        "ending_usable_units": 3379,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 94332,
+        "week_start": "2026-12-07"
+      },
+      {
+        "ending_usable_units": 5750,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 88587,
+        "week_start": "2026-12-14"
+      },
+      {
+        "ending_usable_units": 5331,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 95004,
+        "week_start": "2026-12-21"
+      },
+      {
+        "ending_usable_units": 5599,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 90111,
+        "week_start": "2026-12-28"
+      },
+      {
+        "ending_usable_units": 9409,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 77227,
+        "week_start": "2027-01-04"
+      },
+      {
+        "ending_usable_units": 5235,
+        "tenant_id": "TEN-000004",
+        "unmet_units": 86334,
+        "week_start": "2027-01-11"
+      }
+    ],
+    "part_weeks_with_unmet_demand": 11708,
+    "part_weeks_with_unmet_demand_percent": 81.30555555555556,
+    "total_unmet_units": 3903911
+  },
+  "demand_coefficient_of_variation": {
+    "count": 1200,
+    "max": 0.15697503693576445,
+    "mean": 0.06819617057153866,
+    "median": 0.06173558744234778,
+    "min": 0.035794839283859785,
+    "p10": 0.04837025786670183,
+    "p90": 0.1002708593143477
+  },
+  "demand_mean_units": {
+    "count": 1200,
+    "max": 3271.4166666666665,
+    "mean": 394.9499305555555,
+    "median": 217.375,
+    "min": 22.083333333333332,
+    "p10": 64.44166666666666,
+    "p90": 1086.9416666666677
+  },
+  "demand_to_nominal_capacity": {
+    "count": 1200,
+    "max": 0.919472502805836,
+    "mean": 0.7299530970869514,
+    "median": 0.7308760683760683,
+    "min": 0.5711206896551724,
+    "p10": 0.6592441080099483,
+    "p90": 0.8033655149051491
+  },
+  "health_metric_note": "Physical resource stress proxy: aggregate offered lane commitments versus available hours less firm reservations; not an optimized service-level claim.",
+  "healthy_resource_week_percent": 90.0,
+  "healthy_supplier_week_percent": 92.0,
+  "inventory_weeks_of_cover": {
+    "count": 1200,
+    "max": 3.8172920065252853,
+    "mean": 1.6242363922015806,
+    "median": 1.391029982152674,
+    "min": 0.19124715406020742,
+    "p10": 0.2407435649719018,
+    "p90": 3.235494400604168
+  },
+  "lane_commitment_to_nominal_ratio": {
+    "count": 36000,
+    "max": 1.0346248969497114,
+    "mean": 0.995509202872807,
+    "median": 1.0,
+    "min": 0.9166666666666666,
+    "p10": 0.9615384615384616,
+    "p90": 1.0289596898797042
+  },
+  "lead_time_by_band": {
+    "EUROPE_CROSS_REGION": {
+      "count": 1596,
+      "max": 35.0,
+      "mean": 24.18358395989975,
+      "median": 24.0,
+      "min": 14.0,
+      "p10": 16.0,
+      "p90": 33.0
+    },
+    "INTERCONTINENTAL": {
+      "count": 574,
+      "max": 70.0,
+      "mean": 49.40418118466899,
+      "median": 50.0,
+      "min": 28.0,
+      "p10": 31.0,
+      "p90": 66.0
+    },
+    "SAME_REGION": {
+      "count": 830,
+      "max": 21.0,
+      "mean": 13.867469879518072,
+      "median": 14.0,
+      "min": 7.0,
+      "p10": 8.0,
+      "p90": 20.0
+    }
+  },
+  "lead_time_by_segment": {
+    "ELECTRONICS": {
+      "count": 512,
+      "max": 70.0,
+      "mean": 24.033203125,
+      "median": 20.0,
+      "min": 7.0,
+      "p10": 11.0,
+      "p90": 40.0
+    },
+    "FASTENERS": {
+      "count": 498,
+      "max": 70.0,
+      "mean": 26.08433734939759,
+      "median": 23.0,
+      "min": 7.0,
+      "p10": 11.0,
+      "p90": 48.0
+    },
+    "HARNESS": {
+      "count": 492,
+      "max": 70.0,
+      "mean": 26.49390243902439,
+      "median": 23.0,
+      "min": 7.0,
+      "p10": 13.0,
+      "p90": 49.0
+    },
+    "MACHINED_METAL": {
+      "count": 517,
+      "max": 70.0,
+      "mean": 28.65183752417795,
+      "median": 25.0,
+      "min": 7.0,
+      "p10": 12.600000000000001,
+      "p90": 56.0
+    },
+    "PLASTICS": {
+      "count": 500,
+      "max": 70.0,
+      "mean": 24.678,
+      "median": 22.0,
+      "min": 7.0,
+      "p10": 11.0,
+      "p90": 37.10000000000002
+    },
+    "SPECIALIZED": {
+      "count": 481,
+      "max": 70.0,
+      "mean": 26.991683991683992,
+      "median": 24.0,
+      "min": 7.0,
+      "p10": 12.0,
+      "p90": 53.0
+    }
+  },
+  "nonzero_demand_rows": 14400,
+  "overloaded_resource_weeks": 480,
+  "receipt_status_counts": {
+    "CANCELLED": 300,
+    "CONFIRMED": 5400,
+    "PROPOSED": 300
+  },
+  "resource_weeks": 4800,
+  "supplier_segments": {
+    "ELECTRONICS": 100,
+    "FASTENERS": 75,
+    "HARNESS": 65,
+    "MACHINED_METAL": 125,
+    "PLASTICS": 85,
+    "SPECIALIZED": 50
+  },
+  "supplier_size_bands": {
+    "LARGE": 75,
+    "MEDIUM": 200,
+    "SMALL": 225
+  },
+  "supplier_weeks_total": 6000,
+  "weekly_required_units": {
+    "2026-10-26": 480654,
+    "2026-11-02": 496674,
+    "2026-11-09": 503010,
+    "2026-11-16": 501294,
+    "2026-11-23": 491723,
+    "2026-11-30": 489430,
+    "2026-12-07": 478425,
+    "2026-12-14": 466849,
+    "2026-12-21": 449833,
+    "2026-12-28": 443698,
+    "2027-01-04": 441477,
+    "2027-01-11": 444212
+  }
+}

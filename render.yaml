@@ -1,0 +1,12 @@
+# Render Blueprint: backend API + in-process solver worker on the free plan (Docker).
+services:
+  - type: web
+    name: nodal-accord-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/health/live
+    autoDeploy: true
+    envVars:
+      - key: NODAL_CORS_ORIGINS
+        value: https://nodal-accord.vercel.app

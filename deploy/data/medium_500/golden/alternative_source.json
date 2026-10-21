@@ -1,0 +1,39 @@
+{
+  "alternate_lane_ids": [
+    "LANE-000123"
+  ],
+  "alternate_result": {
+    "alternate_units": [
+      200
+    ],
+    "gap": 0.0,
+    "objective": 800.0,
+    "primary_units": [
+      400
+    ],
+    "required_hours": 40.0,
+    "solver": "scipy.milp/HiGHS",
+    "status": "OPTIMAL",
+    "unmet_units": 0
+  },
+  "arrives_in_time": true,
+  "baseline_result": {
+    "alternate_units": [
+      0
+    ],
+    "gap": 0.0,
+    "objective": 2000400.0,
+    "primary_units": [
+      400
+    ],
+    "required_hours": 40.0,
+    "solver": "scipy.milp/HiGHS",
+    "status": "OPTIMAL",
+    "unmet_units": 200
+  },
+  "case_id": "CASE-000007",
+  "input_path": "scenarios/CASE-000007.json",
+  "qualified": true,
+  "snapshot_content_hash": "c664c76f5e96d94f54aa512c686129712e44c5f2eee159c07a75963da50af9ea",
+  "snapshot_id": "SNAPSHOT-000007"
+}

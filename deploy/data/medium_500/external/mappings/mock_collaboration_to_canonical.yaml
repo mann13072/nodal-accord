@@ -1,0 +1,59 @@
+schema_version: '1.0'
+illustrative_only: true
+mappings:
+  canonical_table: lane_capacity
+  fields:
+  - external_column: route
+    canonical_column: lane_id
+    type_conversion: string/ISO-date
+    unit_conversion: EA identity; reject KG
+    null_policy: REJECT
+    relationship_lookup: route -> supplier/part/plant/tenant
+    version: '1.0'
+    timezone_conversion: Monday local plant bucket; instants UTC
+    rejected_data_behavior: QUARANTINE_WITH_REASON
+  - external_column: customer_scope
+    canonical_column: tenant_id
+    type_conversion: string/ISO-date
+    unit_conversion: EA identity; reject KG
+    null_policy: REJECT
+    relationship_lookup: route -> supplier/part/plant/tenant
+    version: '1.0'
+    timezone_conversion: Monday local plant bucket; instants UTC
+    rejected_data_behavior: QUARANTINE_WITH_REASON
+  - external_column: period
+    canonical_column: week_start
+    type_conversion: string/ISO-date
+    unit_conversion: EA identity; reject KG
+    null_policy: REJECT
+    relationship_lookup: route -> supplier/part/plant/tenant
+    version: '1.0'
+    timezone_conversion: Monday local plant bucket; instants UTC
+    rejected_data_behavior: QUARANTINE_WITH_REASON
+  - external_column: confirmed_capacity_units
+    canonical_column: committed_units
+    type_conversion: int64
+    unit_conversion: EA identity; reject KG
+    null_policy: REJECT
+    relationship_lookup: route -> supplier/part/plant/tenant
+    version: '1.0'
+    timezone_conversion: Monday local plant bucket; instants UTC
+    rejected_data_behavior: QUARANTINE_WITH_REASON
+  - external_column: optional_additional_units
+    canonical_column: supplier_offered_flex_units
+    type_conversion: int64
+    unit_conversion: EA identity; reject KG
+    null_policy: REJECT
+    relationship_lookup: route -> supplier/part/plant/tenant
+    version: '1.0'
+    timezone_conversion: Monday local plant bucket; instants UTC
+    rejected_data_behavior: QUARANTINE_WITH_REASON
+  - external_column: revision
+    canonical_column: source_version
+    type_conversion: int64
+    unit_conversion: EA identity; reject KG
+    null_policy: REJECT
+    relationship_lookup: route -> supplier/part/plant/tenant
+    version: '1.0'
+    timezone_conversion: Monday local plant bucket; instants UTC
+    rejected_data_behavior: QUARANTINE_WITH_REASON

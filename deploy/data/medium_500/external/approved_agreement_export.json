@@ -1,0 +1,130 @@
+[
+  {
+    "case_id": "CASE-000001",
+    "exact_terms_digest": "fc410836dc06e18f1adbdef919293d0ee540638775126ca1fac3154310911ff6",
+    "offer_id": "OFFER-000001-V1",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 10,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000001",
+      "part_id": "PART-000001",
+      "payment_days": 60,
+      "source_snapshot_id": "SNAPSHOT-000001",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "5.95"
+    }
+  },
+  {
+    "case_id": "CASE-000002",
+    "exact_terms_digest": "4dfce942d8b919ddf8a99e26b41286a7a9d4bad2e45c34be7753fe171937e1b9",
+    "offer_id": "OFFER-000002-V1",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 10,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000019",
+      "part_id": "PART-000007",
+      "payment_days": 60,
+      "source_snapshot_id": "SNAPSHOT-000002",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.00"
+    }
+  },
+  {
+    "case_id": "CASE-000003",
+    "exact_terms_digest": "f14137f2a239113bedffe0a7ea16b85c014aa8c8a627e1bc5633dd6433dc4ad2",
+    "offer_id": "OFFER-000003-V1",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 10,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000038",
+      "part_id": "PART-000014",
+      "payment_days": 60,
+      "source_snapshot_id": "SNAPSHOT-000003",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.00"
+    }
+  },
+  {
+    "case_id": "CASE-000004",
+    "exact_terms_digest": "07689ba871e04a4125d41dbb106fe27368ed3ee36bf9f7ab93714d1380824f48",
+    "offer_id": "OFFER-000004-V1",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 10,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000082",
+      "part_id": "PART-000030",
+      "payment_days": 60,
+      "source_snapshot_id": "SNAPSHOT-000004",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.00"
+    }
+  },
+  {
+    "case_id": "CASE-000005",
+    "exact_terms_digest": "8182dba54c0503a65d96603b98e2c4fdf6715681478ef15e9978642137c8f32b",
+    "offer_id": "OFFER-000005-V2",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 8,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000076",
+      "part_id": "PART-000028",
+      "payment_days": 15,
+      "source_snapshot_id": "SNAPSHOT-000005",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.50"
+    }
+  },
+  {
+    "case_id": "CASE-000006",
+    "exact_terms_digest": "e714ba1f0721f3f5f23fd72d9a8765acc5515f83b00a7683d299ff64add23eda",
+    "offer_id": "OFFER-000006-V2",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 8,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000097",
+      "part_id": "PART-000037",
+      "payment_days": 15,
+      "source_snapshot_id": "SNAPSHOT-000006",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.50"
+    }
+  },
+  {
+    "case_id": "CASE-000007",
+    "exact_terms_digest": "588c2cd0d5976938e8c38797b7e5ca0d4c6405e8f16b31a711f5693190e1622d",
+    "offer_id": "OFFER-000007-V2",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 8,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000124",
+      "part_id": "PART-000049",
+      "payment_days": 15,
+      "source_snapshot_id": "SNAPSHOT-000007",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.50"
+    }
+  },
+  {
+    "case_id": "CASE-000008",
+    "exact_terms_digest": "8ca5831379349d68d10ea1f576b9bf8a7798c0c17dd8ed6e161f8da4b2d8f95a",
+    "offer_id": "OFFER-000008-V2",
+    "tenant_id": "TEN-000001",
+    "terms": {
+      "additional_qty": 8,
+      "delivery_week": "2027-02-15",
+      "lane_id": "LANE-000147",
+      "part_id": "PART-000057",
+      "payment_days": 15,
+      "source_snapshot_id": "SNAPSHOT-000008",
+      "source_snapshot_version": 1,
+      "unit_premium_eur": "1.50"
+    }
+  }
+]

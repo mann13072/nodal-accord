@@ -129,6 +129,22 @@ def test_infeasible_zero_shortage_is_reported_not_invented(client):
     assert r["releases"] == [] and r["diagnostics"]
 
 
+def test_requested_solver_time_is_capped(tmp_path, store):
+    from fastapi.testclient import TestClient
+
+    from conftest import data_root
+    from nodal_api.config import Settings
+    from nodal_api.main import create_app
+
+    settings = Settings(env="test", demo_mode=True, data_root=data_root().resolve(),
+                        db_url=f"sqlite:///{(tmp_path / 'cap.db').as_posix()}", inline_worker=False, max_solver_seconds=5)
+    with TestClient(create_app(settings)) as c:
+        r = c.post("/api/v1/cases/CASE-000001/scenarios", headers=H(PLANNER),
+                   json={"modes": ["baseline"], "solver": {"time_limit_seconds": 300}})
+        run = c.get(f"/api/v1/scenario-runs/{r.json()['run_id']}", headers=H(PLANNER)).json()
+        assert run["request"]["solver"]["time_limit_seconds"] == 5
+
+
 def test_idempotent_scenario_submission(client):
     body = {"modes": ["baseline"]}
     a = client.post("/api/v1/cases/CASE-000001/scenarios", json=body, headers=H(PLANNER, **{"Idempotency-Key": "k-1"}))

@@ -1,0 +1,33 @@
+{
+  "input": {
+    "alternate_arrives_in_time": false,
+    "alternate_qualified": false,
+    "alternate_units": [
+      0
+    ],
+    "available_hours": 40.0,
+    "demand_units": [
+      600
+    ],
+    "lane_ceiling_units": [
+      600
+    ],
+    "overtime_hours": 0.0,
+    "prebuild_units": [
+      0
+    ],
+    "usable_stock": [
+      0
+    ]
+  },
+  "result": {
+    "alternate_units": null,
+    "gap": null,
+    "objective": null,
+    "primary_units": null,
+    "required_hours": null,
+    "solver": "scipy.milp/HiGHS",
+    "status": "INFEASIBLE",
+    "unmet_units": null
+  }
+}

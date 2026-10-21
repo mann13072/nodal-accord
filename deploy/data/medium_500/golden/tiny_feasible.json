@@ -1,0 +1,7 @@
+{
+  "available_hours": 40,
+  "demand_units": 600,
+  "hours_per_unit": ".1",
+  "unmet_units": 0,
+  "usable_units": 200
+}

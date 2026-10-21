@@ -1,0 +1,162 @@
+{
+  "alternate_arrives_in_time": true,
+  "alternate_lane_ids": [
+    "LANE-000778"
+  ],
+  "alternate_qualified": true,
+  "alternate_units": [
+    200
+  ],
+  "alternative_order_date": "2026-10-29",
+  "available_hours": 40.0,
+  "baseline_table_content_hashes": {
+    "bom_edges": "cd591aa7288ed31e7816d914a0e85e1619b619456d7335643317fd6cf0108803",
+    "buyer_commercial_terms": "ee3e8feb1668a197dc31edc17bc2fc15cb5ea637cd69eefbf86e78300d25cf97",
+    "buyer_financial_profiles": "cf79e5191fb30f47f8b81d2706b4f291122eb4478d11c91176b3fa104c3c08c9",
+    "capacity_calendar": "079e81b66ca9bb13b905f534976b229f77ad2fbef0b9e0d58a69174e548f34f5",
+    "capacity_resources": "18cbf29f8080fb5dcdb10e8a137f770bf3b90cfc4b9b180b05e6451a3aadaa9d",
+    "demand_forecast": "4373272f2151a709cc2b46d03dcadc7d3b62a94e3bea856234d947fb2bce4bea",
+    "inventory_positions": "0b6e9acaa682426ac99b4f0ac23478d9aa6f1d0f63d8d8d1a207229f5bfbee45",
+    "lane_capacity": "40074afb26b95fe4b6de6981a73518a0d7e83858911e21ed30dd56c705b1b7cc",
+    "organizations": "9d0c007d48e8c99adf4ed24a0634448bb927df020795b667a5371e6a33a0d6da",
+    "parts": "9bbc1a44e06aa33d623b08beb54826b63636b0e94bfee3ffb06351ff65745633",
+    "planning_weeks": "6994cb52d97bb81df648d1529466ab75ba8e6a57c5d95c8e7da32112554de94a",
+    "plant_part_assignments": "7816a5934b539e9fe8ad989ceb30a2c6b7068109f4c8cfe933f90a597e7b0d3f",
+    "plants": "a921704c3d3a8f065d2e5de0a298c8eff53b847161c0d9ad45e7e02603e3411d",
+    "purchase_order_lines": "10ef913a42d4c3095be9cdf235805ec98da7e047a8eebd9db4c6b20e4a6fc8f2",
+    "purchase_orders": "7feaba31cf58c1a825c27829ea439d598ec7abfe19466b0ca6cd7dddb0e51242",
+    "resource_lane_requirements": "1ceadfff9bc79f2e1b038f42451f7576bd457720a12abc655f6905a361e2f519",
+    "scheduled_receipts": "82d09aebcde587b8c3874afee57452d6f6eda257025887dde704a0913fca5c5c",
+    "sharing_policies": "b6a96cef9f5b08da2909ce5e30b757233aa0a03f7c93cbf586c52aeba9cb0b37",
+    "sourcing_lanes": "f207fab3e1bbab26c7863cea3f8d6c34132d8b089fb3b2f493bbaf51748881c4",
+    "supplier_private_economics": "741869457c0cc1d5c836b8f8cad572ed26792d2ec72f2c5db541d6749aa26913",
+    "tenants": "e20cc21246069e75ce7cc4976f24a202e8df21ce2ed9d225955014c7f19d0021",
+    "trading_relationships": "690c762dd0e7fc8269400d49f0cf16cea17c444ac84c768b0f92f7dea045bb89"
+  },
+  "case_id": "CASE-000023",
+  "category": "COUNTEROFFER_FEASIBILITY",
+  "classification": "BUYER_INTERNAL",
+  "counteroffer_recomputed_result": {
+    "alternate_units": [
+      0
+    ],
+    "gap": 0.0,
+    "objective": 2000400.0,
+    "primary_units": [
+      400
+    ],
+    "required_hours": 40.0,
+    "solver": "scipy.milp/HiGHS",
+    "status": "OPTIMAL",
+    "unmet_units": 200
+  },
+  "demand_units": [
+    600
+  ],
+  "disruption_event_id": "DISR-000023",
+  "hours_per_unit": "0.100000",
+  "lane_ceiling_units": [
+    600
+  ],
+  "lane_ids": [
+    "LANE-000777"
+  ],
+  "locked_other_buyer_hours": 0.0,
+  "normal_hours": 60.0,
+  "override_semantics": "Replace only listed part/week demand, usable stock, lane ceilings and resource hours; other baseline production/receipts excluded from this isolated oracle.",
+  "overrides_are_scoped": true,
+  "overtime_hours": 0.0,
+  "part_ids": [
+    "PART-000303"
+  ],
+  "prebuild_prior_week": "2026-11-16",
+  "prebuild_prior_week_free_hours": 0.0,
+  "prebuild_production_start": "2026-10-23",
+  "prebuild_units": [
+    0
+  ],
+  "resource_id": "RES-000376",
+  "results": {
+    "alternate": {
+      "alternate_units": [
+        200
+      ],
+      "gap": 0.0,
+      "objective": 800.0,
+      "primary_units": [
+        400
+      ],
+      "required_hours": 40.0,
+      "solver": "scipy.milp/HiGHS",
+      "status": "OPTIMAL",
+      "unmet_units": 0
+    },
+    "baseline": {
+      "alternate_units": [
+        0
+      ],
+      "gap": 0.0,
+      "objective": 2000400.0,
+      "primary_units": [
+        400
+      ],
+      "required_hours": 40.0,
+      "solver": "scipy.milp/HiGHS",
+      "status": "OPTIMAL",
+      "unmet_units": 200
+    },
+    "hybrid": {
+      "alternate_units": [
+        200
+      ],
+      "gap": 0.0,
+      "objective": 800.0,
+      "primary_units": [
+        400
+      ],
+      "required_hours": 40.0,
+      "solver": "scipy.milp/HiGHS",
+      "status": "OPTIMAL",
+      "unmet_units": 0
+    },
+    "overtime": {
+      "alternate_units": [
+        0
+      ],
+      "gap": 0.0,
+      "objective": 2000400.0,
+      "primary_units": [
+        400
+      ],
+      "required_hours": 40.0,
+      "solver": "scipy.milp/HiGHS",
+      "status": "OPTIMAL",
+      "unmet_units": 200
+    },
+    "prebuild": {
+      "alternate_units": [
+        0
+      ],
+      "gap": 0.0,
+      "objective": 2000400.0,
+      "primary_units": [
+        400
+      ],
+      "required_hours": 40.0,
+      "solver": "scipy.milp/HiGHS",
+      "status": "OPTIMAL",
+      "unmet_units": 200
+    }
+  },
+  "schema_version": "1.0",
+  "snapshot_content_hash": "51dc90f7ef25b5a97ae01d4da334e2fdbbab0f6b08b90f2ef3cdee5fab392222",
+  "snapshot_id": "SNAPSHOT-000023",
+  "snapshot_version": 1,
+  "tenant_ids": [
+    "TEN-000002"
+  ],
+  "usable_stock": [
+    0
+  ],
+  "week_start": "2026-11-23"
+}

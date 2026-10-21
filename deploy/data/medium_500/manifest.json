@@ -1,0 +1,150 @@
+{
+  "config": {
+    "output": {
+      "csv_small_fixture": true,
+      "format": "parquet",
+      "parquet_compression": "zstd",
+      "partition_by": [
+        "tenant_id"
+      ]
+    },
+    "planning": {
+      "allowed_base_units": [
+        "EA"
+      ],
+      "base_currency": "EUR",
+      "start_monday": "2026-10-26",
+      "weeks": 12
+    },
+    "population": {
+      "percent_healthy_supplier_weeks_target": 90,
+      "percent_lanes_using_shared_resource_target": 40,
+      "percent_multibuyer_suppliers_target": 35,
+      "percent_qualified_alt_for_critical_parts_minimum": 65,
+      "percent_single_source_parts_target": 18
+    },
+    "profile": "medium",
+    "scale": {
+      "buyer_parts": 1200,
+      "buyer_plants": 12,
+      "buyer_tenants": 4,
+      "curated_cases_minimum": 36,
+      "curated_offer_chains_minimum": 12,
+      "relationship_count_target": 750,
+      "resource_count_target": 400,
+      "sourcing_lanes": 3000,
+      "suppliers": 500
+    },
+    "scenario_label": "industrial-network-demo",
+    "schema_version": "1.0",
+    "seed": 20261021,
+    "validation": {
+      "fail_on_cross_tenant_leakage": true,
+      "fail_on_negative_quantities": true,
+      "fail_on_orphans": true,
+      "strict": true
+    }
+  },
+  "content_hashes": {
+    "approvals": "4c71dcd5c5b88bb1f63e55f07c672e50231ea7d7d6e8995dcf25036f93dd7a10",
+    "bom_edges": "cd591aa7288ed31e7816d914a0e85e1619b619456d7335643317fd6cf0108803",
+    "buyer_commercial_terms": "ee3e8feb1668a197dc31edc17bc2fc15cb5ea637cd69eefbf86e78300d25cf97",
+    "buyer_financial_profiles": "cf79e5191fb30f47f8b81d2706b4f291122eb4478d11c91176b3fa104c3c08c9",
+    "capacity_calendar": "079e81b66ca9bb13b905f534976b229f77ad2fbef0b9e0d58a69174e548f34f5",
+    "capacity_resources": "18cbf29f8080fb5dcdb10e8a137f770bf3b90cfc4b9b180b05e6451a3aadaa9d",
+    "counteroffers": "0b8d61818bb436d048714a175ebd3ec9f07b51002b188ac41cba55e2f7f97dd1",
+    "demand_forecast": "4373272f2151a709cc2b46d03dcadc7d3b62a94e3bea856234d947fb2bce4bea",
+    "disruption_events": "4c11ff13c4917a3af9028bf974ecfa69e38139e93a5101ded3d47000f27943a3",
+    "graph_edges": "389f9df868902502031956cbc159075eb947593c714285c5924a98460945f0ef",
+    "inventory_positions": "0b6e9acaa682426ac99b4f0ac23478d9aa6f1d0f63d8d8d1a207229f5bfbee45",
+    "lane_capacity": "40074afb26b95fe4b6de6981a73518a0d7e83858911e21ed30dd56c705b1b7cc",
+    "negotiation_events": "871a051548146610df7e2b6e372282552653c5464537b3337e7122c7f5b00585",
+    "offer_lines": "137b142323d663e40ef57229db57d11ac97e9f96c751b60639b6a0c67360e087",
+    "offers": "8c4eb53b72dbd4aae7d9465b20463a11cfac52d20631ef3cbf5c74ba332965e2",
+    "organizations": "9d0c007d48e8c99adf4ed24a0634448bb927df020795b667a5371e6a33a0d6da",
+    "parts": "9bbc1a44e06aa33d623b08beb54826b63636b0e94bfee3ffb06351ff65745633",
+    "planning_weeks": "6994cb52d97bb81df648d1529466ab75ba8e6a57c5d95c8e7da32112554de94a",
+    "plant_part_assignments": "7816a5934b539e9fe8ad989ceb30a2c6b7068109f4c8cfe933f90a597e7b0d3f",
+    "plants": "a921704c3d3a8f065d2e5de0a298c8eff53b847161c0d9ad45e7e02603e3411d",
+    "purchase_order_lines": "10ef913a42d4c3095be9cdf235805ec98da7e047a8eebd9db4c6b20e4a6fc8f2",
+    "purchase_orders": "7feaba31cf58c1a825c27829ea439d598ec7abfe19466b0ca6cd7dddb0e51242",
+    "resolution_cases": "62ed51c40c432c137cc754010985c88f07d6920d890ee21e8e3dbdceedc45413",
+    "resource_lane_requirements": "1ceadfff9bc79f2e1b038f42451f7576bd457720a12abc655f6905a361e2f519",
+    "scenario_oracle": "1b94c6441152d79c1a5972d7e7cd50c27eb8acb78bad6040dc1262a921cf9ef8",
+    "scheduled_receipts": "82d09aebcde587b8c3874afee57452d6f6eda257025887dde704a0913fca5c5c",
+    "sharing_policies": "b6a96cef9f5b08da2909ce5e30b757233aa0a03f7c93cbf586c52aeba9cb0b37",
+    "sourcing_lanes": "f207fab3e1bbab26c7863cea3f8d6c34132d8b089fb3b2f493bbaf51748881c4",
+    "supplier_private_economics": "741869457c0cc1d5c836b8f8cad572ed26792d2ec72f2c5db541d6749aa26913",
+    "supplier_shareable_offers": "c5a35bef0cadc939c80d77505d9d5647b528e872fd2695acc11e590ec875e6a7",
+    "supplier_user_roles": "9c564536b4312bdd9ce2df5e249018db4595f9ed0a214d7937e3d1c1a7b2f003",
+    "tenants": "e20cc21246069e75ce7cc4976f24a202e8df21ce2ed9d225955014c7f19d0021",
+    "trading_relationships": "690c762dd0e7fc8269400d49f0cf16cea17c444ac84c768b0f92f7dea045bb89"
+  },
+  "dataset_name": "nodal-accord-medium",
+  "dataset_version": "1.0.0",
+  "dependencies": {
+    "PyYAML": "6.0.3",
+    "numpy": "2.3.1",
+    "pandas": "2.3.1",
+    "pyarrow": "24.0.0",
+    "python": "3.13.3",
+    "scipy": "1.16.0"
+  },
+  "generated_at_utc": "2026-10-21T10:00:37.524813+00:00",
+  "generation_seconds": 17.48924009996699,
+  "generator_version": "1.0.0",
+  "known_limitations": [
+    "Synthetic modeling assumptions are not observed industry distributions.",
+    "Prototype integration, PostgreSQL RLS and UI benchmarks are NOT_RUN; no prototype files modified.",
+    "Canonical names follow generation spec; blueprint aliases are added, not a claim of live engine compatibility.",
+    "Scenario snapshots contain explicit scoped overrides; do not apply them globally to baseline tables.",
+    "Dense timeout uses an explicit zero-second solver budget to test honest failure handling.",
+    "Supplier-private files require application authorization; a filesystem folder is not an authorization boundary."
+  ],
+  "profile": "medium",
+  "rng": "numpy.PCG64; SHA256 component seeds",
+  "schema_version": "1.0",
+  "seed": 20261021,
+  "source_commit_sha": null,
+  "source_kind": "100_PERCENT_SYNTHETIC",
+  "table_counts": {
+    "approvals": 16,
+    "bom_edges": 208,
+    "buyer_commercial_terms": 3000,
+    "buyer_financial_profiles": 4,
+    "capacity_calendar": 4800,
+    "capacity_resources": 400,
+    "counteroffers": 4,
+    "demand_forecast": 14400,
+    "disruption_events": 60,
+    "graph_edges": 11342,
+    "inventory_positions": 1200,
+    "lane_capacity": 36000,
+    "negotiation_events": 77,
+    "offer_lines": 16,
+    "offers": 16,
+    "organizations": 504,
+    "parts": 1200,
+    "planning_weeks": 12,
+    "plant_part_assignments": 1200,
+    "plants": 12,
+    "purchase_order_lines": 6000,
+    "purchase_orders": 4000,
+    "resolution_cases": 36,
+    "resource_lane_requirements": 1200,
+    "scenario_oracle": 36,
+    "scheduled_receipts": 6000,
+    "sharing_policies": 750,
+    "sourcing_lanes": 3000,
+    "supplier_private_economics": 3000,
+    "supplier_shareable_offers": 12,
+    "supplier_user_roles": 118,
+    "tenants": 4,
+    "trading_relationships": 750
+  },
+  "validation_status": "PASS",
+  "warnings": [
+    "Prototype engine, UI, database RLS and real connector integration were not run; only standalone data/fixture checks are PASS.",
+    "Dense timeout fixture intentionally uses a zero-second budget; it measures failure handling, not solve scalability."
+  ]
+}

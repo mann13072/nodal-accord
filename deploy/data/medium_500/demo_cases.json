@@ -1,0 +1,2267 @@
+{
+  "all_cases": [
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000001",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 9ada28ba0e6419eea8133a5094dc35cb1f2463af879fb1b5e1307479051a66ba"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000001"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000004",
+        "PART-000001",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000001",
+      "supplier_org_ids": [
+        "SUP-000004"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Simple Shortage"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000002",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 94dbf520f9fa64a2e35187c9c177ad869e0ee588dccacc808bdeac76529d5ee7"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 0"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "baseline",
+              "overtime",
+              "alternate",
+              "prebuild",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000002"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000045",
+        "PART-000007",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000002",
+      "supplier_org_ids": [
+        "SUP-000045"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "No Actual Shortage"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000003",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 86754987f1299e75b071af953f904d8922f29e2a1f4321e49b8810b4db9a39aa"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000003"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000097",
+        "PART-000014",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000003",
+      "supplier_org_ids": [
+        "SUP-000097"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Late Alternative"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000004",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 911db3579f227f1ac1845eb9e6b61c7e383b31aa51b54b65c91cca0c563f90a2"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000004"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000295",
+        "PART-000030",
+        "PART-000054",
+        "PLANT-000002",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000004",
+      "supplier_org_ids": [
+        "SUP-000295"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Shared Machine"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000005",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 810f73c99cf9c728c6bc497f0cad1a2dd32ce05b2f4422ebb518596c826cd092"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000005"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000229",
+        "PART-000028",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000005",
+      "supplier_org_ids": [
+        "SUP-000229"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Overtime Feasible"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000006",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == f85b80fefe70ddb4a87aa2d66e85e20dcbde212e1bcff386fad4c8d2fba80755"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "prebuild"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000006"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000183",
+        "PART-000037",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000006",
+      "supplier_org_ids": [
+        "SUP-000183"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Prebuild"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000007",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == c664c76f5e96d94f54aa512c686129712e44c5f2eee159c07a75963da50af9ea"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000007"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000248",
+        "PART-000049",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000007",
+      "supplier_org_ids": [
+        "SUP-000248"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Alternative Sourcing"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000008",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == ec101b85f706ce8b6a9424f15cc346ac827c4dbb46c413d73f39c6bd453b3313"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000008"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000463",
+        "PART-000057",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000008",
+      "supplier_org_ids": [
+        "SUP-000463"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Hybrid"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000009",
+      "case_status": "REJECTED",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 562867b3a10b8c0ee7edca6a3b3bdbe5b585ff7718cafb7afabf093792a12f55"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000009"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000098",
+        "PART-000484",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000009",
+      "supplier_org_ids": [
+        "SUP-000098"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Single Source Impossible"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000010",
+      "case_status": "REJECTED",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 25ca82f9ce9332245abcf28b24ce2d13925aa2ae282530d100edd948730a8c7b"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000010"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000398",
+        "PART-000041",
+        "PART-000065",
+        "PLANT-000001",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000010",
+      "supplier_org_ids": [
+        "SUP-000398"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Multi Buyer"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000011",
+      "case_status": "EXPIRED",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 9cc58759209479fd884d954969330119af978833e35ba47f3c24463d156513a1"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000011"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000361",
+        "PART-000086",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000011",
+      "supplier_org_ids": [
+        "SUP-000361"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Counteroffer Feasibility"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000012",
+      "case_status": "SCENARIOS_STALE",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 13c312f619c7af87e90a6bfa7e68f201b23fa4ed8c1cb3013e970ab22d20bdd3"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000012"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000440",
+        "PART-000097",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000012",
+      "supplier_org_ids": [
+        "SUP-000440"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Commercial Negotiation"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000013",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == ce6b3b940ee915d95a05bf9b27cf5d7c646dbb0377b5518a571f54aae9f41a4d"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000013"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000081",
+        "PART-000106",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000013",
+      "supplier_org_ids": [
+        "SUP-000081"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Simple Shortage"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000014",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 4069c9a43a7eb79981c472cf8b10bea60a88577b240e53268265df156b0dfba1"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 0"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "baseline",
+              "overtime",
+              "alternate",
+              "prebuild",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000014"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000129",
+        "PART-000115",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000014",
+      "supplier_org_ids": [
+        "SUP-000129"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "No Actual Shortage"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000015",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 3e58129b72275651cf94a452b8de21ed33e584f8dd7d38c46aad3f84100ad49d"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000015"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000022",
+        "PART-000129",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000015",
+      "supplier_org_ids": [
+        "SUP-000022"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Late Alternative"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000016",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == b19a10fd2731c0e304ceda446a13656682cb43f57a3c324af4a621a46b58aacb"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000016"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000411",
+        "PART-000042",
+        "PART-000072",
+        "PLANT-000001",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000016",
+      "supplier_org_ids": [
+        "SUP-000411"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Shared Machine"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000017",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == b0ec5b21729f005e2523284da8631dac44b06dd64e5b828b75be4242fd8b5403"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000017"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000357",
+        "PART-000157",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000017",
+      "supplier_org_ids": [
+        "SUP-000357"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Overtime Feasible"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000018",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == c07cfb0f1ac6b6075847293c1649780e07b8fb302128ec5ecb24c5862c6b383f"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "prebuild"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000018"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000002",
+        "PART-000172",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000018",
+      "supplier_org_ids": [
+        "SUP-000002"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Prebuild"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000019",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 9ecb71187f5c68b513a72f0ddfe69e25b21003ca93918b936be97a95039a2ab1"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000019"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000337",
+        "PART-000198",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000019",
+      "supplier_org_ids": [
+        "SUP-000337"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Alternative Sourcing"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000020",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 7a57d3c66354bb7db732d29366dd66a9dce5242b5f58c1c3c6b98c97b6789e1f"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000020"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000114",
+        "PART-000221",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000020",
+      "supplier_org_ids": [
+        "SUP-000114"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Hybrid"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000004",
+      "case_id": "CASE-000021",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == edde0fae75eb0e9c81f1def62a942bf28941b7cd72c07f752d9b9550767f330c"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000021"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000395",
+        "PART-000971",
+        "PLANT-000012"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000021",
+      "supplier_org_ids": [
+        "SUP-000395"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000004",
+      "title": "Single Source Impossible"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000022",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == e0598c327414d49163e2fc89a5a96714de562b6d5c0e32658a196ba6293ea794"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000022"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000441",
+        "PART-000092",
+        "PART-000374",
+        "PLANT-000001",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000022",
+      "supplier_org_ids": [
+        "SUP-000441"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Multi Buyer"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000023",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 51dc90f7ef25b5a97ae01d4da334e2fdbbab0f6b08b90f2ef3cdee5fab392222"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000023"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000006",
+        "PART-000303",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000023",
+      "supplier_org_ids": [
+        "SUP-000006"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Counteroffer Feasibility"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000024",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 7e2599a4c4e10646be37e8fe6b056dbe46074c9a0a0c705daa3820e1687c3f7b"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000024"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000093",
+        "PART-000309",
+        "PLANT-000004"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000024",
+      "supplier_org_ids": [
+        "SUP-000093"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Commercial Negotiation"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000025",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 6f133e114e0997df933374278f5e22a7a815436e9f17fe3b6931fcc00f4303db"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000025"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000166",
+        "PART-000317",
+        "PLANT-000005"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000025",
+      "supplier_org_ids": [
+        "SUP-000166"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Simple Shortage"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000026",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 05165aa61c58dbb09476b2d2290612b90ebb801579e6c981628838463ec2f5f8"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 0"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "baseline",
+              "overtime",
+              "alternate",
+              "prebuild",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000026"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000209",
+        "PART-000327",
+        "PLANT-000004"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000026",
+      "supplier_org_ids": [
+        "SUP-000209"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "No Actual Shortage"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000027",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 41fe7668d35e9058efbf572ab66226d56936eb87b751934c3ba19871c09b288a"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000027"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000373",
+        "PART-000335",
+        "PLANT-000005"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000027",
+      "supplier_org_ids": [
+        "SUP-000373"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Late Alternative"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000028",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 99a3325fe19692a594a4ec05cede63918cbfd84b15304df0df3f93cfeed60f58"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000028"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000463",
+        "PART-000057",
+        "PART-000111",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000028",
+      "supplier_org_ids": [
+        "SUP-000463"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Shared Machine"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000029",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 201d47daf91215d83d230388830ee5bf5a791bf2a5f59c0960b64ed71643c874"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000029"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000290",
+        "PART-000356",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000029",
+      "supplier_org_ids": [
+        "SUP-000290"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Overtime Feasible"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000030",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == b2ea2d5eee5f44c12a7932c1f55e59a2d3e3404b67859ce40bfd853442e1273f"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "prebuild"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000030"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000188",
+        "PART-000369",
+        "PLANT-000005"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000030",
+      "supplier_org_ids": [
+        "SUP-000188"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Prebuild"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000031",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 5b2d9d16d42ed75097a228a122210bb42d6e8f36bc826b12304a68919fc92d6b"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000031"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000389",
+        "PART-000381",
+        "PLANT-000004"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000031",
+      "supplier_org_ids": [
+        "SUP-000389"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Alternative Sourcing"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000032",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 09240bb6ab64c3c720c40b56302e3da57bb0eda4939de0780d3c4176c85bd445"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000032"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000075",
+        "PART-000396",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000032",
+      "supplier_org_ids": [
+        "SUP-000075"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Hybrid"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000033",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 75958e534b1d799ee13a3279a93b94e3077eefd74af1e442dba47f6faa89d202"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000033"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000475",
+        "PART-000088",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000033",
+      "supplier_org_ids": [
+        "SUP-000475"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Single Source Impossible"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000034",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == d4bcf131e5c6e567674213a4773ff8bda4bcab0772622c008575fa639e282bf9"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000034"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000142",
+        "PART-000031",
+        "PART-000325",
+        "PLANT-000003",
+        "PLANT-000004"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000034",
+      "supplier_org_ids": [
+        "SUP-000142"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Multi Buyer"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000035",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == c966bea89add30d3d59a2a5fd17ae5753cb360b7df3463be24a0926dfb903f08"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000035"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000053",
+        "PART-000428",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000035",
+      "supplier_org_ids": [
+        "SUP-000053"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Counteroffer Feasibility"
+    },
+    {
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000036",
+      "case_status": "SCENARIOS_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 6ed872fdff51bbb6c818060f9749fe71f2af03d9710ec3532044358aa19db833"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000036"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000487",
+        "PART-000447",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000036",
+      "supplier_org_ids": [
+        "SUP-000487"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Commercial Negotiation"
+    }
+  ],
+  "named_cases": [
+    {
+      "alias": "CASE-SHARED-RESOURCE",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000004",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 911db3579f227f1ac1845eb9e6b61c7e383b31aa51b54b65c91cca0c563f90a2"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000004"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000295",
+        "PART-000030",
+        "PART-000054",
+        "PLANT-000002",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000004",
+      "supplier_org_ids": [
+        "SUP-000295"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Shared Machine"
+    },
+    {
+      "alias": "CASE-HYBRID-RESOLUTION",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000008",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == ec101b85f706ce8b6a9424f15cc346ac827c4dbb46c413d73f39c6bd453b3313"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000008"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000463",
+        "PART-000057",
+        "PLANT-000001"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000008",
+      "supplier_org_ids": [
+        "SUP-000463"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Hybrid"
+    },
+    {
+      "alias": "CASE-PAYMENT-NEGOTIATION",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000012",
+      "case_status": "SCENARIOS_STALE",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 13c312f619c7af87e90a6bfa7e68f201b23fa4ed8c1cb3013e970ab22d20bdd3"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000012"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000440",
+        "PART-000097",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000012",
+      "supplier_org_ids": [
+        "SUP-000440"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Commercial Negotiation"
+    },
+    {
+      "alias": "CASE-SUPPLIER-COUNTER",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000011",
+      "case_status": "EXPIRED",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 9cc58759209479fd884d954969330119af978833e35ba47f3c24463d156513a1"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "alternate",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000011"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000361",
+        "PART-000086",
+        "PLANT-000003"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000011",
+      "supplier_org_ids": [
+        "SUP-000361"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Counteroffer Feasibility"
+    },
+    {
+      "alias": "CASE-MULTITENANT-ACCESS",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000010",
+      "case_status": "REJECTED",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 25ca82f9ce9332245abcf28b24ce2d13925aa2ae282530d100edd948730a8c7b"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "overtime",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000010"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000398",
+        "PART-000041",
+        "PART-000065",
+        "PLANT-000001",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000010",
+      "supplier_org_ids": [
+        "SUP-000398"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "Multi Buyer"
+    },
+    {
+      "alias": "CASE-INFEASIBLE",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000002",
+      "case_id": "CASE-000009",
+      "case_status": "REJECTED",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 562867b3a10b8c0ee7edca6a3b3bdbe5b585ff7718cafb7afabf093792a12f55"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 200"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": []
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000009"
+      ],
+      "expected_solver_status_class": "PARTIAL_ONLY",
+      "highlighted_graph_nodes": [
+        "SUP-000098",
+        "PART-000484",
+        "PLANT-000006"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000009",
+      "supplier_org_ids": [
+        "SUP-000098"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000002",
+      "title": "Single Source Impossible"
+    },
+    {
+      "alias": "CASE-NO-RISK",
+      "allowed_roles": [
+        "BUYER_PLANNER",
+        "BUYER_PROCUREMENT",
+        "BUYER_FINANCE",
+        "SUPPLIER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CROSS_TENANT_LOOKUP",
+        "BUYER_READ_SUPPLIER_COST",
+        "APPROVE_STALE_TERMS"
+      ],
+      "buyer_org_id": "BUY-000001",
+      "case_id": "CASE-000002",
+      "case_status": "EXPORT_READY",
+      "demo_steps": [
+        {
+          "action": "Open immutable scoped snapshot",
+          "assert": "snapshot digest == 94dbf520f9fa64a2e35187c9c177ad869e0ee588dccacc808bdeac76529d5ee7"
+        },
+        {
+          "action": "Run baseline feasibility",
+          "assert": "unmet units == 0"
+        },
+        {
+          "action": "Compare overtime, alternate, prebuild and hybrid",
+          "assert": {
+            "zero_shortage_modes": [
+              "baseline",
+              "overtime",
+              "alternate",
+              "prebuild",
+              "hybrid"
+            ]
+          }
+        }
+      ],
+      "disruption_ids": [
+        "DISR-000002"
+      ],
+      "expected_solver_status_class": "FEASIBLE_MITIGATION",
+      "highlighted_graph_nodes": [
+        "SUP-000045",
+        "PART-000007",
+        "PLANT-000002"
+      ],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "SNAPSHOT-000002",
+      "supplier_org_ids": [
+        "SUP-000045"
+      ],
+      "synthetic_disclosure": true,
+      "tenant_id": "TEN-000001",
+      "title": "No Actual Shortage"
+    },
+    {
+      "alias": "CASE-SOLVER-TIMEOUT",
+      "allowed_roles": [
+        "BUYER_PLANNER"
+      ],
+      "blocked_actions": [
+        "CLAIM_OPTIMALITY"
+      ],
+      "buyer_org_id": null,
+      "case_id": "DENSE-STRESS",
+      "case_status": "TIME_LIMIT",
+      "demo_steps": [
+        {
+          "action": "Run golden/dense_stress.json solver recipe",
+          "assert": {
+            "optimality_claimed": false,
+            "status": "TIME_LIMIT"
+          }
+        }
+      ],
+      "disruption_ids": [],
+      "expected_solver_status_class": "TIME_LIMIT",
+      "highlighted_graph_nodes": [],
+      "recommended_starting_view": "SIMULATE",
+      "snapshot_id": "DENSE-STRESS",
+      "supplier_org_ids": [],
+      "synthetic_disclosure": true,
+      "tenant_id": null,
+      "title": "Dense binary problem with explicit zero-second budget"
+    }
+  ],
+  "schema_version": "1.0"
+}

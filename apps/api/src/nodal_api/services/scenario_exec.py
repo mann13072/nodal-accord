@@ -6,6 +6,7 @@ full (unprojected) result. Projections for each principal are applied on read.
 """
 from __future__ import annotations
 
+import os
 import time
 import traceback
 from dataclasses import replace
@@ -89,7 +90,8 @@ def build_inputs(store, case: Case, request: dict[str, Any], mode: str) -> tuple
     if scope == "SNAPSHOT_HORIZON":
         if not case.disruption_id:
             raise ValueError("case has no disruption event for a snapshot-horizon run")
-        inp, econ, info = snapshot_scenario(store, case.disruption_id, mode, tenant_id=case.tenant_id, solver=solver,
+        max_items = int(os.environ.get("NODAL_MAX_SCOPE_ITEMS", "60"))  # small hosts cap the 12-week scope size
+        inp, econ, info = snapshot_scenario(store, case.disruption_id, mode, tenant_id=case.tenant_id, solver=solver, max_items=max_items,
                                             require_zero_shortage=zero, max_incremental_cost=Decimal(str(budget)) if budget else None)
         meta.update(info)
     else:

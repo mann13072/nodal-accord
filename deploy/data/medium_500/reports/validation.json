@@ -1,0 +1,5255 @@
+{
+  "checks": [
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "exact_suppliers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "exact_buyers"
+    },
+    {
+      "detail": {
+        "actual": 4,
+        "expected": 4
+      },
+      "passed": true,
+      "rule": "count:tenants"
+    },
+    {
+      "detail": {
+        "actual": 12,
+        "expected": 12
+      },
+      "passed": true,
+      "rule": "count:plants"
+    },
+    {
+      "detail": {
+        "actual": 1200,
+        "expected": 1200
+      },
+      "passed": true,
+      "rule": "count:parts"
+    },
+    {
+      "detail": {
+        "actual": 3000,
+        "expected": 3000
+      },
+      "passed": true,
+      "rule": "count:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "exact_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "curated_cases_minimum"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_chains_minimum"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "demo_principals_minimum"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:approvals.offer_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:approvals.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:approvals"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:bom_edges.quantity_per_parent"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:bom_edges.bom_revision"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:bom_edges.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:bom_edges.scrap_factor"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:bom_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:buyer_commercial_terms.payment_days"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:buyer_commercial_terms.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_commercial_terms.unit_price_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_commercial_terms.base_transport_cost_eur_per_unit"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_commercial_terms.max_approved_premium_pct"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:buyer_commercial_terms"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:buyer_financial_profiles.scenario_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:buyer_financial_profiles.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_financial_profiles.inventory_holding_rate_annual"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_financial_profiles.cash_financing_rate_annual"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_financial_profiles.stockout_exposure_proxy_eur_per_unit"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_financial_profiles.max_case_incremental_spend_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:buyer_financial_profiles.approval_threshold_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:buyer_financial_profiles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:capacity_calendar"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:capacity_calendar"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:capacity_calendar"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:capacity_calendar"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:capacity_calendar"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:capacity_calendar.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_calendar.available_hours"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_calendar.maintenance_hours"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_calendar.firm_reserved_hours"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_calendar.flexible_additional_hours"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_calendar.data_confidence"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:capacity_calendar"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:capacity_resources.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_resources.rated_hours_per_week"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:capacity_resources.efficiency_factor"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:counteroffers.new_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:counteroffers.countered_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:counteroffers.countered_payment_days"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:counteroffers.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:counteroffers.countered_premium"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:counteroffers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:demand_forecast.required_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:demand_forecast.revision"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:demand_forecast.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:demand_forecast"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:disruption_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:disruption_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:disruption_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:disruption_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:disruption_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:disruption_events.duration_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:disruption_events.lead_time_extension_days"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:disruption_events.event_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:disruption_events.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:disruption_events.capacity_loss_percent"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:disruption_events.demand_increase_percent"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:disruption_events.event_confidence"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:disruption_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:graph_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:graph_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:graph_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:graph_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:graph_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:graph_edges.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:graph_edges"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:inventory_positions.on_hand_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:inventory_positions.reserved_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:inventory_positions.quality_hold_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:inventory_positions.usable_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:inventory_positions.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:inventory_positions.valuation_unit_cost_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:inventory_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:lane_capacity.committed_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:lane_capacity.supplier_offered_flex_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:lane_capacity.confidence"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:lane_capacity.source_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:lane_capacity.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:lane_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:negotiation_events.sequence"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:negotiation_events.offer_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:negotiation_events.snapshot_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:negotiation_events.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:negotiation_events"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:offer_lines.additional_qty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:offer_lines.payment_days"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:offer_lines.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:offer_lines.unit_premium_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:offer_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:offers.offer_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:offers.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:organizations"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:organizations"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:organizations"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:organizations"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:organizations"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:organizations.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:organizations"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:parts.base_weekly_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:parts.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:parts.average_unit_value_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:planning_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:planning_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:planning_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:planning_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:planning_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:planning_weeks.week_index"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:planning_weeks.iso_week"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:planning_weeks.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:planning_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:plant_part_assignments.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:plant_part_assignments"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:plants.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:plants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:purchase_order_lines.ordered_qty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:purchase_order_lines.confirmed_qty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:purchase_order_lines.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:purchase_order_lines.unit_purchase_price"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:purchase_orders.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:resolution_cases.impact_score"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:resolution_cases.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:resource_lane_requirements"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:resource_lane_requirements"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:resource_lane_requirements"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:resource_lane_requirements"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:resource_lane_requirements"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:resource_lane_requirements.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:resource_lane_requirements.hours_per_unit"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:resource_lane_requirements.setup_hours_if_activated"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:resource_lane_requirements"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:scenario_oracle"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:scenario_oracle"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:scenario_oracle"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:scenario_oracle"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:scenario_oracle"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:scenario_oracle.at_risk_units_from_deterministic_baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:scenario_oracle.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:scenario_oracle"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:scheduled_receipts.receipt_qty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:scheduled_receipts.source_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:scheduled_receipts.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:scheduled_receipts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sharing_policies.policy_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sharing_policies.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:sharing_policies"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.lead_time_days"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.min_order_qty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.lot_multiple"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.max_weekly_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.nominal_weekly_units"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.source_count"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:sourcing_lanes.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:sourcing_lanes.standard_landed_unit_price_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:supplier_private_economics"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:supplier_private_economics"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:supplier_private_economics"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:supplier_private_economics"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:supplier_private_economics"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:supplier_private_economics.max_flex_units_per_week"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:supplier_private_economics.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:supplier_private_economics.unit_variable_cost_eur"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:supplier_private_economics.overtime_premium_cost_eur_per_unit"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:supplier_private_economics.minimum_acceptable_margin_eur_per_unit"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:supplier_private_economics.internal_financing_rate_annual"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:supplier_private_economics"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:supplier_shareable_offers.additional_qty_offer"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:supplier_shareable_offers.new_payment_days"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:supplier_shareable_offers.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:supplier_shareable_offers.premium_price_eur_per_unit"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative_decimal:supplier_shareable_offers.extra_shift_hours"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:supplier_shareable_offers"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:supplier_user_roles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:supplier_user_roles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:supplier_user_roles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:supplier_user_roles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:supplier_user_roles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:supplier_user_roles.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:supplier_user_roles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:tenants.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:tenants"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "unique_key:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "null_key:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "manifest_count:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "content_hash:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "classification:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "blueprint_tenant_alias:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "tenant_fk:trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "nonnegative:trading_relationships.record_version"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "valid_window:trading_relationships"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:tenants.buyer_org_id->organizations.org_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:plants.owner_org_id->organizations.org_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:trading_relationships.buyer_org_id->organizations.org_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:trading_relationships.supplier_org_id->organizations.org_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:trading_relationships.sharing_policy_id->sharing_policies.sharing_policy_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:parts.owner_org_id->organizations.org_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:plant_part_assignments.part_id->parts.part_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:plant_part_assignments.plant_id->plants.plant_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:bom_edges.parent_part_id->parts.part_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:bom_edges.child_part_id->parts.part_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:bom_edges.plant_id->plants.plant_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:sourcing_lanes.relationship_id->trading_relationships.relationship_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:sourcing_lanes.part_id->parts.part_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:sourcing_lanes.destination_plant_id->plants.plant_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:resource_lane_requirements.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:resource_lane_requirements.resource_id->capacity_resources.resource_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:capacity_calendar.resource_id->capacity_resources.resource_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:lane_capacity.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:lane_capacity.week_start->planning_weeks.week_start"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:demand_forecast.part_id->parts.part_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:demand_forecast.plant_id->plants.plant_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:purchase_orders.relationship_id->trading_relationships.relationship_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:purchase_order_lines.po_id->purchase_orders.po_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:purchase_order_lines.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:scheduled_receipts.po_line_id->purchase_order_lines.po_line_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:scheduled_receipts.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:buyer_commercial_terms.relationship_id->trading_relationships.relationship_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:supplier_private_economics.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:resolution_cases.exception_id->disruption_events.disruption_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:offers.case_id->resolution_cases.case_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:offer_lines.offer_id->offers.offer_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:offer_lines.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:counteroffers.parent_offer_id->offers.offer_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:approvals.case_id->resolution_cases.case_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:supplier_shareable_offers.lane_id->sourcing_lanes.lane_id"
+    },
+    {
+      "detail": {
+        "sample": [],
+        "unresolved": 0
+      },
+      "passed": true,
+      "rule": "fk:supplier_shareable_offers.relationship_id->trading_relationships.relationship_id"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:sourcing_lanes->trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:sourcing_lanes->parts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:purchase_orders->trading_relationships"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:purchase_order_lines->sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:scheduled_receipts->purchase_order_lines"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:supplier_private_economics->sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:resource_lane_requirements->capacity_resources"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:resource_lane_requirements->sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:lane_capacity->sourcing_lanes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scope:offers->resolution_cases"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "po_header_vendor_buyer_matches_lane"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "po_minimum_and_lot"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "confirmed_qty_bounded"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "order_lead_time"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "order_after_relationship_active"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "all_lanes_qualified"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "lane_unique_routes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "all_suppliers_active_routes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "all_relationships_have_routes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "all_parts_routes"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "demand_assignment_fk"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "inventory_usable"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "stock_subsets"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "firm_reservations_within_hours"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "lane_contractual_ceiling"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "resource_single_budget"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "weekly_capacity_complete"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "weekly_resource_capacity_complete"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "demand_complete"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "monday_weeks"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "demand_in_horizon"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "future_confirmed_only"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "receipt_no_duplicate_promises"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "receipt_matches_confirmation"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "bom_acyclic"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "bom_positive"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "bom_scope:parent_part_id"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "bom_scope:child_part_id"
+    },
+    {
+      "detail": {
+        "distinct_supplier_definition": true,
+        "percent": 95.63758389261746
+      },
+      "passed": true,
+      "rule": "critical_alternatives_65pct"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "transport_lead_time"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "cost_and_price_separate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "private_classification"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "financing_example"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "financing_transfer_net_zero"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "premium_transfer_net_zero"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000001"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000001"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000002"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000002"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000004"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000004"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000005"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000005"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000006"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000006"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000008"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "mutual_acceptability:CASE-000008"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000009"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000010"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000011"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "commercial_economics:CASE-000012"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000001"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000001"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000001:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000001:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000001:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000001:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000001:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000001:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000001:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000001:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000001:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000001:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000001"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000002"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000002"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000002:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000002:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000002:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000002:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000002:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000002:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000002:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000002:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000002:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000002:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000002"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000003:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000003:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000003:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000003:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000003:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000003:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000003:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000003:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000003:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000003:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000004"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000004"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000004:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000004:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000004:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000004:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000004:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000004:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000004:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000004:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000004:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000004:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000004"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000005"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000005"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000005:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000005:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000005:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000005:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000005:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000005:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000005:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000005:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000005:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000005:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000005"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000006"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000006"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000006:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000006:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000006:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000006:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000006:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000006:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000006:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000006:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000006:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000006:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000006"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000007:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000007:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000007:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000007:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000007:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000007:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000007:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000007:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000007:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000007:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000008"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000008"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000008:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000008:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000008:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000008:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000008:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000008:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000008:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000008:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000008:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000008:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000008"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000009"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000009"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000009:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000009:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000009:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000009:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000009:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000009:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000009:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000009:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000009:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000009:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000009"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000010"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000010"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000010:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000010:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000010:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000010:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000010:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000010:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000010:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000010:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000010:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000010:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000010"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000011"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000011"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000011:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000011:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000011:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000011:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000011:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000011:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000011:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000011:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000011:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000011:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000011"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000012"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000012"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000012:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000012:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000012:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000012:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000012:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000012:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000012:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000012:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000012:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000012:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000012"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000013"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000013"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000013:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000013:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000013:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000013:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000013:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000013:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000013:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000013:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000013:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000013:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000013"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000014"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000014"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000014:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000014:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000014:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000014:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000014:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000014:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000014:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000014:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000014:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000014:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000014"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000015"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000015"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000015:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000015:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000015:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000015:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000015:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000015:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000015:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000015:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000015:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000015:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000015"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000016"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000016"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000016:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000016:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000016:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000016:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000016:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000016:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000016:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000016:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000016:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000016:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000016"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000017"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000017"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000017:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000017:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000017:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000017:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000017:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000017:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000017:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000017:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000017:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000017:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000017"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000018"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000018"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000018:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000018:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000018:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000018:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000018:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000018:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000018:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000018:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000018:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000018:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000018"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000019"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000019"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000019:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000019:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000019:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000019:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000019:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000019:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000019:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000019:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000019:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000019:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000019"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000020"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000020"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000020:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000020:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000020:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000020:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000020:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000020:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000020:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000020:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000020:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000020:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000020"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000021"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000021"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000021:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000021:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000021:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000021:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000021:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000021:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000021:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000021:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000021:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000021:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000021"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000022"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000022"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000022:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000022:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000022:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000022:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000022:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000022:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000022:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000022:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000022:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000022:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000022"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000023"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000023"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000023:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000023:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000023:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000023:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000023:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000023:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000023:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000023:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000023:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000023:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000023"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000024"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000024"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000024:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000024:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000024:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000024:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000024:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000024:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000024:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000024:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000024:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000024:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000024"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000025"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000025"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000025:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000025:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000025:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000025:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000025:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000025:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000025:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000025:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000025:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000025:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000025"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000026"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000026"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000026:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000026:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000026:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000026:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000026:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000026:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000026:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000026:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000026:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000026:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000026"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000027"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000027"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000027:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000027:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000027:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000027:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000027:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000027:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000027:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000027:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000027:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000027:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000027"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000028"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000028"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000028:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000028:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000028:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000028:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000028:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000028:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000028:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000028:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000028:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000028:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000028"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000029"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000029"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000029:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000029:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000029:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000029:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000029:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000029:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000029:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000029:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000029:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000029:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000029"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000030"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000030"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000030:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000030:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000030:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000030:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000030:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000030:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000030:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000030:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000030:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000030:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000030"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000031"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000031"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000031:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000031:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000031:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000031:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000031:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000031:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000031:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000031:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000031:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000031:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000031"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000032"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000032"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000032:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000032:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000032:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000032:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000032:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000032:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000032:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000032:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000032:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000032:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000032"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000033"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000033"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000033:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000033:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000033:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000033:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000033:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000033:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000033:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000033:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000033:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000033:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000033"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000034"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000034"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000034:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000034:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000034:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000034:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000034:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000034:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000034:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000034:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000034:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000034:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000034"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000035"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000035"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000035:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000035:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000035:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000035:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000035:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000035:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000035:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000035:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000035:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000035:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000035"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_hash:CASE-000036"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "snapshot_refs:CASE-000036"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000036:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000036:alternate"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000036:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000036:baseline"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000036:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000036:hybrid"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000036:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000036:overtime"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle:CASE-000036:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "scenario_resource:CASE-000036:prebuild"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "oracle_table:CASE-000036"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "all_case_categories"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "golden_shared_machine"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "golden_mandatory_infeasible"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "timeout_honesty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:buyer_other_demand"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:buyer_other_price"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:supplier_other_cost"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:supplier_buyer_penalty"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:buyer_agent_private_margin"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:supplier_own_cost"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:supplier_own_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:ops_metadata"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:ops_price"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:buyer_hidden_case"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:buyer_shared_capacity"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "access:policy_revision_invalidates_projection"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "buyer_projection_no_private_fields"
+    },
+    {
+      "detail": {
+        "ACCEPTED": 8,
+        "EXPIRED": 1,
+        "REJECTED": 2,
+        "STALE": 1
+      },
+      "passed": true,
+      "rule": "script_outcome_counts"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "counteroffer_count"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000001-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000002-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000003-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000004-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000005-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000005-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000006-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000006-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000007-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000007-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000008-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000008-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000010-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000011-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000012-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "offer_digest:OFFER-000009-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000001-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000002-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000003-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000004-V1"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000005-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000006-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000007-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "export_approved:OFFER-000008-V2"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "only_approved_exports"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000001"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000001-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000002"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000002-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000003-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000004"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000004-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000005"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000005-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000005-007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000006"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000006-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000006-007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000007-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000007-007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000008"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000008-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000008-007"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000009"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000009-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000010"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000010-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000011"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "sent_before_response:NE-000011-003"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "negotiation_time_order:CASE-000012"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "buyer_role_membership"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "supplier_role_membership"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "approval_role_membership"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "graph_endpoints"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "external_every_row_reconciles"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "external_current_bytes:demand"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "external_current_bytes:stock_positions"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "external_current_bytes:purchase_orders"
+    },
+    {
+      "detail": null,
+      "passed": true,
+      "rule": "external_current_bytes:collaboration"
+    }
+  ],
+  "checks_passed": 1015,
+  "checks_run": 1015,
+  "errors": [],
+  "hard_validation_failures": 0,
+  "profile": "medium",
+  "seed": 20261021,
+  "status": "PASS",
+  "table_counts": {
+    "approvals": 16,
+    "bom_edges": 208,
+    "buyer_commercial_terms": 3000,
+    "buyer_financial_profiles": 4,
+    "capacity_calendar": 4800,
+    "capacity_resources": 400,
+    "counteroffers": 4,
+    "demand_forecast": 14400,
+    "disruption_events": 60,
+    "graph_edges": 11342,
+    "inventory_positions": 1200,
+    "lane_capacity": 36000,
+    "negotiation_events": 77,
+    "offer_lines": 16,
+    "offers": 16,
+    "organizations": 504,
+    "parts": 1200,
+    "planning_weeks": 12,
+    "plant_part_assignments": 1200,
+    "plants": 12,
+    "purchase_order_lines": 6000,
+    "purchase_orders": 4000,
+    "resolution_cases": 36,
+    "resource_lane_requirements": 1200,
+    "scenario_oracle": 36,
+    "scheduled_receipts": 6000,
+    "sharing_policies": 750,
+    "sourcing_lanes": 3000,
+    "supplier_private_economics": 3000,
+    "supplier_shareable_offers": 12,
+    "supplier_user_roles": 118,
+    "tenants": 4,
+    "trading_relationships": 750
+  },
+  "unresolved_foreign_keys": 0,
+  "validation_seconds": 8.177427800022997,
+  "warnings": [
+    "Prototype engine, UI, database RLS and real connector integration were not run; only standalone data/fixture checks are PASS.",
+    "Dense timeout fixture intentionally uses a zero-second budget; it measures failure handling, not solve scalability."
+  ]
+}

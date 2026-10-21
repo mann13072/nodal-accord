@@ -1,0 +1,67 @@
+{
+  "allowed_roles": [
+    "BUYER_PLANNER",
+    "BUYER_PROCUREMENT",
+    "BUYER_FINANCE",
+    "SUPPLIER_PLANNER"
+  ],
+  "available_hours": 80,
+  "blocked_actions": [
+    "CROSS_TENANT_LOOKUP",
+    "BUYER_READ_SUPPLIER_COST",
+    "APPROVE_STALE_TERMS"
+  ],
+  "buyer_org_id": "BUY-000001",
+  "case_id": "CASE-000004",
+  "case_status": "SCENARIOS_READY",
+  "demand_units": [
+    600,
+    400
+  ],
+  "demo_steps": [
+    {
+      "action": "Open immutable scoped snapshot",
+      "assert": "snapshot digest == 911db3579f227f1ac1845eb9e6b61c7e383b31aa51b54b65c91cca0c563f90a2"
+    },
+    {
+      "action": "Run baseline feasibility",
+      "assert": "unmet units == 200"
+    },
+    {
+      "action": "Compare overtime, alternate, prebuild and hybrid",
+      "assert": {
+        "zero_shortage_modes": [
+          "alternate",
+          "hybrid"
+        ]
+      }
+    }
+  ],
+  "disruption_ids": [
+    "DISR-000004"
+  ],
+  "expected_solver_status_class": "FEASIBLE_MITIGATION",
+  "highlighted_graph_nodes": [
+    "SUP-000295",
+    "PART-000030",
+    "PART-000054",
+    "PLANT-000002",
+    "PLANT-000003"
+  ],
+  "hours_per_unit": ".1",
+  "minimum_unmet_units": 200,
+  "part_aliases": [
+    "PART-A",
+    "PART-B"
+  ],
+  "recommended_starting_view": "SIMULATE",
+  "required_hours": 100,
+  "snapshot_id": "SNAPSHOT-000004",
+  "supplier_org_ids": [
+    "SUP-000295"
+  ],
+  "synthetic_disclosure": true,
+  "tenant_id": "TEN-000001",
+  "title": "Shared Machine",
+  "uncovered_hours": 20
+}

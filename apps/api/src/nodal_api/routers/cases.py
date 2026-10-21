@@ -137,6 +137,9 @@ def submit_scenario(case_id: str, body: ScenarioRequest, request: Request, respo
     if idem and (prev := session.get(IdempotencyRecord, idem)):
         response.status_code = prev.status_code
         return prev.response
+    cap = request.app.state.settings.max_solver_seconds
+    if body.solver.time_limit_seconds > cap:
+        body.solver.time_limit_seconds = cap  # public demo protection; the applied value is stored with the run
     run = ScenarioRun(run_id=new_id("RUN"), case_id=case.case_id, tenant_id=case.tenant_id, requested_by=principal.principal_id,
                       request=body.model_dump(), input_version=case.input_version, state=RunState.QUEUED.value)
     session.add(run)

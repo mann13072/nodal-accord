@@ -1,0 +1,65 @@
+{
+  "buyers_per_supplier": {
+    "count": 500,
+    "max": 3.0,
+    "mean": 1.5,
+    "median": 1.0,
+    "min": 1.0,
+    "p10": 1.0,
+    "p90": 3.0
+  },
+  "component_semantics": "Undirected operational graph excluding buyer relationship hub edges; plant aggregation can create large components. Event propagation is directed, never unrestricted component optimization.",
+  "degree_distribution": {
+    "count": 5116,
+    "max": 274.0,
+    "mean": 4.433932759968726,
+    "median": 2.0,
+    "min": 1.0,
+    "p10": 1.0,
+    "p90": 7.0
+  },
+  "event_affected_parts": {
+    "count": 60,
+    "max": 30.0,
+    "mean": 5.016666666666667,
+    "median": 2.0,
+    "min": 1.0,
+    "p10": 1.0,
+    "p90": 19.1
+  },
+  "graph_edges": 11342,
+  "lanes_per_supplier": {
+    "count": 500,
+    "max": 35.0,
+    "mean": 6.0,
+    "median": 5.0,
+    "min": 1.0,
+    "p10": 2.0,
+    "p90": 13.0
+  },
+  "mapped_lane_percent": 40.0,
+  "max_affected_reachability": 69,
+  "multibuyer_supplier_percent": 35.0,
+  "procurement_component_sizes": [
+    5108,
+    2,
+    2
+  ],
+  "qualified_sources_per_part": {
+    "count": 1200,
+    "max": 3.0,
+    "mean": 2.5,
+    "median": 3.0,
+    "min": 1.0,
+    "p10": 1.0,
+    "p90": 3.0
+  },
+  "resource_sharing_count": 400,
+  "single_source_parts_percent": 18.0,
+  "suppliers_per_buyer": {
+    "TEN-000001": 187,
+    "TEN-000002": 186,
+    "TEN-000003": 192,
+    "TEN-000004": 185
+  }
+}
