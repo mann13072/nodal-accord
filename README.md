@@ -1,131 +1,152 @@
-# Nodal Accord — collaborative supply resolution engine (prototype)
+# Nodal Accord
 
-A working, API-first prototype of the blueprint in `../Nodal_Accord_Engineering_Blueprint.md`: detect a supply
-exception, compare constrained mitigation plans (Pyomo + HiGHS MILP), turn a validated plan into a structured offer, let
-the supplier accept or counteroffer, re-simulate, route human approvals, and export an immutable agreement record.
+**Collaborative supply resolution: from a supplier shortfall to an approved recovery plan.**
 
-**Website:** https://nodal-accord.vercel.app · **Live demo:** https://nodal-accord.vercel.app/app (frontend on Vercel) · API: https://nodal-accord-api.onrender.com/docs
-(backend on Render's free plan with the synthetic 500-supplier dataset; it sleeps after 15 minutes idle, so the first
-request can take about a minute. Pick a demo identity in the top bar.)
+Nodal Accord connects supply-chain planning, supplier collaboration and commercial approval in one workbench. Buyers investigate disruptions, compare constrained recovery scenarios and negotiate with suppliers using validated plans. Procurement and finance teams retain approval authority, with a traceable record of the inputs and terms behind each decision.
 
-**Synthetic data only.** Independent concept; no affiliation with SupplyOn or any ERP vendor; no real integration,
-credentials or ERP write-back. Not production-ready.
+[Website](https://nodal-accord.vercel.app/) · [Live demo](https://nodal-accord.vercel.app/app) · [API reference](https://nodal-accord-api.onrender.com/docs)
 
-## What runs
+Independent working prototype using synthetic industrial supply-chain data. The hosted demo uses 500 suppliers; local datasets include up to 5,000. Allow about a minute for the hosted API to wake after inactivity.
 
-| Piece | Where | Notes |
+## The resolution workflow
+
+```mermaid
+flowchart LR
+    A[Investigate shortage] --> B[Compare recovery plans]
+    B --> C[Propose supplier terms]
+    C --> D{Supplier response}
+    D -->|Counteroffer| B
+    D -->|Accept| E[Procurement and finance review]
+    E --> F[Agreement and export preview]
+```
+
+1. **Investigate.** Review the disruption, affected parts and plants, inventory, confirmed receipts and projected shortages.
+2. **Simulate.** Compare the baseline with overtime, alternate sourcing, prebuild and hybrid options. Inspect service, cost and working-capital trade-offs.
+3. **Negotiate.** Draft an offer from a validated scenario. The supplier can accept, reject or counteroffer; changes to quantities or delivery dates require a new simulation.
+4. **Approve.** Procurement reviews the agreement. Finance approval also applies at the configured spending threshold or when payment terms change.
+5. **Trace.** Inspect the agreed terms, scenario version, approval history and export preview.
+
+## Core capabilities
+
+### Constraint-aware planning
+
+The Pyomo/HiGHS mixed-integer model accounts for shared machine capacity, supplier lead times, qualified sourcing lanes, lot sizes, inventory balances and locked releases. Its two-stage objective prioritises criticality-weighted late demand, then cost.
+
+An independent validator reconstructs capacity and inventory balances from the original inputs before a plan becomes eligible for an offer. The workbench distinguishes proven optimal solutions from feasible plans with an outstanding solver gap.
+
+Two scopes support different questions:
+
+- **Case fixture:** an isolated disruption for a focused comparison and reference-solver validation.
+- **12-week snapshot horizon:** a connected planning scope around a disruption, including lanes that share bottleneck resources.
+
+### Commercial and workflow controls
+
+- **Versioned terms:** immutable offer revisions, exact-version acceptance and SHA-256 term digests.
+- **Current evidence:** input changes invalidate earlier scenarios, offers and approvals.
+- **Separated responsibilities:** buyer planning, procurement, finance and supplier roles govern the workflow.
+- **Financial context:** compare incremental buyer costs, inventory holding costs and illustrative payment-term financing effects.
+
+### Scoped data access
+
+Server-side tenant and organisation checks govern record access. Field-level projections separate buyer-confidential information from supplier-private economics, including when a supplier serves multiple buyers. Platform operators receive operational metadata rather than commercial records.
+
+Illustrative ERP and supplier file connectors map external records into canonical fields, quarantine invalid rows with reason codes and reconcile accepted data against a read-only planning snapshot.
+
+### Tool-using AI assistance
+
+The optional DeepSeek assistant explains case evidence, compares solver results, requests a scenario run and drafts supplier message text. It uses the requesting user's scoped views, applies field redaction and records tool calls in the audit trail. Numerical statements without support in tool results receive an unverified flag.
+
+People send offers, accept terms and approve agreements. The assistant supports investigation and preparation within those boundaries. The planning and collaboration workflow also runs without an AI provider.
+
+## Architecture
+
+| Layer | Implementation | Responsibility |
 |---|---|---|
-| Domain, ledger, MILP, finance, connectors | `packages/*/src` | pure Python, no web/cloud dependency |
-| API (FastAPI, `/api/v1`, OpenAPI in `contracts/openapi/nodal-accord-v1.json`) | `apps/api` | demo identities, policy, cases, scenarios (202 + poll), offers, approvals, audit, imports |
-| Optimization worker | `apps/worker` | separate process; atomic job claiming; several can run |
-| Resolution Workbench (React + TS + Vite) | `apps/web` | queue · Investigate / Simulate / Resolve · supplier portal · agreements · audit · imports |
-| Data | `../Nodal_Accord_5000_Supplier_Data/data/synthetic/generated/<tiny\|medium_500\|enterprise_5000>` | produced by the companion generator; read-only here |
+| Workbench | React, TypeScript, Vite, TanStack Query | Investigation, scenario comparison, supplier portal and approvals |
+| API | FastAPI, Pydantic | Scoped access, workflow rules, imports and audit events |
+| Planning and optimisation | Python, Pyomo, HiGHS | Inventory ledgers, constrained scenarios and independent validation |
+| Execution | Separate optimisation worker | Asynchronous jobs with atomic claiming; API submission returns `202` |
+| Data | Parquet snapshots; SQLite via SQLAlchemy | Read-only planning inputs and persistent workflow state |
+| AI tools | Provider abstraction and bounded tool loop | Evidence-grounded assistance with server-side access controls |
 
-## Run it
+The hosted frontend runs on Vercel and the API on Render. See the [architecture decisions](docs/architecture/decisions.md) and [mathematical formulation](docs/optimization/formulation.md) for implementation details.
 
-From this folder (`nodal-accord/`):
+## Run locally
 
-```powershell
-.\scripts\bootstrap.ps1        # once: venv + pip install -e ".[dev]" + npm install   (sh scripts/bootstrap.sh on macOS/Linux)
-npm run dev                    # frees :8000/:5173, starts API, worker and web
+### Prerequisites
+
+- Python 3.12 or later.
+- Node.js 18 or later, with npm.
+- A generated synthetic dataset from the companion `Nodal_Accord_5000_Supplier_Data` project.
+
+The dataset is a separate dependency, outside this repository. The default location is:
+
+```text
+../Nodal_Accord_5000_Supplier_Data/data/synthetic/generated/tiny/
 ```
 
-Open http://localhost:5173. Pick a demo identity in the top bar (the server resolves its role and tenant):
-`demo.buyer001.planner` → run scenarios and draft offers; `demo.buyer001.procurement` → send offers and approve;
-`demo.buyer001.finance` → required above the approval threshold or when payment days change; `demo.supplierNNNN.planner`
-→ supplier portal (accept / counteroffer / reject); `demo.platform.ops` → metadata only.
+Each dataset contains `tables/`, `scenarios/`, `golden/`, `access-tests/` and `external/`. To use another generated dataset, set `NODAL_DATA_ROOT` to its directory before starting the API and worker.
 
-Dataset: `tiny` by default. Switch with `NODAL_DATA_ROOT` (e.g. `...\generated\enterprise_5000`) before `npm run dev`.
-Workflow state lives in `var/nodal_<dataset>.db` (SQLite); delete it to reset the demo.
+Run these commands from the repository root.
 
-Demo script (CASE-000004, shared machine): Simulate → Run comparison (baseline leaves 200 units short because one
-80 h machine serves both parts; alternate and hybrid recover them) → Draft offer → switch to procurement → Send →
-switch to `demo.supplier0013.planner` → Accept → back to procurement → Approve → Show export preview.
-Counteroffer path: CASE-000011 (tenant 2) — supplier moves the delivery week → inputs v2, earlier runs stale → re-run →
-the alternate no longer arrives in time (200 units unmet, matching the generator's oracle) → no offer can be drafted.
-
-## Optional AI assistant
-
-An "Ask AI" panel in each case explains shortages, compares scenario runs, can queue a new solver run and drafts
-supplier message text. It never computes numbers itself, never sees data the user can't see, and cannot send,
-accept or approve anything; numbers not found in its tool results are flagged as unverified. It is **off** unless
-an API key is configured — the rest of the product does not depend on it. Details: ADR-8 in
-`docs/architecture/decisions.md`.
-
-To enable it locally (PowerShell, current terminal only; paste your own key):
+**Windows / PowerShell**
 
 ```powershell
-$env:DEEPSEEK_API_KEY = "<your key>"; npm run dev
+.\scripts\bootstrap.ps1
+npm run dev
 ```
 
-On Render, add `DEEPSEEK_API_KEY` (and an `NODAL_AI_ACCESS_CODE` you share only with demo viewers) under the
-service's **Environment** settings. Questions and the visible synthetic case data are sent to DeepSeek.
+**macOS / Linux**
 
-## Tests
-
-```powershell
-npm test                                            # or: .\.venv\Scripts\python -m pytest
+```sh
+sh scripts/bootstrap.sh
+npm run dev
 ```
 
-57 tests: AI assistant gating, scoping, redaction, bounded loop and number checks (scripted provider, no real
-calls); ledger properties (Hypothesis), finance goldens (payment terms EUR 394.52, consolidated 0.00), golden solver
-fixtures (hand optimum, lead time, shared machine, unqualified lane, locked release, infeasible zero-shortage, prebuild,
-overtime, time limit never labelled optimal), **oracle cross-check: all 36 curated cases × 5 modes agree with the
-generator's independent solver on unmet units (180/180 on tiny, medium_500 and enterprise_5000)**, 12-week scope tests,
-the full buyer→supplier→approval→export workflow, counteroffer re-simulation, stale-approval block, cross-tenant
-concealment, field-leak scans, multi-buyer isolation, platform-operator limits, import validation/idempotency.
-Run the cross-check on a bigger dataset with `NODAL_DATA_ROOT=<dir> pytest tests/unit/test_oracle_crosscheck.py`.
+Open the workbench at **http://localhost:5173/app/** and the API documentation at **http://localhost:8000/docs**. The development command starts the API, worker and frontend, clearing ports 8000 and 5173 first. Stop the command with `Ctrl+C` when finished.
 
-## Measured performance
+### Explore a complete case
 
-Measured on one developer laptop (Windows 11, 12 logical CPUs, Python 3.13, HiGHS via Pyomo), dev servers stopped.
-Raw per-run data: `docs/evaluation/*.json`. Reproduce with `tests/benchmark/solve_network.py` and `load_api.py`.
-These are measurements of this synthetic workload, not a production SLA.
+Use the **Demo identity** selector to switch between roles:
 
-**Scenario solves** — 10 sampled disruptions × {baseline, hybrid} per dataset, 12-week `SNAPSHOT_HORIZON` scope
-(≤ 60 items per scope), 30 s time limit per mode, 1 % MIP gap target:
+| Identity | Role |
+|---|---|
+| `demo.buyer001.planner` | Investigate cases, run comparisons and draft offers |
+| `demo.buyer001.procurement` | Send offers and review procurement approvals |
+| `demo.buyer001.finance` | Review finance approvals |
+| `demo.supplierNNNN.planner` | Review, accept or counter supplier offers |
 
-| Dataset | Suppliers / lanes | Status (20 solves) | Solver p50 / p95 / max | Hit time limit | Stage-1 gap > 50 % | Validation failures | Load + index | Peak RSS |
-|---|---|---|---|---|---|---|---|---|
-| tiny | 20 / 37 | 6 OPTIMAL, 14 FEASIBLE_WITH_GAP | 0.24 / 4.2 / 5.2 s | 0 | 0 | 0 | 0.05 + 0.02 s | 150 MB |
-| medium_500 | 500 / 3,000 | 2 OPTIMAL, 18 FEASIBLE_WITH_GAP | 16.5 / 30.7 / 31.2 s | 6 | 6 | 0 | 0.07 + 0.38 s | 391 MB |
-| enterprise_5000 | 5,000 / 30,000 | 5 OPTIMAL, 15 FEASIBLE_WITH_GAP | 16.3 / 30.5 / 30.5 s | 3 | 8 | 0 | 0.26 + 3.9 s | 1,210 MB |
+With the default `tiny` dataset, open **CASE-000004**, run a **Case fixture** comparison and compare the shared-machine bottleneck across modes. Draft an offer, switch to procurement to send it, then to `demo.supplier0013.planner` to accept. Return to procurement to approve and inspect the export preview.
 
-How to read this honestly:
-- Every solve returned a validated plan, but most large scopes (≈ 6,000–8,600 integer variables) are **not proven
-  optimal**: on 8 of 20 enterprise solves the shortage stage stopped with a bound gap above 50 %, so those numbers are
-  incumbents, not optima. Small scopes and the curated case fixtures solve to optimality in well under a second.
-- Mode results are warm-started (baseline from the no-release plan, others from baseline), so mitigation never reports
-  worse service than baseline; one run per large dataset did not improve on its seed and is flagged as such.
-- A solve covers one disruption's scoped component, not the whole network. Decomposition / rolling horizon for larger
-  connected scopes is not implemented.
+### Optional AI configuration
 
-**API latency** — 5,000-supplier dataset, in-process client, 20 sequential requests (`api-latency-enterprise_5000.json`):
+Set `DEEPSEEK_API_KEY` in the API process environment to enable the assistant. Public demos can also use `NODAL_AI_ACCESS_CODE` and `NODAL_AI_HOURLY_LIMIT` to control access and usage. See [`.env.example`](.env.example) for configuration names; keep credentials out of version control.
 
-| Endpoint | Cold (first request) | Warm p50 / p95 | Blueprint target |
-|---|---|---|---|
-| `GET /cases` | 0.04 s | 4 / 5 ms | p95 < 2 s |
-| `GET /cases/{id}` | 1.43 s (lazy index build) | 4 / 5 ms | p95 < 3 s |
-| `GET /network/impact` | 0.19 s | 7 / 8 ms | — |
+When enabled, the provider receives the question and the case data visible to the requesting user.
 
-The case index holds the 36 curated cases (33 visible to buyer 1), not one case per supplier, so it is not evidence of
-filtering thousands of cases.
+## Validation and evaluation
 
-## Getting the data
-The synthetic dataset is produced by the companion generator (`Nodal_Accord_5000_Supplier_Data/`, not part of this
-repository) and expected next to this folder. Point `NODAL_DATA_ROOT` at any generated dataset directory that contains
-`tables/`, `scenarios/`, `golden/`, `access-tests/` and `external/`. Tests that need it are skipped when it is missing.
+```sh
+npm test
+npm run build:web
+```
 
-## Design, decisions, deviations
+The test suite covers planning balances, financial calculations, solver constraints, buyer-to-supplier workflows, stale approvals, tenant isolation, import validation and AI tool boundaries. AI tests use a scripted provider and require no paid API calls. Dataset-dependent tests skip when their inputs are unavailable.
 
-- `docs/optimization/formulation.md` — the MILP as implemented, status labels, HYBRID definition.
-- `docs/architecture/decisions.md` — ADRs and **every deviation from the blueprint** (SQLite instead of PostgreSQL, no
-  RLS, no Azure, demo identities instead of OIDC, Mode A economics only).
+The reference-solver tests compare **36 curated cases across five mitigation modes**, checking **180 case/mode outcomes** against the companion generator's independent solver. See the [cross-check tests](tests/unit/test_oracle_crosscheck.py) and [workflow tests](tests/e2e/test_buyer_supplier_case.py).
 
-## License
-Apache License 2.0 — see `LICENSE`. Third-party dependencies keep their own licenses (MIT, BSD or Apache-2.0).
+Recorded local benchmarks cover networks of **20, 500 and 5,000 synthetic suppliers**, including **30,000 sourcing lanes** in the largest dataset. Each solve handles a scoped disruption, rather than the entire network. Larger scopes can return feasible plans before proving optimality; the results retain status and gap information.
 
-## What is not claimed
-Not integrated with SupplyOn or any ERP; no vendor schema is used; not production-ready; time-limited runs are labelled
-`FEASIBLE_WITH_GAP`, never optimal; benchmark numbers are from one laptop and one synthetic workload; shortage exposure is
-a scenario proxy, not a loss forecast; synthetic results are not customer savings.
+[Published evaluation data](docs/evaluation/) · [Scenario benchmark runner](tests/benchmark/solve_network.py) · [API benchmark runner](tests/benchmark/load_api.py)
+
+## Prototype scope
+
+The application demonstrates planning and collaboration with synthetic records, seeded demo identities and application-level access controls. Real ERP connectivity, production authentication and enterprise operational assurance remain outside the implemented scope. Agreement exports are previews; the application performs no ERP write-back or legal signing.
+
+Nodal Accord is an independent project with no affiliation with SupplyOn or an ERP vendor. Benchmark results describe local synthetic workloads, not customer savings or production service guarantees.
+
+## Author and licence
+
+Created by [Mann D. Shah](https://github.com/mann13072) through AI-assisted development, with ownership of business requirements, planning logic, workflow design and validation.
+
+Licensed under [Apache License 2.0](LICENSE). Third-party dependencies retain their respective licences.
